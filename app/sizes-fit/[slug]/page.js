@@ -1,18 +1,53 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { editorialHubs } from "../../lib/activewearData";
+import { categories, editorialHubs, fitGuides, intentGuides, segmentCategoryGuides } from "../../lib/activewearData";
+
+function getFitPage(slug) {
+  return editorialHubs.find((item) => item.href === `/sizes-fit/${slug}`) || fitGuides.find((item) => item.slug === slug);
+}
 
 export function generateStaticParams() {
-  return editorialHubs
+  const editorialParams = editorialHubs
     .filter((item) => item.href.startsWith("/sizes-fit/"))
     .map((item) => ({ slug: item.href.split("/").pop() }));
+  const guideParams = fitGuides.map((item) => ({ slug: item.slug }));
+
+  return [...editorialParams, ...guideParams];
+}
+
+export function generateMetadata({ params }) {
+  const page = getFitPage(params.slug);
+
+  if (!page) {
+    return {};
+  }
+
+  return {
+    title: `${page.title} | ActivewearEtc`,
+    description: page.summary,
+    alternates: { canonical: page.href }
+  };
 }
 
 export default function FitPage({ params }) {
-  const page = editorialHubs.find((item) => item.href === `/sizes-fit/${params.slug}`);
+  const page = getFitPage(params.slug);
   if (!page) {
     notFound();
   }
+
+  const category = categories.find((item) => item.slug === page.categorySlug);
+  const relatedSegmentPages = segmentCategoryGuides
+    .filter((item) => item.categorySlug === page.categorySlug)
+    .slice(0, 4);
+  const relatedIntentPages = intentGuides
+    .filter((item) => item.categorySlug === page.categorySlug)
+    .slice(0, 2);
+  const items = [
+    category,
+    ...relatedSegmentPages,
+    ...relatedIntentPages,
+    ...editorialHubs.filter((item) => item.href !== page.href)
+  ].filter(Boolean).slice(0, 6);
 
   return (
     <HubPage
@@ -20,7 +55,17 @@ export default function FitPage({ params }) {
       title={page.title}
       intro={page.summary}
       path={page.href}
-      items={editorialHubs.filter((item) => item.href !== page.href)}
-    />
+      items={items}
+    >
+      <section className="section">
+        <div className="content-card">
+          <h2>Fit checks before buying</h2>
+          <p>
+            Activewear sizing can vary by brand, fabric, compression, rise, inseam, and support level. Use retailer size
+            charts and return policies as final decision checks before purchasing.
+          </p>
+        </div>
+      </section>
+    </HubPage>
   );
 }

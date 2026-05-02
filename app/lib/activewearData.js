@@ -629,6 +629,34 @@ export const dealGuides = dealCategorySlugs.map((categorySlug) => {
   };
 });
 
+const fitGuideCategorySlugs = [
+  "leggings",
+  "sports-bras",
+  "workout-tops",
+  "running-shorts",
+  "joggers",
+  "hoodies",
+  "compression-wear",
+  "yoga-wear",
+  "running-shoes",
+  "training-shoes"
+];
+
+export const fitGuides = fitGuideCategorySlugs.map((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return {
+    slug: `${categorySlug}-fit-guide`,
+    name: `${category.name} Fit Guide`,
+    title: `${category.name} Fit Guide`,
+    summary: `Compare ${category.name.toLowerCase()} sizing, fit signals, fabric behavior, support level, return-policy risk, and retailer size-chart details before choosing a product.`,
+    href: `/sizes-fit/${categorySlug}-fit-guide`,
+    categorySlug,
+    relatedHrefs: [category.href, "/about/how-we-rank-products", "/about/price-and-availability"],
+    tags: [category.name, "fit", "size guide"]
+  };
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
