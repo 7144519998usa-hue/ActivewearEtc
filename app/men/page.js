@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { categories } from "../lib/activewearData";
+import { categories, segmentCategoryGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Men's Activewear",
@@ -14,7 +14,10 @@ export default function MenPage() {
       title="Men's activewear for training, running, and everyday movement"
       intro="Compare joggers, workout tops, training shoes, running shorts, hoodies, compression wear, and gym clothes in one activewear-focused path."
       path="/men"
-      items={categories.filter((item) => ["joggers", "workout-tops", "training-shoes", "running-shorts", "hoodies", "compression-wear"].includes(item.slug))}
+      items={[
+        ...segmentCategoryGuides.filter((item) => item.segmentSlug === "men").slice(0, 6),
+        ...categories.filter((item) => ["joggers", "workout-tops", "training-shoes", "running-shorts", "hoodies", "compression-wear"].includes(item.slug))
+      ].slice(0, 8)}
     />
   );
 }

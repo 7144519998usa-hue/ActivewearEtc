@@ -533,6 +533,44 @@ export const activityCategoryGuides = Object.entries(activityCategoryMatrix).fla
   });
 });
 
+export const segmentHubs = [
+  { slug: "women", name: "Women's Activewear", href: "/shop/women", summary: "Women's activewear pages organized by category, fit, support level, activity, and retailer shopping checks." },
+  { slug: "men", name: "Men's Activewear", href: "/shop/men", summary: "Men's activewear pages organized by training use, fabric, fit, price range, and brand coverage." },
+  { slug: "plus-size", name: "Plus-Size Activewear", href: "/shop/plus-size", summary: "Plus-size activewear pages focused on size range, support, coverage, waistband stability, and return policies." },
+  { slug: "budget", name: "Budget Activewear", href: "/shop/budget", summary: "Budget activewear pages focused on price, sale timing, fabric tradeoffs, durability, and return windows." },
+  { slug: "premium", name: "Premium Activewear", href: "/shop/premium", summary: "Premium activewear pages focused on fabric quality, construction, fit consistency, and long-term value." },
+  { slug: "sustainable", name: "Sustainable Activewear", href: "/shop/sustainable", summary: "Sustainable activewear pages focused on material claims, transparency, durability, and care expectations." }
+];
+
+const segmentCategoryMatrix = {
+  women: ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "yoga-wear", "athleisure", "running-shoes", "training-shoes"],
+  men: ["workout-tops", "running-shorts", "joggers", "hoodies", "compression-wear", "gym-clothes", "running-shoes", "training-shoes"],
+  "plus-size": ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies"],
+  budget: ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes"],
+  premium: ["leggings", "sports-bras", "workout-tops", "joggers", "hoodies", "yoga-wear", "running-shoes", "training-shoes"],
+  sustainable: ["leggings", "sports-bras", "workout-tops", "joggers", "hoodies", "yoga-wear"]
+};
+
+export const segmentCategoryGuides = Object.entries(segmentCategoryMatrix).flatMap(([segmentSlug, categorySlugs]) => {
+  const segment = segmentHubs.find((item) => item.slug === segmentSlug);
+
+  return categorySlugs.map((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return {
+      slug: categorySlug,
+      segmentSlug,
+      categorySlug,
+      name: `${segment.name} ${category.name}`,
+      title: `${segment.name} ${category.name}`,
+      summary: `Compare ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by fit, fabric, support, price range, retailer availability, return policy, and disclosure-safe shopping signals.`,
+      href: `/shop/${segmentSlug}/${categorySlug}`,
+      relatedHrefs: [segment.href, category.href, "/about/advertiser-disclosure"],
+      tags: [segment.name, category.name, "shopping guide"]
+    };
+  });
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",

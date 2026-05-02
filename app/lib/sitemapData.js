@@ -1,5 +1,5 @@
 import { siteConfig } from "./siteConfig";
-import { activityCategoryGuides, activityHubs, brandCategoryGuides, brandHubs, categories, comparisonGuides, editorialHubs, intentGuides, sampleProducts, shoppingGuides } from "./activewearData";
+import { activityCategoryGuides, activityHubs, brandCategoryGuides, brandHubs, categories, comparisonGuides, editorialHubs, intentGuides, sampleProducts, segmentCategoryGuides, shoppingGuides } from "./activewearData";
 
 const corePages = [
   "/",
@@ -10,6 +10,7 @@ const corePages = [
   "/styles",
   "/sizes-fit",
   "/deals",
+  "/shop",
   "/compare",
   "/reviews",
   "/activewear-university",
@@ -30,6 +31,7 @@ export const sitemapSections = [
   { slug: "intersection-pages", paths: editorialHubs.map((item) => item.href) },
   { slug: "buying-guide-pages", paths: shoppingGuides.map((item) => `/best/${item.slug}`) },
   { slug: "intent-pages", paths: intentGuides.map((item) => item.href) },
+  { slug: "segment-category-pages", paths: segmentCategoryGuides.map((item) => item.href) },
   { slug: "comparison-pages", paths: comparisonGuides.map((item) => `/compare/${item.slug}`) },
   { slug: "product-pages", paths: sampleProducts.map((item) => item.href) }
 ];

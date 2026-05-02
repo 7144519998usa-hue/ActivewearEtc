@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { categories, editorialHubs } from "../lib/activewearData";
+import { categories, editorialHubs, segmentCategoryGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Women's Activewear",
@@ -10,6 +10,7 @@ export const metadata = {
 export default function WomenPage() {
   const items = [
     ...categories.filter((item) => ["leggings", "sports-bras", "workout-tops", "running-shorts", "yoga-wear"].includes(item.slug)),
+    ...segmentCategoryGuides.filter((item) => item.segmentSlug === "women").slice(0, 4),
     editorialHubs.find((item) => item.slug === "plus-size-activewear")
   ].filter(Boolean);
 
