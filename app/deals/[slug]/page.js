@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { brandCategoryGuides, brandDealGuides, brandHubs, categories, dealGuides, editorialHubs, sampleProducts, segmentCategoryGuides } from "../../lib/activewearData";
+import { brandCategoryGuides, brandDealGuides, brandHubs, categories, dealGuides, editorialHubs, priceBandGuides, sampleProducts, segmentCategoryGuides } from "../../lib/activewearData";
 import ProductComparison from "../../components/ProductComparison";
 
 function getDealPage(slug) {
   return editorialHubs.find((item) => item.href === `/deals/${slug}`)
     || dealGuides.find((item) => item.slug === slug)
+    || priceBandGuides.find((item) => item.slug === slug)
     || brandDealGuides.find((item) => item.slug === slug);
 }
 
@@ -14,9 +15,10 @@ export function generateStaticParams() {
     .filter((item) => item.href.startsWith("/deals/"))
     .map((item) => ({ slug: item.href.split("/").pop() }));
   const generatedParams = dealGuides.map((item) => ({ slug: item.slug }));
+  const priceBandParams = priceBandGuides.map((item) => ({ slug: item.slug }));
   const brandParams = brandDealGuides.map((item) => ({ slug: item.slug }));
 
-  return [...editorialParams, ...generatedParams, ...brandParams];
+  return [...editorialParams, ...generatedParams, ...priceBandParams, ...brandParams];
 }
 
 export function generateMetadata({ params }) {
@@ -50,6 +52,7 @@ export default function DealPage({ params }) {
     category,
     brandCategoryPage,
     ...relatedSegmentPages,
+    ...priceBandGuides.filter((item) => item.slug !== page.slug && item.categorySlug === page.categorySlug).slice(0, 3),
     ...brandDealGuides.filter((item) => item.slug !== page.slug && item.brandSlug === page.brandSlug),
     ...dealGuides.filter((item) => item.slug !== page.slug)
   ].filter(Boolean).slice(0, 6);

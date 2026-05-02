@@ -659,6 +659,51 @@ export const dealGuides = dealCategorySlugs.map((categorySlug) => {
   };
 });
 
+const priceBandModifiers = [
+  {
+    slug: "under-25",
+    label: "Under $25",
+    summary: "entry-level price filters, fabric tradeoffs, return-policy risk, size availability, and whether the listing is from a trusted retailer",
+    tags: ["under $25", "budget", "price check"]
+  },
+  {
+    slug: "under-50",
+    label: "Under $50",
+    summary: "budget-to-midrange filters, material expectations, fit-risk management, shipping thresholds, and current merchant availability",
+    tags: ["under $50", "budget", "value"]
+  },
+  {
+    slug: "under-75",
+    label: "Under $75",
+    summary: "midrange price filters, fabric quality signals, feature coverage, return flexibility, and comparison against sale pricing",
+    tags: ["under $75", "midrange", "value"]
+  },
+  {
+    slug: "sale",
+    label: "On Sale",
+    summary: "discount context, final-sale warnings, color and size limitations, shipping rules, and whether the marked-down item still fits the workout use case",
+    tags: ["sale", "deals", "clearance"]
+  }
+];
+
+const priceBandCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes", "workout-accessories", "yoga-wear"];
+
+export const priceBandGuides = priceBandCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return priceBandModifiers.map((priceBand) => ({
+    slug: `${categorySlug}-${priceBand.slug}`,
+    name: `${category.name} ${priceBand.label}`,
+    title: `${category.name} ${priceBand.label}`,
+    summary: `Compare ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by ${priceBand.summary}. ActivewearEtc uses price bands as shopping filters, not guaranteed live prices, so verify the final merchant page before purchase.`,
+    href: `/deals/${categorySlug}-${priceBand.slug}`,
+    categorySlug,
+    priceBandSlug: priceBand.slug,
+    relatedHrefs: [category.href, "/deals", "/about/price-and-availability"],
+    tags: [category.name, ...priceBand.tags]
+  }));
+});
+
 export const brandDealGuides = brandCategoryGuides
   .filter((guide) => categories.some((category) => category.slug === guide.categorySlug))
   .map((guide) => {

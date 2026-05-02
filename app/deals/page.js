@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { brandDealGuides, dealGuides, editorialHubs, sampleProducts } from "../lib/activewearData";
+import { brandDealGuides, dealGuides, editorialHubs, priceBandGuides, sampleProducts } from "../lib/activewearData";
 import ProductComparison from "../components/ProductComparison";
 
 export const metadata = {
@@ -18,6 +18,7 @@ export default function DealsPage() {
       items={[
         ...editorialHubs.filter((item) => item.href.startsWith("/deals/")),
         ...dealGuides.slice(0, 6),
+        ...priceBandGuides.slice(0, 8),
         ...brandDealGuides.slice(0, 6)
       ]}
     >
