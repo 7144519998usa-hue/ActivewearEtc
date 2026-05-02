@@ -657,6 +657,51 @@ export const fitGuides = fitGuideCategorySlugs.map((categorySlug) => {
   };
 });
 
+const fabricModifiers = [
+  {
+    slug: "moisture-wicking",
+    label: "Moisture-Wicking",
+    summary: "sweat handling, drying expectations, fabric weight, breathability, and high-sweat comfort",
+    tags: ["moisture-wicking", "sweat", "breathable"]
+  },
+  {
+    slug: "compression",
+    label: "Compression",
+    summary: "support feel, stretch recovery, pressure level, range of motion, and workout intensity match",
+    tags: ["compression", "support", "training"]
+  },
+  {
+    slug: "sustainable",
+    label: "Sustainable",
+    summary: "material claims, recycled-content signals, durability, care expectations, and brand transparency",
+    tags: ["sustainable", "materials", "durability"]
+  },
+  {
+    slug: "lightweight",
+    label: "Lightweight",
+    summary: "fabric weight, layering comfort, warm-weather use, packability, and coverage tradeoffs",
+    tags: ["lightweight", "layers", "warm weather"]
+  }
+];
+
+const fabricCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies"];
+
+export const fabricGuides = fabricCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return fabricModifiers.map((fabric) => ({
+    slug: `${fabric.slug}-${categorySlug}`,
+    name: `${fabric.label} ${category.name}`,
+    title: `${fabric.label} ${category.name}`,
+    summary: `Compare ${fabric.label.toLowerCase()} ${category.name.toLowerCase()} by ${fabric.summary}. ActivewearEtc treats fabric claims as shopper signals, not guaranteed performance promises.`,
+    href: `/styles/${fabric.slug}-${categorySlug}`,
+    categorySlug,
+    fabricSlug: fabric.slug,
+    relatedHrefs: [category.href, "/about/editorial-policy", "/about/how-we-rank-products"],
+    tags: [category.name, ...fabric.tags]
+  }));
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
