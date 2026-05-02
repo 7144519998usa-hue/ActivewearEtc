@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { categories, editorialHubs, fitGuides, intentGuides, segmentCategoryGuides } from "../../lib/activewearData";
+import { bodyFitGuides, categories, editorialHubs, fitGuides, intentGuides, segmentCategoryGuides } from "../../lib/activewearData";
 
 function getFitPage(slug) {
-  return editorialHubs.find((item) => item.href === `/sizes-fit/${slug}`) || fitGuides.find((item) => item.slug === slug);
+  return editorialHubs.find((item) => item.href === `/sizes-fit/${slug}`) || fitGuides.find((item) => item.slug === slug) || bodyFitGuides.find((item) => item.slug === slug);
 }
 
 export function generateStaticParams() {
@@ -11,8 +11,9 @@ export function generateStaticParams() {
     .filter((item) => item.href.startsWith("/sizes-fit/"))
     .map((item) => ({ slug: item.href.split("/").pop() }));
   const guideParams = fitGuides.map((item) => ({ slug: item.slug }));
+  const bodyFitParams = bodyFitGuides.map((item) => ({ slug: item.slug }));
 
-  return [...editorialParams, ...guideParams];
+  return [...editorialParams, ...guideParams, ...bodyFitParams];
 }
 
 export function generateMetadata({ params }) {
@@ -42,10 +43,14 @@ export default function FitPage({ params }) {
   const relatedIntentPages = intentGuides
     .filter((item) => item.categorySlug === page.categorySlug)
     .slice(0, 2);
+  const relatedBodyFitPages = bodyFitGuides
+    .filter((item) => item.categorySlug === page.categorySlug && item.href !== page.href)
+    .slice(0, 2);
   const items = [
     category,
     ...relatedSegmentPages,
     ...relatedIntentPages,
+    ...relatedBodyFitPages,
     ...editorialHubs.filter((item) => item.href !== page.href)
   ].filter(Boolean).slice(0, 6);
 

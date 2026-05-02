@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { colorGuides, editorialHubs, featureGuides, intentGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
+import { bodyFitGuides, colorGuides, editorialHubs, featureGuides, intentGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear University",
@@ -24,7 +24,8 @@ export default function UniversityPage() {
         ...useCaseGuides.slice(0, 6),
         ...seasonalGuides.slice(0, 4),
         ...featureGuides.slice(0, 6),
-        ...colorGuides.slice(0, 6)
+        ...colorGuides.slice(0, 6),
+        ...bodyFitGuides.slice(0, 6)
       ]}
     />
   );

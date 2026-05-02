@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { editorialHubs, fitGuides } from "../lib/activewearData";
+import { bodyFitGuides, editorialHubs, fitGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear Sizes and Fit",
@@ -16,7 +16,8 @@ export default function SizesFitPage() {
       path="/sizes-fit"
       items={[
         ...editorialHubs.filter((item) => item.href.startsWith("/sizes-fit/")),
-        ...fitGuides.slice(0, 8)
+        ...fitGuides.slice(0, 8),
+        ...bodyFitGuides.slice(0, 8)
       ]}
     />
   );

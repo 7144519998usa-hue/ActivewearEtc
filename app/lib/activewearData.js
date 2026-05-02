@@ -706,6 +706,57 @@ export const fitGuides = fitGuideCategorySlugs.map((categorySlug) => {
   };
 });
 
+const bodyFitModifiers = [
+  {
+    slug: "petite",
+    label: "Petite",
+    summary: "inseam, rise, strap length, sleeve length, torso fit, and whether the brand publishes petite-specific measurements",
+    tags: ["petite", "short inseam", "fit"]
+  },
+  {
+    slug: "tall",
+    label: "Tall",
+    summary: "inseam, sleeve length, torso coverage, rise, compression placement, and tall-size inventory checks",
+    tags: ["tall", "long inseam", "fit"]
+  },
+  {
+    slug: "plus-size",
+    label: "Plus-Size",
+    summary: "size range, waistband security, support coverage, fabric recovery, model references, and return-policy flexibility",
+    tags: ["plus size", "inclusive sizing", "fit"]
+  },
+  {
+    slug: "curvy-fit",
+    label: "Curvy-Fit",
+    summary: "waist-to-hip fit, waistband gap risk, coverage, compression feel, stretch recovery, and size-chart clarity",
+    tags: ["curvy", "coverage", "fit"]
+  },
+  {
+    slug: "maternity",
+    label: "Maternity",
+    summary: "belly-panel style, adjustability, compression caution, comfort range, return-policy flexibility, and retailer size guidance",
+    tags: ["maternity", "adjustable", "comfort"]
+  }
+];
+
+const bodyFitCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies"];
+
+export const bodyFitGuides = bodyFitCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return bodyFitModifiers.map((fit) => ({
+    slug: `${fit.slug}-${categorySlug}`,
+    name: `${fit.label} ${category.name}`,
+    title: `${fit.label} ${category.name}`,
+    summary: `Compare ${fit.label.toLowerCase()} ${category.name.toLowerCase()} by ${fit.summary}. ActivewearEtc treats size-fit pages as shopping guidance and recommends confirming the retailer size chart before buying.`,
+    href: `/sizes-fit/${fit.slug}-${categorySlug}`,
+    categorySlug,
+    bodyFitSlug: fit.slug,
+    relatedHrefs: [category.href, "/sizes-fit", "/about/price-and-availability"],
+    tags: [category.name, ...fit.tags]
+  }));
+});
+
 const fabricModifiers = [
   {
     slug: "moisture-wicking",
