@@ -908,6 +908,51 @@ export const featureGuides = Object.entries(featureMatrix).flatMap(([categorySlu
   }));
 });
 
+const colorModifiers = [
+  {
+    slug: "black",
+    label: "Black",
+    summary: "opacity risk, wardrobe versatility, lint visibility, gym-to-everyday styling, and long-term wear practicality",
+    tags: ["black", "neutral", "versatile"]
+  },
+  {
+    slug: "white",
+    label: "White",
+    summary: "opacity, care needs, sweat visibility, layering, return-policy risk, and styling with darker basics",
+    tags: ["white", "opacity", "care"]
+  },
+  {
+    slug: "neutral",
+    label: "Neutral",
+    summary: "capsule wardrobe value, outfit pairing, shade variation, care needs, and season-to-season styling",
+    tags: ["neutral", "capsule", "style"]
+  },
+  {
+    slug: "bright",
+    label: "Bright",
+    summary: "color visibility, styling confidence, sweat visibility, seasonal use, and whether the shade fits repeat wear",
+    tags: ["bright", "color", "style"]
+  }
+];
+
+const colorCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies"];
+
+export const colorGuides = colorCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return colorModifiers.map((color) => ({
+    slug: `${color.slug}-${categorySlug}`,
+    name: `${color.label} ${category.name}`,
+    title: `${color.label} ${category.name}`,
+    summary: `Compare ${color.label.toLowerCase()} ${category.name.toLowerCase()} by ${color.summary}. ActivewearEtc treats color as a shopper filter and reminds buyers to verify current retailer inventory.`,
+    href: `/colors/${color.slug}-${categorySlug}`,
+    categorySlug,
+    colorSlug: color.slug,
+    relatedHrefs: [category.href, "/about/price-and-availability", "/about/image-attribution-policy"],
+    tags: [category.name, ...color.tags]
+  }));
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
