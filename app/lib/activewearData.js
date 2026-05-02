@@ -778,6 +778,51 @@ export const useCaseGuides = useCaseCategorySlugs.flatMap((categorySlug) => {
   }));
 });
 
+const seasonalModifiers = [
+  {
+    slug: "summer",
+    label: "Summer",
+    summary: "warm-weather comfort, breathability, fabric weight, sweat visibility, coverage, and travel-ready use",
+    tags: ["summer", "hot weather", "lightweight"]
+  },
+  {
+    slug: "winter",
+    label: "Winter",
+    summary: "layering, warmth, mobility, fabric weight, cold-weather errands, and pre-workout or post-workout comfort",
+    tags: ["winter", "layers", "warmth"]
+  },
+  {
+    slug: "spring",
+    label: "Spring",
+    summary: "transitional layering, rain-aware errands, lighter fabrics, color refreshes, and outdoor workout versatility",
+    tags: ["spring", "layers", "outdoor"]
+  },
+  {
+    slug: "holiday",
+    label: "Holiday",
+    summary: "giftability, sale timing, return windows, size-risk management, color availability, and price-check discipline",
+    tags: ["holiday", "gifts", "deals"]
+  }
+];
+
+const seasonalCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes"];
+
+export const seasonalGuides = seasonalCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return seasonalModifiers.map((season) => ({
+    slug: `${season.slug}-${categorySlug}`,
+    name: `${season.label} ${category.name}`,
+    title: `${season.label} ${category.name}`,
+    summary: `Compare ${season.label.toLowerCase()} ${category.name.toLowerCase()} by ${season.summary}. ActivewearEtc keeps seasonal shopping pages evergreen and reminds shoppers to verify current price and availability with the retailer.`,
+    href: `/seasonal/${season.slug}-${categorySlug}`,
+    categorySlug,
+    seasonSlug: season.slug,
+    relatedHrefs: [category.href, "/about/price-and-availability", "/deals"],
+    tags: [category.name, ...season.tags]
+  }));
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
