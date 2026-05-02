@@ -450,6 +450,62 @@ export const comparisonGuides = [
   }
 ];
 
+const intentModifiers = [
+  {
+    slug: "with-pockets",
+    label: "with Pockets",
+    summary: "storage, pocket placement, phone security, waistband comfort, and everyday utility",
+    tags: ["pockets", "storage", "utility"]
+  },
+  {
+    slug: "for-running",
+    label: "for Running",
+    summary: "sweat control, bounce control, chafe reduction, weather fit, and secure movement",
+    tags: ["running", "sweat", "training"]
+  },
+  {
+    slug: "for-gym",
+    label: "for the Gym",
+    summary: "durability, range of motion, sweat management, layering, and workout intensity",
+    tags: ["gym", "training", "durable"]
+  },
+  {
+    slug: "budget",
+    label: "on a Budget",
+    summary: "price range, sale frequency, fabric tradeoffs, return rules, and long-term value",
+    tags: ["budget", "value", "deals"]
+  },
+  {
+    slug: "premium",
+    label: "Premium Picks",
+    summary: "fabric quality, construction, fit consistency, support, and whether the higher price makes sense",
+    tags: ["premium", "quality", "fit"]
+  },
+  {
+    slug: "plus-size",
+    label: "Plus-Size Options",
+    summary: "size range, waistband stability, support, coverage, size charts, and retailer return rules",
+    tags: ["plus size", "fit", "support"]
+  }
+];
+
+const intentCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies"];
+
+export const intentGuides = intentCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return intentModifiers.map((intent) => ({
+    slug: `${categorySlug}-${intent.slug}`,
+    title: `${category.name} ${intent.label}`,
+    summary: `Compare ${category.name.toLowerCase()} ${intent.label.toLowerCase()} by ${intent.summary}. ActivewearEtc keeps these pages disclosure-safe and avoids fake reviews or unsupported performance claims.`,
+    href: `/intent/${categorySlug}-${intent.slug}`,
+    categorySlug,
+    intentSlug: intent.slug,
+    relatedHrefs: [category.href, "/about/how-we-rank-products", "/about/price-and-availability"],
+    tags: [category.name, ...intent.tags]
+  }));
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
