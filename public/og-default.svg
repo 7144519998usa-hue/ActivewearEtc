@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="48" fill="#111827"/>
+  <rect x="48" y="48" width="1104" height="534" rx="36" fill="url(#paint0_linear)"/>
+  <rect x="88" y="88" width="1024" height="454" rx="30" fill="rgba(17,24,39,0.76)" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+  <text x="120" y="170" fill="#FBBF24" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">ACTIVEWEARETC</text>
+  <text x="120" y="270" fill="#F9FAFB" font-family="Arial, sans-serif" font-size="70" font-weight="700">Compare activewear by fit,</text>
+  <text x="120" y="350" fill="#F9FAFB" font-family="Arial, sans-serif" font-size="70" font-weight="700">support, style, and budget.</text>
+  <text x="120" y="448" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="32">Leggings</text>
+  <text x="120" y="490" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="32">Sports bras</text>
+  <text x="120" y="532" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="32">Running shoes</text>
+  <rect x="724" y="450" width="308" height="58" rx="29" fill="#F59E0B"/>
+  <text x="758" y="488" fill="#111827" font-family="Arial, sans-serif" font-size="28" font-weight="700">Shopper-first comparisons</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="62" y1="44" x2="1138" y2="586" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.55" stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#374151"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,10 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="600" rx="48" fill="#111827"/>
+  <rect x="58" y="58" width="1084" height="484" rx="34" fill="#F7F3EC"/>
+  <text x="104" y="162" fill="#D97706" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">ACTIVEWEARETC</text>
+  <text x="104" y="258" fill="#111827" font-family="Arial, sans-serif" font-size="66" font-weight="700">Activewear comparisons</text>
+  <text x="104" y="336" fill="#111827" font-family="Arial, sans-serif" font-size="66" font-weight="700">built for real shoppers.</text>
+  <text x="104" y="432" fill="#374151" font-family="Arial, sans-serif" font-size="30">Women  Men  Brands  Styles  Deals</text>
+  <rect x="790" y="402" width="250" height="56" rx="28" fill="#111827"/>
+  <text x="836" y="438" fill="#F9FAFB" font-family="Arial, sans-serif" font-size="28" font-weight="700">Compare top picks</text>
+</svg>

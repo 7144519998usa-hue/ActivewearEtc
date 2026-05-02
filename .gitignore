@@ -1,0 +1,10 @@
+.next
+node_modules
+.env
+.env.local
+.vercel
+build-output*.txt
+*.log
+export-ready
+
+.vercel
