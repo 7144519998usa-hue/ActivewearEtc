@@ -506,6 +506,33 @@ export const intentGuides = intentCategorySlugs.flatMap((categorySlug) => {
   }));
 });
 
+const activityCategoryMatrix = {
+  running: ["leggings", "sports-bras", "workout-tops", "running-shorts", "hoodies", "running-shoes", "workout-accessories"],
+  yoga: ["leggings", "sports-bras", "workout-tops", "joggers", "hoodies", "yoga-wear", "athleisure"],
+  gym: ["leggings", "sports-bras", "workout-tops", "joggers", "hoodies", "compression-wear", "gym-clothes", "training-shoes"],
+  athleisure: ["leggings", "workout-tops", "joggers", "hoodies", "athleisure", "workout-accessories"]
+};
+
+export const activityCategoryGuides = Object.entries(activityCategoryMatrix).flatMap(([activitySlug, categorySlugs]) => {
+  const activity = activityHubs.find((item) => item.slug === activitySlug);
+
+  return categorySlugs.map((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return {
+      slug: categorySlug,
+      activitySlug,
+      categorySlug,
+      name: `${activity.name} ${category.name}`,
+      title: `${activity.name} ${category.name}`,
+      summary: `Compare ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by fit, fabric, support, comfort, price range, size availability, and retailer return policy.`,
+      href: `/activities/${activitySlug}/${categorySlug}`,
+      relatedHrefs: [activity.href, category.href, "/about/how-we-rank-products"],
+      tags: [activity.name, category.name, "activewear"]
+    };
+  });
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
