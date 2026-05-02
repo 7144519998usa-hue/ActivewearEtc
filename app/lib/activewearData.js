@@ -571,6 +571,37 @@ export const segmentCategoryGuides = Object.entries(segmentCategoryMatrix).flatM
   });
 });
 
+const dealCategorySlugs = [
+  "leggings",
+  "sports-bras",
+  "workout-tops",
+  "running-shorts",
+  "joggers",
+  "hoodies",
+  "compression-wear",
+  "yoga-wear",
+  "gym-clothes",
+  "athleisure",
+  "running-shoes",
+  "training-shoes",
+  "workout-accessories"
+];
+
+export const dealGuides = dealCategorySlugs.map((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return {
+    slug: `${categorySlug}-deals`,
+    name: `${category.name} Deals`,
+    title: `${category.name} Deals`,
+    summary: `Compare ${category.name.toLowerCase()} deals by current merchant availability, price range, fit context, return policy, fabric tradeoffs, and whether the discount still matches the shopper's workout use case.`,
+    href: `/deals/${categorySlug}-deals`,
+    categorySlug,
+    relatedHrefs: [category.href, "/about/price-and-availability", "/about/advertiser-disclosure"],
+    tags: [category.name, "deals", "price check"]
+  };
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
