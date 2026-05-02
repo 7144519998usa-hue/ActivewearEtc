@@ -133,6 +133,35 @@ export const brandHubs = [
   { slug: "gymshark", name: "Gymshark", href: "/brands/gymshark", summary: "Gym-first activewear, contour styles, matching sets, and social-led collections." }
 ];
 
+const brandCategoryMatrix = {
+  nike: ["leggings", "sports-bras", "running-shorts", "running-shoes", "workout-tops", "training-shoes"],
+  adidas: ["leggings", "sports-bras", "running-shorts", "running-shoes", "workout-tops", "training-shoes"],
+  lululemon: ["leggings", "sports-bras", "joggers", "hoodies", "yoga-wear", "premium-activewear"],
+  gymshark: ["leggings", "sports-bras", "joggers", "hoodies", "gym-clothes", "compression-wear"]
+};
+
+export const brandCategoryGuides = Object.entries(brandCategoryMatrix).flatMap(([brandSlug, categorySlugs]) => {
+  const brand = brandHubs.find((item) => item.slug === brandSlug);
+
+  return categorySlugs.map((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug) || editorialHubs.find((item) => item.slug === categorySlug);
+    const categoryName = category?.name || category?.title || categorySlug.replaceAll("-", " ");
+    const categorySummary = category?.summary || `Compare ${categoryName.toLowerCase()} by fit, fabric, price, retailer availability, and return policy.`;
+
+    return {
+      slug: `${brandSlug}-${categorySlug}`,
+      brandSlug,
+      categorySlug,
+      title: `${brand.name} ${categoryName}`,
+      summary: `Compare ${brand.name} ${categoryName.toLowerCase()} by fit, fabric feel, price range, size availability, retailer coverage, and return policy before clicking through to shop.`,
+      href: `/brands/${brandSlug}/${categorySlug}`,
+      relatedHrefs: [brand.href, category.href, "/about/how-we-rank-products"],
+      tags: [brand.name, categoryName, "activewear"],
+      categorySummary
+    };
+  });
+});
+
 export const sampleProducts = [
   {
     brand: "Nike",

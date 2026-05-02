@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { brandHubs, categories } from "../../lib/activewearData";
+import { brandCategoryGuides, brandHubs, categories } from "../../lib/activewearData";
 
 export function generateStaticParams() {
   return brandHubs.map((brand) => ({ slug: brand.slug }));
@@ -12,13 +12,19 @@ export default function BrandPage({ params }) {
     notFound();
   }
 
+  const brandGuides = brandCategoryGuides.filter((item) => item.brandSlug === brand.slug);
+  const items = [
+    ...brandGuides,
+    ...categories.slice(0, Math.max(0, 6 - brandGuides.length))
+  ];
+
   return (
     <HubPage
       eyebrow="Brand"
       title={`${brand.name} activewear`}
       intro={brand.summary}
       path={brand.href}
-      items={categories.slice(0, 6)}
+      items={items}
     />
   );
 }
