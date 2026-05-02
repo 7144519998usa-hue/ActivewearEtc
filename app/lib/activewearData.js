@@ -477,6 +477,36 @@ export const comparisonGuides = [
   }
 ];
 
+const comparisonBrandPairs = [
+  ["nike", "adidas"],
+  ["lululemon", "gymshark"],
+  ["nike", "gymshark"],
+  ["adidas", "lululemon"]
+];
+
+const comparisonCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies"];
+
+export const categoryComparisonGuides = comparisonBrandPairs.flatMap(([firstBrandSlug, secondBrandSlug]) => {
+  const firstBrand = brandHubs.find((item) => item.slug === firstBrandSlug);
+  const secondBrand = brandHubs.find((item) => item.slug === secondBrandSlug);
+
+  return comparisonCategorySlugs.map((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return {
+      slug: `${firstBrandSlug}-vs-${secondBrandSlug}-${categorySlug}`,
+      title: `${firstBrand.name} vs ${secondBrand.name} ${category.name}`,
+      summary: `Compare ${firstBrand.name} and ${secondBrand.name} ${category.name.toLowerCase()} by fit, fabric feel, price range, size availability, activity match, retailer coverage, and return policy before choosing where to shop.`,
+      href: `/compare/${firstBrandSlug}-vs-${secondBrandSlug}-${categorySlug}`,
+      firstBrandSlug,
+      secondBrandSlug,
+      categorySlug,
+      relatedHrefs: [firstBrand.href, secondBrand.href, category.href, "/about/how-we-rank-products"],
+      tags: [firstBrand.name, secondBrand.name, category.name]
+    };
+  });
+});
+
 const intentModifiers = [
   {
     slug: "with-pockets",

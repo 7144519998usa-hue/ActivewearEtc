@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { brandHubs, categories, comparisonGuides, editorialHubs, shoppingGuides } from "../../lib/activewearData";
+import { brandHubs, categories, categoryComparisonGuides, comparisonGuides, editorialHubs, shoppingGuides } from "../../lib/activewearData";
 
 function getComparison(slug) {
-  return comparisonGuides.find((item) => item.slug === slug);
+  return comparisonGuides.find((item) => item.slug === slug) || categoryComparisonGuides.find((item) => item.slug === slug);
 }
 
 function getRelatedItems(comparison) {
@@ -12,7 +12,8 @@ function getRelatedItems(comparison) {
     ...categories,
     ...editorialHubs,
     ...shoppingGuides.map((item) => ({ ...item, href: `/best/${item.slug}` })),
-    ...comparisonGuides.map((item) => ({ ...item, href: `/compare/${item.slug}` }))
+    ...comparisonGuides.map((item) => ({ ...item, href: `/compare/${item.slug}` })),
+    ...categoryComparisonGuides
   ];
   const related = comparison.relatedHrefs
     .map((href) => lookup.find((item) => item.href === href))
@@ -22,11 +23,15 @@ function getRelatedItems(comparison) {
     .slice(0, 6)
     .map((item) => ({ ...item, href: `/compare/${item.slug}` }));
 
-  return [...related, ...fallback].slice(0, 6);
+  const categoryFallback = categoryComparisonGuides
+    .filter((item) => item.slug !== comparison.slug && item.categorySlug === comparison.categorySlug)
+    .slice(0, 4);
+
+  return [...related, ...categoryFallback, ...fallback].slice(0, 6);
 }
 
 export function generateStaticParams() {
-  return comparisonGuides.map((guide) => ({ slug: guide.slug }));
+  return [...comparisonGuides, ...categoryComparisonGuides].map((guide) => ({ slug: guide.slug }));
 }
 
 export function generateMetadata({ params }) {
@@ -55,7 +60,7 @@ export default function ComparisonPage({ params }) {
       eyebrow="Comparison"
       title={comparison.title}
       intro={comparison.summary}
-      path={`/compare/${comparison.slug}`}
+      path={comparison.href || `/compare/${comparison.slug}`}
       items={getRelatedItems(comparison)}
     >
       <section className="section">
