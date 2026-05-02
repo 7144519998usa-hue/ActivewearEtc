@@ -853,6 +853,61 @@ export const seasonalGuides = seasonalCategorySlugs.flatMap((categorySlug) => {
   }));
 });
 
+const featureMatrix = {
+  leggings: [
+    { slug: "high-waisted", label: "High-Waisted", summary: "rise, waistband stability, coverage, compression feel, opacity, and everyday comfort", tags: ["high-waisted", "coverage", "fit"] },
+    { slug: "with-pockets", label: "with Pockets", summary: "phone storage, pocket placement, waistband comfort, bounce control, and travel utility", tags: ["pockets", "storage", "travel"] },
+    { slug: "squat-proof", label: "Squat-Proof", summary: "opacity signals, fabric weight, seam placement, return-policy risk, and gym confidence", tags: ["opacity", "gym", "fit"] },
+    { slug: "flare", label: "Flare", summary: "leg opening, inseam, styling range, studio use, and everyday wear versatility", tags: ["flare", "athleisure", "style"] }
+  ],
+  "sports-bras": [
+    { slug: "adjustable", label: "Adjustable", summary: "strap adjustability, band control, cup coverage, support level, and fit-risk reduction", tags: ["adjustable", "support", "fit"] },
+    { slug: "high-support", label: "High-Support", summary: "support level, strap shape, band security, coverage, and running or HIIT suitability", tags: ["high support", "running", "coverage"] },
+    { slug: "longline", label: "Longline", summary: "coverage, cropped-top styling, band comfort, layering, and low-to-medium impact use", tags: ["longline", "coverage", "studio"] },
+    { slug: "padded", label: "Padded", summary: "removable pads, cup shape, coverage, wash care, and comfort preferences", tags: ["padded", "coverage", "comfort"] }
+  ],
+  "workout-tops": [
+    { slug: "cropped", label: "Cropped", summary: "length, coverage, layering, high-rise pairing, and workout-to-everyday styling", tags: ["cropped", "layers", "style"] },
+    { slug: "sleeveless", label: "Sleeveless", summary: "arm mobility, ventilation, coverage, gym comfort, and hot-weather use", tags: ["sleeveless", "breathable", "gym"] },
+    { slug: "long-sleeve", label: "Long-Sleeve", summary: "layering, sleeve fit, warmth, breathability, and outdoor workout comfort", tags: ["long sleeve", "layers", "outdoor"] },
+    { slug: "mesh-panel", label: "Mesh-Panel", summary: "ventilation zones, opacity tradeoffs, comfort, care needs, and high-sweat workout use", tags: ["mesh", "ventilation", "sweat"] }
+  ],
+  "running-shorts": [
+    { slug: "with-liner", label: "with Liner", summary: "liner comfort, coverage, chafe control, pocket placement, and run duration", tags: ["liner", "running", "comfort"] },
+    { slug: "split", label: "Split", summary: "range of motion, race-day feel, coverage, inseam, and warm-weather performance", tags: ["split", "race day", "lightweight"] },
+    { slug: "with-pockets", label: "with Pockets", summary: "phone storage, key pocket placement, bounce control, waistband comfort, and trail or road use", tags: ["pockets", "running", "storage"] },
+    { slug: "high-rise", label: "High-Rise", summary: "waistband position, coverage, compression feel, liner compatibility, and everyday styling", tags: ["high rise", "coverage", "fit"] }
+  ],
+  joggers: [
+    { slug: "tapered", label: "Tapered", summary: "leg shape, ankle fit, mobility, gym use, and polished athleisure styling", tags: ["tapered", "athleisure", "fit"] },
+    { slug: "fleece", label: "Fleece", summary: "warmth, fabric weight, softness, recovery-day comfort, and care needs", tags: ["fleece", "warmth", "comfort"] },
+    { slug: "zip-pocket", label: "Zip-Pocket", summary: "secure storage, travel utility, gym use, pocket placement, and everyday practicality", tags: ["zip pockets", "storage", "travel"] },
+    { slug: "lightweight", label: "Lightweight", summary: "fabric weight, breathability, mobility, packability, and warm-weather use", tags: ["lightweight", "travel", "breathable"] }
+  ],
+  hoodies: [
+    { slug: "zip", label: "Zip", summary: "layering flexibility, pocket layout, warmth, commute use, and pre-workout comfort", tags: ["zip", "layers", "warmup"] },
+    { slug: "fleece", label: "Fleece", summary: "warmth, softness, fabric weight, recovery comfort, and cold-weather errands", tags: ["fleece", "warmth", "comfort"] },
+    { slug: "cropped", label: "Cropped", summary: "length, layering, high-rise pairing, studio styling, and everyday wear", tags: ["cropped", "style", "layers"] },
+    { slug: "oversized", label: "Oversized", summary: "fit volume, warmth, mobility, recovery-day comfort, and outfit styling", tags: ["oversized", "comfort", "athleisure"] }
+  ]
+};
+
+export const featureGuides = Object.entries(featureMatrix).flatMap(([categorySlug, features]) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return features.map((feature) => ({
+    slug: `${feature.slug}-${categorySlug}`,
+    name: `${feature.label} ${category.name}`,
+    title: `${feature.label} ${category.name}`,
+    summary: `Compare ${feature.label.toLowerCase()} ${category.name.toLowerCase()} by ${feature.summary}. ActivewearEtc treats features as shopper filters and avoids unsupported performance claims.`,
+    href: `/features/${feature.slug}-${categorySlug}`,
+    categorySlug,
+    featureSlug: feature.slug,
+    relatedHrefs: [category.href, "/about/editorial-policy", "/about/how-we-rank-products"],
+    tags: [category.name, ...feature.tags]
+  }));
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",

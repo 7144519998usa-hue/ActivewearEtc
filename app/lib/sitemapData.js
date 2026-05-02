@@ -1,5 +1,5 @@
 import { siteConfig } from "./siteConfig";
-import { activityCategoryGuides, activityHubs, brandActivityGuides, brandCategoryGuides, brandDealGuides, brandHubs, categories, categoryComparisonGuides, comparisonGuides, dealGuides, editorialHubs, fabricGuides, fitGuides, intentGuides, sampleProducts, seasonalGuides, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
+import { activityCategoryGuides, activityHubs, brandActivityGuides, brandCategoryGuides, brandDealGuides, brandHubs, categories, categoryComparisonGuides, comparisonGuides, dealGuides, editorialHubs, fabricGuides, featureGuides, fitGuides, intentGuides, sampleProducts, seasonalGuides, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
 
 const corePages = [
   "/",
@@ -15,6 +15,7 @@ const corePages = [
   "/reviews",
   "/use-cases",
   "/seasonal",
+  "/features",
   "/activewear-university",
   "/about/advertiser-disclosure",
   "/about/editorial-policy",
@@ -36,6 +37,7 @@ export const sitemapSections = [
   { slug: "deal-pages", paths: dealGuides.map((item) => item.href) },
   { slug: "brand-deal-pages", paths: brandDealGuides.map((item) => item.href) },
   { slug: "fabric-guide-pages", paths: fabricGuides.map((item) => item.href) },
+  { slug: "feature-pages", paths: featureGuides.map((item) => item.href) },
   { slug: "fit-guide-pages", paths: fitGuides.map((item) => item.href) },
   { slug: "intent-pages", paths: intentGuides.map((item) => item.href) },
   { slug: "use-case-pages", paths: useCaseGuides.map((item) => item.href) },
