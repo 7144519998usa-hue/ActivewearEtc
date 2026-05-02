@@ -162,6 +162,33 @@ export const brandCategoryGuides = Object.entries(brandCategoryMatrix).flatMap((
   });
 });
 
+const brandActivityMatrix = {
+  nike: ["running", "gym", "athleisure"],
+  adidas: ["running", "gym", "athleisure"],
+  lululemon: ["running", "yoga", "gym", "athleisure"],
+  gymshark: ["gym", "athleisure"]
+};
+
+export const brandActivityGuides = Object.entries(brandActivityMatrix).flatMap(([brandSlug, activitySlugs]) => {
+  const brand = brandHubs.find((item) => item.slug === brandSlug);
+
+  return activitySlugs.map((activitySlug) => {
+    const activity = activityHubs.find((item) => item.slug === activitySlug);
+
+    return {
+      slug: activitySlug,
+      brandSlug,
+      activitySlug,
+      name: `${brand.name} ${activity.name} Activewear`,
+      title: `${brand.name} ${activity.name} Activewear`,
+      summary: `Compare ${brand.name} activewear for ${activity.name.toLowerCase()} by category coverage, fit, fabric feel, price range, size availability, retailer coverage, and return policy.`,
+      href: `/brands/${brandSlug}/activities/${activitySlug}`,
+      relatedHrefs: [brand.href, activity.href, "/about/how-we-rank-products"],
+      tags: [brand.name, activity.name, "activewear"]
+    };
+  });
+});
+
 export const sampleProducts = [
   {
     brand: "Nike",
