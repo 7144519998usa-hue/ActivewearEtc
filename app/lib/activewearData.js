@@ -629,6 +629,25 @@ export const dealGuides = dealCategorySlugs.map((categorySlug) => {
   };
 });
 
+export const brandDealGuides = brandCategoryGuides
+  .filter((guide) => categories.some((category) => category.slug === guide.categorySlug))
+  .map((guide) => {
+    const brand = brandHubs.find((item) => item.slug === guide.brandSlug);
+    const category = categories.find((item) => item.slug === guide.categorySlug);
+
+    return {
+      slug: `${guide.brandSlug}-${guide.categorySlug}-deals`,
+      name: `${brand.name} ${category.name} Deals`,
+      title: `${brand.name} ${category.name} Deals`,
+      summary: `Compare ${brand.name} ${category.name.toLowerCase()} deals by merchant availability, price range, size availability, return policy, discount context, and whether the product still matches the shopper's workout use case.`,
+      href: `/deals/${guide.brandSlug}-${guide.categorySlug}-deals`,
+      brandSlug: guide.brandSlug,
+      categorySlug: guide.categorySlug,
+      relatedHrefs: [guide.href, brand.href, category.href, "/about/price-and-availability"],
+      tags: [brand.name, category.name, "deals"]
+    };
+  });
+
 const fitGuideCategorySlugs = [
   "leggings",
   "sports-bras",

@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { categories, dealGuides, editorialHubs, sampleProducts, segmentCategoryGuides } from "../../lib/activewearData";
+import { brandCategoryGuides, brandDealGuides, brandHubs, categories, dealGuides, editorialHubs, sampleProducts, segmentCategoryGuides } from "../../lib/activewearData";
 import ProductComparison from "../../components/ProductComparison";
 
 function getDealPage(slug) {
-  return editorialHubs.find((item) => item.href === `/deals/${slug}`) || dealGuides.find((item) => item.slug === slug);
+  return editorialHubs.find((item) => item.href === `/deals/${slug}`)
+    || dealGuides.find((item) => item.slug === slug)
+    || brandDealGuides.find((item) => item.slug === slug);
 }
 
 export function generateStaticParams() {
@@ -12,8 +14,9 @@ export function generateStaticParams() {
     .filter((item) => item.href.startsWith("/deals/"))
     .map((item) => ({ slug: item.href.split("/").pop() }));
   const generatedParams = dealGuides.map((item) => ({ slug: item.slug }));
+  const brandParams = brandDealGuides.map((item) => ({ slug: item.slug }));
 
-  return [...editorialParams, ...generatedParams];
+  return [...editorialParams, ...generatedParams, ...brandParams];
 }
 
 export function generateMetadata({ params }) {
@@ -37,12 +40,17 @@ export default function DealPage({ params }) {
   }
 
   const category = categories.find((item) => item.slug === page.categorySlug);
+  const brand = brandHubs.find((item) => item.slug === page.brandSlug);
+  const brandCategoryPage = brandCategoryGuides.find((item) => item.brandSlug === page.brandSlug && item.categorySlug === page.categorySlug);
   const relatedSegmentPages = segmentCategoryGuides
     .filter((item) => item.categorySlug === page.categorySlug)
-    .slice(0, 5);
+    .slice(0, 3);
   const items = [
+    brand,
     category,
+    brandCategoryPage,
     ...relatedSegmentPages,
+    ...brandDealGuides.filter((item) => item.slug !== page.slug && item.brandSlug === page.brandSlug),
     ...dealGuides.filter((item) => item.slug !== page.slug)
   ].filter(Boolean).slice(0, 6);
 
