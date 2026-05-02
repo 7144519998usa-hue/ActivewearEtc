@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { editorialHubs } from "../lib/activewearData";
+import { editorialHubs, shoppingGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear University",
@@ -14,7 +14,13 @@ export default function UniversityPage() {
       title="Fit, fabric, and shopping education for activewear buyers"
       intro="Use education pages to support commercial decisions with clear sizing, fabric, support, and retailer guidance."
       path="/activewear-university"
-      items={editorialHubs}
+      items={[
+        ...editorialHubs,
+        ...shoppingGuides.slice(0, 8).map((guide) => ({
+          ...guide,
+          href: `/best/${guide.slug}`
+        }))
+      ]}
     />
   );
 }

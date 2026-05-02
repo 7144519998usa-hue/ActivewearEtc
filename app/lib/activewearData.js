@@ -163,6 +163,177 @@ export const sampleProducts = [
   }
 ];
 
+export const shoppingGuides = [
+  {
+    slug: "best-leggings-for-running",
+    title: "Best Leggings for Running",
+    summary: "Compare running leggings by waistband security, pocket layout, sweat control, opacity, and return policy before clicking through to a retailer.",
+    tags: ["running", "leggings", "pockets"],
+    relatedHrefs: ["/women/leggings", "/activities/running", "/styles/moisture-wicking-clothing"]
+  },
+  {
+    slug: "best-leggings-with-pockets",
+    title: "Best Leggings with Pockets",
+    summary: "Compare pocketed leggings by phone storage, waistband height, compression, fabric feel, and everyday wear use.",
+    tags: ["leggings", "pockets", "everyday"],
+    relatedHrefs: ["/women/leggings", "/styles/athleisure", "/sizes-fit/plus-size-activewear"]
+  },
+  {
+    slug: "best-high-impact-sports-bras",
+    title: "Best High-Impact Sports Bras",
+    summary: "Compare high-impact sports bras by support level, adjustability, cup coverage, strap shape, and running comfort.",
+    tags: ["sports bras", "running", "support"],
+    relatedHrefs: ["/women/sports-bras", "/activities/running", "/sizes-fit/plus-size-activewear"]
+  },
+  {
+    slug: "best-sports-bras-for-large-busts",
+    title: "Best Sports Bras for Large Busts",
+    summary: "Compare sports bras for larger cup ranges by encapsulation support, band security, adjustability, coverage, and retailer return rules.",
+    tags: ["sports bras", "plus size", "support"],
+    relatedHrefs: ["/women/sports-bras", "/sizes-fit/plus-size-activewear", "/activities/running"]
+  },
+  {
+    slug: "best-workout-tops-for-sweat",
+    title: "Best Workout Tops for Sweat",
+    summary: "Compare workout tops by moisture-wicking fabric, ventilation, cling, length, and comfort for high-sweat gym sessions.",
+    tags: ["workout tops", "moisture-wicking", "gym"],
+    relatedHrefs: ["/styles/workout-tops", "/styles/moisture-wicking-clothing", "/activities/gym"]
+  },
+  {
+    slug: "best-running-shorts-with-pockets",
+    title: "Best Running Shorts with Pockets",
+    summary: "Compare running shorts by pocket security, liner comfort, inseam length, waistband feel, and warm-weather performance.",
+    tags: ["running shorts", "pockets", "running"],
+    relatedHrefs: ["/activities/running/running-shorts", "/activities/running", "/styles/workout-accessories"]
+  },
+  {
+    slug: "best-joggers-for-women",
+    title: "Best Joggers for Women",
+    summary: "Compare women's joggers by rise, fabric weight, ankle shape, stretch, and whether they fit training, travel, or daily wear.",
+    tags: ["joggers", "women", "athleisure"],
+    relatedHrefs: ["/styles/joggers", "/women", "/styles/athleisure"]
+  },
+  {
+    slug: "best-joggers-for-men",
+    title: "Best Joggers for Men",
+    summary: "Compare men's joggers by fit, fabric, pocket layout, taper, and whether they work better for training or casual wear.",
+    tags: ["joggers", "men", "gym"],
+    relatedHrefs: ["/styles/joggers", "/men", "/activities/gym"]
+  },
+  {
+    slug: "best-hoodies-for-workouts",
+    title: "Best Hoodies for Workouts",
+    summary: "Compare workout hoodies by warmth, breathability, sleeve fit, pocket placement, and layering comfort before buying.",
+    tags: ["hoodies", "layers", "gym"],
+    relatedHrefs: ["/styles/hoodies", "/activities/gym", "/styles/athleisure"]
+  },
+  {
+    slug: "best-compression-wear-for-training",
+    title: "Best Compression Wear for Training",
+    summary: "Compare compression wear by fit pressure, fabric recovery, range of motion, layering use, and workout intensity.",
+    tags: ["compression", "training", "support"],
+    relatedHrefs: ["/styles/compression-wear", "/activities/gym", "/styles/workout-tops"]
+  },
+  {
+    slug: "best-yoga-leggings",
+    title: "Best Yoga Leggings",
+    summary: "Compare yoga leggings by softness, stretch, waistband comfort, opacity, and studio-to-everyday versatility.",
+    tags: ["yoga", "leggings", "soft feel"],
+    relatedHrefs: ["/activities/yoga", "/women/leggings", "/styles/premium-activewear"]
+  },
+  {
+    slug: "best-gym-clothes-for-beginners",
+    title: "Best Gym Clothes for Beginners",
+    summary: "Compare beginner gym clothes by comfort, durability, sweat control, budget, and easy outfit pairing.",
+    tags: ["gym", "budget", "training"],
+    relatedHrefs: ["/activities/gym", "/deals/budget-activewear", "/styles/workout-tops"]
+  },
+  {
+    slug: "best-athleisure-for-travel",
+    title: "Best Athleisure for Travel",
+    summary: "Compare travel athleisure by wrinkle resistance, pocket utility, stretch, layering options, and all-day comfort.",
+    tags: ["athleisure", "travel", "joggers"],
+    relatedHrefs: ["/styles/athleisure", "/styles/joggers", "/styles/hoodies"]
+  },
+  {
+    slug: "best-plus-size-leggings",
+    title: "Best Plus-Size Leggings",
+    summary: "Compare plus-size leggings by waistband stability, opacity, size range, pocket options, and retailer return policy.",
+    tags: ["plus size", "leggings", "fit"],
+    relatedHrefs: ["/sizes-fit/plus-size-activewear", "/women/leggings", "/styles/athleisure"]
+  },
+  {
+    slug: "best-plus-size-sports-bras",
+    title: "Best Plus-Size Sports Bras",
+    summary: "Compare plus-size sports bras by support range, band security, adjustability, coverage, and workout intensity.",
+    tags: ["plus size", "sports bras", "support"],
+    relatedHrefs: ["/sizes-fit/plus-size-activewear", "/women/sports-bras", "/activities/gym"]
+  },
+  {
+    slug: "best-mens-activewear-brands",
+    title: "Best Men's Activewear Brands",
+    summary: "Compare men's activewear brands by training focus, fit consistency, fabric quality, price range, and return options.",
+    tags: ["men", "brands", "training"],
+    relatedHrefs: ["/men", "/brands", "/activities/gym"]
+  },
+  {
+    slug: "best-womens-activewear-brands",
+    title: "Best Women's Activewear Brands",
+    summary: "Compare women's activewear brands by category strength, size range, fabric feel, price range, and retailer coverage.",
+    tags: ["women", "brands", "fit"],
+    relatedHrefs: ["/women", "/brands", "/styles/premium-activewear"]
+  },
+  {
+    slug: "best-running-shoes-for-gym-and-road",
+    title: "Best Running Shoes for Gym and Road",
+    summary: "Compare running shoes for mixed use by cushioning, stability, treadmill comfort, road feel, and gym versatility.",
+    tags: ["running shoes", "gym", "road"],
+    relatedHrefs: ["/activities/running/running-shoes", "/activities/gym/training-shoes", "/activities/running"]
+  },
+  {
+    slug: "best-training-shoes-for-hiit",
+    title: "Best Training Shoes for HIIT",
+    summary: "Compare HIIT training shoes by lateral support, grip, cushioning, heel stability, and durability.",
+    tags: ["training shoes", "hiit", "gym"],
+    relatedHrefs: ["/activities/gym/training-shoes", "/activities/gym", "/styles/compression-wear"]
+  },
+  {
+    slug: "best-workout-accessories",
+    title: "Best Workout Accessories",
+    summary: "Compare workout accessories by utility, durability, packability, and whether they solve a real training problem.",
+    tags: ["accessories", "gym", "running"],
+    relatedHrefs: ["/styles/workout-accessories", "/activities/gym", "/activities/running"]
+  },
+  {
+    slug: "best-moisture-wicking-shirts",
+    title: "Best Moisture-Wicking Shirts",
+    summary: "Compare moisture-wicking shirts by fabric weight, ventilation, drying speed, fit, and high-sweat comfort.",
+    tags: ["moisture-wicking", "workout tops", "sweat"],
+    relatedHrefs: ["/styles/moisture-wicking-clothing", "/styles/workout-tops", "/activities/gym"]
+  },
+  {
+    slug: "best-sustainable-activewear-brands",
+    title: "Best Sustainable Activewear Brands",
+    summary: "Compare sustainable activewear brands by material claims, durability, transparency, category coverage, and return policies.",
+    tags: ["sustainable", "brands", "materials"],
+    relatedHrefs: ["/styles/sustainable-activewear", "/brands", "/styles/premium-activewear"]
+  },
+  {
+    slug: "best-budget-activewear",
+    title: "Best Budget Activewear",
+    summary: "Compare budget activewear by durability, fabric feel, size availability, sale frequency, and return policy.",
+    tags: ["budget", "deals", "value"],
+    relatedHrefs: ["/deals/budget-activewear", "/deals", "/styles/workout-tops"]
+  },
+  {
+    slug: "best-premium-activewear",
+    title: "Best Premium Activewear",
+    summary: "Compare premium activewear by fabric quality, construction, fit consistency, support, and long-term value.",
+    tags: ["premium", "quality", "fit"],
+    relatedHrefs: ["/styles/premium-activewear", "/brands/lululemon", "/women/leggings"]
+  }
+];
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
