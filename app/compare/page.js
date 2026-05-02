@@ -1,6 +1,6 @@
 import HubPage from "../components/HubPage";
 import ProductComparison from "../components/ProductComparison";
-import { brandHubs, categories, sampleProducts } from "../lib/activewearData";
+import { brandHubs, categories, comparisonGuides, sampleProducts } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear Compare",
@@ -15,7 +15,14 @@ export default function ComparePage() {
       title="Compare activewear before the retailer click"
       intro="Comparison pages focus on one shopping decision at a time: category, brand, support level, fit, activity, material, or budget."
       path="/compare"
-      items={[...brandHubs, ...categories.slice(0, 4)]}
+      items={[
+        ...comparisonGuides.slice(0, 8).map((guide) => ({
+          ...guide,
+          href: `/compare/${guide.slug}`
+        })),
+        ...brandHubs,
+        ...categories.slice(0, 4)
+      ]}
     >
       <section className="section">
         <ProductComparison products={sampleProducts} />

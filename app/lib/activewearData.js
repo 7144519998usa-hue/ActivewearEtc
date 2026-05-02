@@ -334,6 +334,93 @@ export const shoppingGuides = [
   }
 ];
 
+export const comparisonGuides = [
+  {
+    slug: "lululemon-vs-gymshark",
+    title: "lululemon vs Gymshark",
+    summary: "Compare lululemon and Gymshark by fit, fabric feel, training use, price range, and return policy before choosing a brand lane.",
+    tags: ["premium", "gym", "brands"],
+    relatedHrefs: ["/brands/lululemon", "/brands/gymshark", "/styles/premium-activewear"]
+  },
+  {
+    slug: "nike-vs-adidas-activewear",
+    title: "Nike vs Adidas Activewear",
+    summary: "Compare Nike and Adidas activewear by running gear, gym clothes, athleisure, size coverage, and sale frequency.",
+    tags: ["brands", "running", "gym"],
+    relatedHrefs: ["/brands/nike", "/brands/adidas", "/activities/running"]
+  },
+  {
+    slug: "leggings-vs-joggers",
+    title: "Leggings vs Joggers",
+    summary: "Compare leggings and joggers by compression, warmth, pocket utility, workout use, and everyday comfort.",
+    tags: ["leggings", "joggers", "athleisure"],
+    relatedHrefs: ["/women/leggings", "/styles/joggers", "/styles/athleisure"]
+  },
+  {
+    slug: "running-shorts-vs-bike-shorts",
+    title: "Running Shorts vs Bike Shorts",
+    summary: "Compare running shorts and bike shorts by liner comfort, coverage, chafe control, pockets, and warm-weather training use.",
+    tags: ["running shorts", "coverage", "summer"],
+    relatedHrefs: ["/activities/running/running-shorts", "/activities/running", "/women/leggings"]
+  },
+  {
+    slug: "sports-bra-low-impact-vs-high-impact",
+    title: "Low-Impact vs High-Impact Sports Bras",
+    summary: "Compare low-impact and high-impact sports bras by support, strap shape, compression, cup coverage, and activity match.",
+    tags: ["sports bras", "support", "running"],
+    relatedHrefs: ["/women/sports-bras", "/best/best-high-impact-sports-bras", "/activities/yoga"]
+  },
+  {
+    slug: "premium-vs-budget-activewear",
+    title: "Premium vs Budget Activewear",
+    summary: "Compare premium and budget activewear by fabric quality, construction, fit consistency, durability, and sale timing.",
+    tags: ["premium", "budget", "value"],
+    relatedHrefs: ["/styles/premium-activewear", "/deals/budget-activewear", "/best/best-budget-activewear"]
+  },
+  {
+    slug: "sustainable-vs-standard-activewear",
+    title: "Sustainable vs Standard Activewear",
+    summary: "Compare sustainable and standard activewear by material claims, durability, transparency, care needs, and price range.",
+    tags: ["sustainable", "materials", "value"],
+    relatedHrefs: ["/styles/sustainable-activewear", "/best/best-sustainable-activewear-brands", "/brands"]
+  },
+  {
+    slug: "running-shoes-vs-training-shoes",
+    title: "Running Shoes vs Training Shoes",
+    summary: "Compare running shoes and training shoes by cushioning, lateral support, grip, heel stability, and workout use.",
+    tags: ["running shoes", "training shoes", "gym"],
+    relatedHrefs: ["/activities/running/running-shoes", "/activities/gym/training-shoes", "/best/best-training-shoes-for-hiit"]
+  },
+  {
+    slug: "hoodies-vs-lightweight-jackets",
+    title: "Workout Hoodies vs Lightweight Jackets",
+    summary: "Compare workout hoodies and lightweight jackets by warmth, breathability, layering, pockets, and outdoor training use.",
+    tags: ["hoodies", "layers", "running"],
+    relatedHrefs: ["/styles/hoodies", "/activities/running", "/styles/athleisure"]
+  },
+  {
+    slug: "compression-leggings-vs-yoga-leggings",
+    title: "Compression Leggings vs Yoga Leggings",
+    summary: "Compare compression leggings and yoga leggings by pressure, softness, stretch, opacity, and workout intensity.",
+    tags: ["compression", "yoga", "leggings"],
+    relatedHrefs: ["/styles/compression-wear", "/best/best-yoga-leggings", "/women/leggings"]
+  },
+  {
+    slug: "plus-size-leggings-vs-standard-sizing",
+    title: "Plus-Size Leggings vs Standard Sizing",
+    summary: "Compare plus-size and standard-size leggings by waistband stability, size charts, opacity, length options, and return rules.",
+    tags: ["plus size", "leggings", "fit"],
+    relatedHrefs: ["/sizes-fit/plus-size-activewear", "/best/best-plus-size-leggings", "/women/leggings"]
+  },
+  {
+    slug: "gymshark-vs-nike-training-clothes",
+    title: "Gymshark vs Nike Training Clothes",
+    summary: "Compare Gymshark and Nike training clothes by gym fit, fabric feel, price range, color drops, and everyday versatility.",
+    tags: ["gym", "brands", "training"],
+    relatedHrefs: ["/brands/gymshark", "/brands/nike", "/activities/gym"]
+  }
+];
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",
