@@ -721,6 +721,63 @@ export const fabricGuides = fabricCategorySlugs.flatMap((categorySlug) => {
   }));
 });
 
+const useCaseModifiers = [
+  {
+    slug: "for-travel",
+    label: "for Travel",
+    summary: "packability, wrinkle expectations, pocket utility, all-day comfort, and outfit repeatability",
+    tags: ["travel", "packable", "comfort"]
+  },
+  {
+    slug: "for-beginners",
+    label: "for Beginners",
+    summary: "easy fit, price risk, return flexibility, fabric comfort, and simple outfit pairing",
+    tags: ["beginners", "value", "comfort"]
+  },
+  {
+    slug: "for-hot-weather",
+    label: "for Hot Weather",
+    summary: "fabric weight, breathability, coverage, sweat visibility, and warm-weather training comfort",
+    tags: ["hot weather", "lightweight", "breathable"]
+  },
+  {
+    slug: "for-cold-weather",
+    label: "for Cold Weather",
+    summary: "layering, warmth, fabric weight, mobility, and whether the piece works before and after workouts",
+    tags: ["cold weather", "layers", "warmth"]
+  },
+  {
+    slug: "for-high-sweat-workouts",
+    label: "for High-Sweat Workouts",
+    summary: "sweat handling, cling, drying expectations, odor-care needs, and high-movement comfort",
+    tags: ["high sweat", "training", "moisture"]
+  },
+  {
+    slug: "for-everyday-wear",
+    label: "for Everyday Wear",
+    summary: "comfort, styling range, opacity, pockets, care needs, and whether it still works for light movement",
+    tags: ["everyday", "athleisure", "comfort"]
+  }
+];
+
+const useCaseCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes"];
+
+export const useCaseGuides = useCaseCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return useCaseModifiers.map((useCase) => ({
+    slug: `${categorySlug}-${useCase.slug}`,
+    name: `${category.name} ${useCase.label}`,
+    title: `${category.name} ${useCase.label}`,
+    summary: `Compare ${category.name.toLowerCase()} ${useCase.label.toLowerCase()} by ${useCase.summary}. ActivewearEtc keeps use-case pages helpful, disclosure-safe, and free of fake review language.`,
+    href: `/use-cases/${categorySlug}-${useCase.slug}`,
+    categorySlug,
+    useCaseSlug: useCase.slug,
+    relatedHrefs: [category.href, "/about/editorial-policy", "/about/price-and-availability"],
+    tags: [category.name, ...useCase.tags]
+  }));
+});
+
 export const allowedTaxonomy = [
   "leggings",
   "sports bras",

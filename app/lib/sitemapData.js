@@ -1,5 +1,5 @@
 import { siteConfig } from "./siteConfig";
-import { activityCategoryGuides, activityHubs, brandActivityGuides, brandCategoryGuides, brandDealGuides, brandHubs, categories, comparisonGuides, dealGuides, editorialHubs, fabricGuides, fitGuides, intentGuides, sampleProducts, segmentCategoryGuides, shoppingGuides } from "./activewearData";
+import { activityCategoryGuides, activityHubs, brandActivityGuides, brandCategoryGuides, brandDealGuides, brandHubs, categories, comparisonGuides, dealGuides, editorialHubs, fabricGuides, fitGuides, intentGuides, sampleProducts, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
 
 const corePages = [
   "/",
@@ -13,6 +13,7 @@ const corePages = [
   "/shop",
   "/compare",
   "/reviews",
+  "/use-cases",
   "/activewear-university",
   "/about/advertiser-disclosure",
   "/about/editorial-policy",
@@ -36,6 +37,7 @@ export const sitemapSections = [
   { slug: "fabric-guide-pages", paths: fabricGuides.map((item) => item.href) },
   { slug: "fit-guide-pages", paths: fitGuides.map((item) => item.href) },
   { slug: "intent-pages", paths: intentGuides.map((item) => item.href) },
+  { slug: "use-case-pages", paths: useCaseGuides.map((item) => item.href) },
   { slug: "segment-category-pages", paths: segmentCategoryGuides.map((item) => item.href) },
   { slug: "comparison-pages", paths: comparisonGuides.map((item) => `/compare/${item.slug}`) },
   { slug: "product-pages", paths: sampleProducts.map((item) => item.href) }
