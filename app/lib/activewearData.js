@@ -810,6 +810,26 @@ export const retailerSegmentCategoryGuides = retailerHubs.flatMap((retailer) => 
   });
 });
 
+export const brandSegmentCategoryGuides = brandHubs.flatMap((brand) => {
+  return segmentCategoryGuides.map((segmentCategory) => {
+    const segment = segmentHubs.find((item) => item.slug === segmentCategory.segmentSlug);
+    const category = categories.find((item) => item.slug === segmentCategory.categorySlug);
+
+    return {
+      slug: `${brand.slug}-${segment.slug}-${category.slug}`,
+      brandSlug: brand.slug,
+      segmentSlug: segment.slug,
+      categorySlug: category.slug,
+      name: `${brand.name} ${segment.name} ${category.name}`,
+      title: `${brand.name} ${segment.name} ${category.name}`,
+      summary: `Compare ${brand.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by fit context, size availability, fabric expectations, price range, retailer coverage, return-policy risk, and disclosure-safe shopping signals before choosing where to shop.`,
+      href: `/brands/${brand.slug}/shop/${segment.slug}/${category.slug}`,
+      relatedHrefs: [brand.href, segment.href, category.href, segmentCategory.href, "/about/how-we-rank-products"],
+      tags: [brand.name, segment.name, category.name, "brand segment"]
+    };
+  });
+});
+
 const dealCategorySlugs = [
   "leggings",
   "sports-bras",

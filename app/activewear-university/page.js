@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { bodyFitGuides, brandActivityCategoryGuides, brandConcernGuides, careGuides, colorGuides, concernGuides, editorialHubs, featureGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandActivityCategoryGuides, retailerBrandCategoryGuides, retailerBrandPriceBandGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, retailerSegmentCategoryGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
+import { bodyFitGuides, brandActivityCategoryGuides, brandConcernGuides, brandSegmentCategoryGuides, careGuides, colorGuides, concernGuides, editorialHubs, featureGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandActivityCategoryGuides, retailerBrandCategoryGuides, retailerBrandPriceBandGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, retailerSegmentCategoryGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear University",
@@ -39,6 +39,7 @@ export default function UniversityPage() {
         ...retailerConcernGuides.slice(0, 6),
         ...brandActivityCategoryGuides.slice(0, 6),
         ...brandConcernGuides.slice(0, 6),
+        ...brandSegmentCategoryGuides.slice(0, 6),
         ...careGuides.slice(0, 6),
         ...occasionGuides.slice(0, 6),
         ...concernGuides.slice(0, 6)
