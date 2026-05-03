@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { bodyFitGuides, brandActivityCategoryGuides, brandConcernGuides, brandSegmentCategoryGuides, careGuides, colorGuides, concernGuides, editorialHubs, featureGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandActivityCategoryGuides, retailerBrandCategoryGuides, retailerBrandPriceBandGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, retailerSegmentCategoryGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
+import { bodyFitGuides, brandActivityCategoryGuides, brandConcernGuides, brandSegmentCategoryGuides, careGuides, colorGuides, concernGuides, editorialHubs, featureGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandActivityCategoryGuides, retailerBrandCategoryGuides, retailerBrandPriceBandGuides, retailerBrandSegmentCategoryGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, retailerSegmentCategoryGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear University",
@@ -33,6 +33,7 @@ export default function UniversityPage() {
         ...retailerBrandCategoryGuides.slice(0, 6),
         ...retailerBrandActivityCategoryGuides.slice(0, 6),
         ...retailerBrandPriceBandGuides.slice(0, 6),
+        ...retailerBrandSegmentCategoryGuides.slice(0, 6),
         ...retailerPriceBandGuides.slice(0, 6),
         ...retailerSegmentCategoryGuides.slice(0, 6),
         ...retailerComparisonGuides.slice(0, 6),

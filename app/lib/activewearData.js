@@ -830,6 +830,28 @@ export const brandSegmentCategoryGuides = brandHubs.flatMap((brand) => {
   });
 });
 
+export const retailerBrandSegmentCategoryGuides = retailerHubs.flatMap((retailer) => {
+  return brandSegmentCategoryGuides.map((brandSegmentCategory) => {
+    const brand = brandHubs.find((item) => item.slug === brandSegmentCategory.brandSlug);
+    const segment = segmentHubs.find((item) => item.slug === brandSegmentCategory.segmentSlug);
+    const category = categories.find((item) => item.slug === brandSegmentCategory.categorySlug);
+
+    return {
+      slug: `${retailer.slug}-${brand.slug}-${segment.slug}-${category.slug}`,
+      retailerSlug: retailer.slug,
+      brandSlug: brand.slug,
+      segmentSlug: segment.slug,
+      categorySlug: category.slug,
+      name: `${retailer.name} ${brand.name} ${segment.name} ${category.name}`,
+      title: `${retailer.name} ${brand.name} ${segment.name} ${category.name}`,
+      summary: `Compare ${retailer.name} ${brand.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by retailer assortment, size availability, fit context, seller details, price range, shipping, returns, product image limitations, and disclosure-safe affiliate shopping signals.`,
+      href: `/retailers/${retailer.slug}/brands/${brand.slug}/shop/${segment.slug}/${category.slug}`,
+      relatedHrefs: [retailer.href, brand.href, segment.href, category.href, brandSegmentCategory.href, "/about/advertiser-disclosure"],
+      tags: [retailer.name, brand.name, segment.name, category.name, "affiliate segment research"]
+    };
+  });
+});
+
 const dealCategorySlugs = [
   "leggings",
   "sports-bras",
