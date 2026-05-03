@@ -270,6 +270,29 @@ export const brandActivityCategoryGuides = brandActivityGuides.flatMap((brandAct
   });
 });
 
+export const retailerActivityCategoryGuides = retailerHubs.flatMap((retailer) => {
+  return activityHubs.flatMap((activity) => {
+    const categorySlugs = activityCategoryIntentMatrix[activity.slug] || [];
+
+    return categorySlugs.map((categorySlug) => {
+      const category = categories.find((item) => item.slug === categorySlug);
+
+      return {
+        slug: `${retailer.slug}-${activity.slug}-${categorySlug}`,
+        retailerSlug: retailer.slug,
+        activitySlug: activity.slug,
+        categorySlug,
+        name: `${retailer.name} ${activity.name} ${category.name}`,
+        title: `${retailer.name} ${activity.name} ${category.name}`,
+        summary: `Compare ${retailer.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by assortment, seller or retailer details, size availability, activity-specific fit needs, return policy, product image context, and final price checks before shopping.`,
+        href: `/retailers/${retailer.slug}/activities/${activity.slug}/${categorySlug}`,
+        relatedHrefs: [retailer.href, activity.href, category.href, "/about/advertiser-disclosure", "/about/price-and-availability"],
+        tags: [retailer.name, activity.name, category.name, "retailer activity research"]
+      };
+    });
+  });
+});
+
 export const sampleProducts = [
   {
     brand: "Nike",
