@@ -928,6 +928,63 @@ export const fabricGuides = fabricCategorySlugs.flatMap((categorySlug) => {
   }));
 });
 
+const careModifiers = [
+  {
+    slug: "washing",
+    label: "Washing",
+    summary: "care-label checks, detergent choice, cold-water guidance, color protection, and fabric wear risk",
+    tags: ["washing", "care", "laundry"]
+  },
+  {
+    slug: "drying",
+    label: "Drying",
+    summary: "air-dry preference, heat risk, stretch recovery, shrinkage concerns, and how drying choices affect fit",
+    tags: ["drying", "care", "fit"]
+  },
+  {
+    slug: "odor-control",
+    label: "Odor-Control",
+    summary: "sweat buildup, wash timing, fabric type, detergent residue, and realistic odor-care expectations",
+    tags: ["odor control", "sweat", "care"]
+  },
+  {
+    slug: "stain-care",
+    label: "Stain Care",
+    summary: "sweat marks, deodorant transfer, colorfastness, fabric sensitivity, and pre-treatment caution",
+    tags: ["stain care", "laundry", "care"]
+  },
+  {
+    slug: "travel-care",
+    label: "Travel Care",
+    summary: "packing, wrinkle expectations, quick wash routines, drying time, and repeat-wear practicality",
+    tags: ["travel", "packing", "care"]
+  },
+  {
+    slug: "long-term-care",
+    label: "Long-Term Care",
+    summary: "elastic recovery, pilling risk, seam stress, color fading, and whether care needs fit the shopper's routine",
+    tags: ["durability", "care", "value"]
+  }
+];
+
+const careCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes"];
+
+export const careGuides = careCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return careModifiers.map((care) => ({
+    slug: `${care.slug}-${categorySlug}`,
+    name: `${care.label} ${category.name}`,
+    title: `${care.label} ${category.name}`,
+    summary: `Compare ${category.name.toLowerCase()} care needs by ${care.summary}. ActivewearEtc treats care guidance as general shopping education and recommends following the product care label before washing or drying.`,
+    href: `/care/${care.slug}-${categorySlug}`,
+    categorySlug,
+    careSlug: care.slug,
+    relatedHrefs: [category.href, "/about/editorial-policy", "/about/price-and-availability"],
+    tags: [category.name, ...care.tags]
+  }));
+});
+
 const useCaseModifiers = [
   {
     slug: "for-travel",
