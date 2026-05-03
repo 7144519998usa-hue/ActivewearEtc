@@ -790,6 +790,26 @@ export const segmentCategoryGuides = Object.entries(segmentCategoryMatrix).flatM
   });
 });
 
+export const retailerSegmentCategoryGuides = retailerHubs.flatMap((retailer) => {
+  return segmentCategoryGuides.map((segmentCategory) => {
+    const segment = segmentHubs.find((item) => item.slug === segmentCategory.segmentSlug);
+    const category = categories.find((item) => item.slug === segmentCategory.categorySlug);
+
+    return {
+      slug: `${retailer.slug}-${segment.slug}-${category.slug}`,
+      retailerSlug: retailer.slug,
+      segmentSlug: segment.slug,
+      categorySlug: category.slug,
+      name: `${retailer.name} ${segment.name} ${category.name}`,
+      title: `${retailer.name} ${segment.name} ${category.name}`,
+      summary: `Compare ${retailer.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by retailer assortment, size availability, fit context, price range, seller details, shipping, returns, product image limitations, and disclosure-safe shopping signals.`,
+      href: `/retailers/${retailer.slug}/shop/${segment.slug}/${category.slug}`,
+      relatedHrefs: [retailer.href, segment.href, category.href, segmentCategory.href, "/about/advertiser-disclosure"],
+      tags: [retailer.name, segment.name, category.name, "shopping segment"]
+    };
+  });
+});
+
 const dealCategorySlugs = [
   "leggings",
   "sports-bras",
