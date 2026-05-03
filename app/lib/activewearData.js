@@ -785,6 +785,25 @@ export const priceBandGuides = priceBandCategorySlugs.flatMap((categorySlug) => 
   }));
 });
 
+export const retailerPriceBandGuides = retailerHubs.flatMap((retailer) => {
+  return priceBandCategorySlugs.flatMap((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return priceBandModifiers.map((priceBand) => ({
+      slug: `${retailer.slug}-${categorySlug}-${priceBand.slug}`,
+      retailerSlug: retailer.slug,
+      categorySlug,
+      priceBandSlug: priceBand.slug,
+      name: `${retailer.name} ${category.name} ${priceBand.label}`,
+      title: `${retailer.name} ${category.name} ${priceBand.label}`,
+      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by current retailer assortment, seller details, size availability, shipping, returns, and final price checks. ActivewearEtc treats retailer price bands as filters, not guaranteed live prices.`,
+      href: `/retailers/${retailer.slug}/deals/${categorySlug}/${priceBand.slug}`,
+      relatedHrefs: [retailer.href, category.href, "/deals", "/about/price-and-availability"],
+      tags: [retailer.name, category.name, ...priceBand.tags]
+    }));
+  });
+});
+
 export const brandDealGuides = brandCategoryGuides
   .filter((guide) => categories.some((category) => category.slug === guide.categorySlug))
   .map((guide) => {
