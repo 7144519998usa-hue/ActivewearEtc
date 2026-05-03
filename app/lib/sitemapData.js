@@ -1,5 +1,5 @@
 import { siteConfig } from "./siteConfig";
-import { activityCategoryGuides, activityHubs, bodyFitGuides, brandActivityCategoryGuides, brandActivityGuides, brandCategoryGuides, brandDealGuides, brandHubs, careGuides, categories, categoryComparisonGuides, colorGuides, comparisonGuides, dealGuides, editorialHubs, fabricGuides, featureGuides, fitGuides, intentGuides, priceBandGuides, retailerBrandCategoryGuides, retailerCategoryGuides, retailerHubs, sampleProducts, seasonalGuides, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
+import { activityCategoryGuides, activityHubs, bodyFitGuides, brandActivityCategoryGuides, brandActivityGuides, brandCategoryGuides, brandDealGuides, brandHubs, careGuides, categories, categoryComparisonGuides, colorGuides, comparisonGuides, dealGuides, editorialHubs, fabricGuides, featureGuides, fitGuides, intentGuides, occasionGuides, priceBandGuides, retailerBrandCategoryGuides, retailerCategoryGuides, retailerHubs, sampleProducts, seasonalGuides, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
 
 const corePages = [
   "/",
@@ -15,6 +15,7 @@ const corePages = [
   "/compare",
   "/reviews",
   "/use-cases",
+  "/occasions",
   "/seasonal",
   "/features",
   "/colors",
@@ -52,6 +53,7 @@ export const sitemapSections = [
   { slug: "body-fit-pages", paths: bodyFitGuides.map((item) => item.href) },
   { slug: "intent-pages", paths: intentGuides.map((item) => item.href) },
   { slug: "use-case-pages", paths: useCaseGuides.map((item) => item.href) },
+  { slug: "occasion-pages", paths: occasionGuides.map((item) => item.href) },
   { slug: "seasonal-pages", paths: seasonalGuides.map((item) => item.href) },
   { slug: "segment-category-pages", paths: segmentCategoryGuides.map((item) => item.href) },
   { slug: "comparison-pages", paths: comparisonGuides.map((item) => `/compare/${item.slug}`) },

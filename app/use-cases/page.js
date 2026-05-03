@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { useCaseGuides } from "../lib/activewearData";
+import { occasionGuides, useCaseGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear Use Cases",
@@ -14,7 +14,7 @@ export default function UseCasesPage() {
       title="Activewear by real-world use case"
       intro="Use these pages when the shopper problem matters more than the brand: travel, beginner-friendly gear, weather, sweat, and everyday wear."
       path="/use-cases"
-      items={useCaseGuides.slice(0, 12)}
+      items={[...useCaseGuides.slice(0, 12), ...occasionGuides.slice(0, 6)]}
     />
   );
 }

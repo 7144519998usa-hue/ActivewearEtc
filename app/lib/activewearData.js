@@ -1042,6 +1042,57 @@ export const useCaseGuides = useCaseCategorySlugs.flatMap((categorySlug) => {
   }));
 });
 
+const occasionModifiers = [
+  {
+    slug: "airport-travel",
+    label: "for Airport Travel",
+    summary: "comfort on long sits, pocket utility, layering, wrinkle expectations, security-line practicality, and repeat-wear value",
+    tags: ["airport travel", "travel", "comfort"]
+  },
+  {
+    slug: "work-from-home",
+    label: "for Work from Home",
+    summary: "all-day comfort, polished styling, temperature shifts, camera-ready coverage, and whether the piece still works for movement breaks",
+    tags: ["work from home", "athleisure", "comfort"]
+  },
+  {
+    slug: "errands",
+    label: "for Errands",
+    summary: "coverage, pockets, weather flexibility, easy styling, durability, and whether the item transitions from casual wear to light workouts",
+    tags: ["errands", "everyday", "athleisure"]
+  },
+  {
+    slug: "gym-commute",
+    label: "for the Gym Commute",
+    summary: "layering, bag compatibility, sweat transition, pocket security, weather coverage, and post-workout practicality",
+    tags: ["gym commute", "layers", "training"]
+  },
+  {
+    slug: "gifts",
+    label: "as Gifts",
+    summary: "size-risk management, return-window checks, color safety, gift-card alternatives, price range, and whether fit-sensitive items are worth the risk",
+    tags: ["gifts", "holiday", "returns"]
+  }
+];
+
+const occasionCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes"];
+
+export const occasionGuides = occasionCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return occasionModifiers.map((occasion) => ({
+    slug: `${categorySlug}-${occasion.slug}`,
+    name: `${category.name} ${occasion.label}`,
+    title: `${category.name} ${occasion.label}`,
+    summary: `Compare ${category.name.toLowerCase()} ${occasion.label.toLowerCase()} by ${occasion.summary}. ActivewearEtc keeps occasion pages practical, disclosure-safe, and focused on shopper decision context.`,
+    href: `/occasions/${categorySlug}-${occasion.slug}`,
+    categorySlug,
+    occasionSlug: occasion.slug,
+    relatedHrefs: [category.href, "/use-cases", "/about/price-and-availability"],
+    tags: [category.name, ...occasion.tags]
+  }));
+});
+
 const seasonalModifiers = [
   {
     slug: "summer",
