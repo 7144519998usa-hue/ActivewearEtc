@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { retailerCategoryGuides, retailerHubs } from "../../lib/activewearData";
+import { retailerBrandCategoryGuides, retailerCategoryGuides, retailerHubs } from "../../lib/activewearData";
 
 function getRetailer(slug) {
   return retailerHubs.find((item) => item.slug === slug);
@@ -25,7 +25,10 @@ export default function RetailerPage({ params }) {
   const retailer = getRetailer(params.slug);
   if (!retailer) notFound();
 
-  const items = retailerCategoryGuides.filter((item) => item.retailerSlug === retailer.slug).slice(0, 8);
+  const items = [
+    ...retailerCategoryGuides.filter((item) => item.retailerSlug === retailer.slug).slice(0, 8),
+    ...retailerBrandCategoryGuides.filter((item) => item.retailerSlug === retailer.slug).slice(0, 4)
+  ];
 
   return (
     <HubPage eyebrow="Retailer guide" title={`${retailer.name} Activewear`} intro={retailer.summary} path={retailer.href} items={items}>

@@ -161,6 +161,29 @@ export const retailerCategoryGuides = retailerHubs.flatMap((retailer) => {
   });
 });
 
+const retailerBrandCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "running-shoes", "training-shoes"];
+
+export const retailerBrandCategoryGuides = retailerHubs.flatMap((retailer) => {
+  return brandHubs.flatMap((brand) => {
+    return retailerBrandCategorySlugs.map((categorySlug) => {
+      const category = categories.find((item) => item.slug === categorySlug);
+
+      return {
+        slug: `${retailer.slug}-${brand.slug}-${categorySlug}`,
+        retailerSlug: retailer.slug,
+        brandSlug: brand.slug,
+        categorySlug,
+        name: `${retailer.name} ${brand.name} ${category.name}`,
+        title: `${retailer.name} ${brand.name} ${category.name}`,
+        summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} by retailer assortment, seller details, size availability, return policy, product image context, price checks, and whether the listing matches the shopper's activity and fit needs.`,
+        href: `/retailers/${retailer.slug}/brands/${brand.slug}/${categorySlug}`,
+        relatedHrefs: [retailer.href, brand.href, category.href, "/about/advertiser-disclosure", "/about/price-and-availability"],
+        tags: [retailer.name, brand.name, category.name, "affiliate research"]
+      };
+    });
+  });
+});
+
 const brandCategoryMatrix = {
   nike: ["leggings", "sports-bras", "running-shorts", "running-shoes", "workout-tops", "training-shoes"],
   adidas: ["leggings", "sports-bras", "running-shorts", "running-shoes", "workout-tops", "training-shoes"],

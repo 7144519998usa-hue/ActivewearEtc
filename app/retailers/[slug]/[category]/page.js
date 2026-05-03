@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../../components/HubPage";
-import { categories, dealGuides, priceBandGuides, retailerCategoryGuides, retailerHubs } from "../../../lib/activewearData";
+import { categories, dealGuides, priceBandGuides, retailerBrandCategoryGuides, retailerCategoryGuides, retailerHubs } from "../../../lib/activewearData";
 
 function getRetailerCategoryPage(slug, category) {
   return retailerCategoryGuides.find((item) => item.retailerSlug === slug && item.categorySlug === category);
@@ -35,6 +35,7 @@ export default function RetailerCategoryPage({ params }) {
     category,
     dealGuides.find((item) => item.categorySlug === page.categorySlug),
     ...priceBandGuides.filter((item) => item.categorySlug === page.categorySlug).slice(0, 3),
+    ...retailerBrandCategoryGuides.filter((item) => item.retailerSlug === page.retailerSlug && item.categorySlug === page.categorySlug).slice(0, 2),
     ...retailerCategoryGuides.filter((item) => item.categorySlug === page.categorySlug && item.href !== page.href).slice(0, 2)
   ].filter(Boolean).slice(0, 6);
 
