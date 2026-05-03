@@ -2,7 +2,7 @@ import CategoryGrid from "./components/CategoryGrid";
 import DisclosureNotice from "./components/DisclosureNotice";
 import ProductComparison from "./components/ProductComparison";
 import JsonLd from "./components/JsonLd";
-import { activityHubs, brandHubs, categories, editorialHubs, sampleProducts } from "./lib/activewearData";
+import { activityHubs, brandHubs, categories, editorialHubs, retailerHubs, sampleProducts } from "./lib/activewearData";
 import { collectionPageSchema } from "./lib/structuredData";
 
 export const metadata = {
@@ -66,10 +66,10 @@ export default function HomePage() {
 
         <section className="section">
           <div className="section-heading">
-            <span className="eyebrow">Activities and brands</span>
-            <h2>Move from workout intent to brand research without losing context.</h2>
+            <span className="eyebrow">Activities, brands, and retailers</span>
+            <h2>Move from workout intent to brand and retailer research without losing context.</h2>
           </div>
-          <CategoryGrid items={[...activityHubs, ...brandHubs]} />
+          <CategoryGrid items={[...activityHubs, ...brandHubs, ...retailerHubs.slice(0, 4)]} />
         </section>
 
         <section className="section">

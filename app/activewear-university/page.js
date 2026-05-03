@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { bodyFitGuides, colorGuides, editorialHubs, featureGuides, intentGuides, priceBandGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
+import { bodyFitGuides, colorGuides, editorialHubs, featureGuides, intentGuides, priceBandGuides, retailerCategoryGuides, retailerHubs, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear University",
@@ -26,7 +26,9 @@ export default function UniversityPage() {
         ...featureGuides.slice(0, 6),
         ...colorGuides.slice(0, 6),
         ...bodyFitGuides.slice(0, 6),
-        ...priceBandGuides.slice(0, 6)
+        ...priceBandGuides.slice(0, 6),
+        ...retailerHubs,
+        ...retailerCategoryGuides.slice(0, 6)
       ]}
     />
   );

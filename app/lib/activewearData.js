@@ -133,6 +133,34 @@ export const brandHubs = [
   { slug: "gymshark", name: "Gymshark", href: "/brands/gymshark", summary: "Gym-first activewear, contour styles, matching sets, and social-led collections." }
 ];
 
+export const retailerHubs = [
+  { slug: "amazon", name: "Amazon", href: "/retailers/amazon", summary: "Marketplace activewear research with extra attention to seller quality, size charts, returns, product images, and price verification." },
+  { slug: "target", name: "Target", href: "/retailers/target", summary: "Accessible activewear shopping paths with budget, in-store pickup, sizing, and return-policy considerations." },
+  { slug: "walmart", name: "Walmart", href: "/retailers/walmart", summary: "Value-focused activewear research with marketplace, shipping, size availability, and return-window checks." },
+  { slug: "nordstrom", name: "Nordstrom", href: "/retailers/nordstrom", summary: "Premium and department-store activewear comparison with brand assortment, fit help, and return-policy context." },
+  { slug: "zappos", name: "Zappos", href: "/retailers/zappos", summary: "Shoe and activewear research with sizing, shipping, return-policy, and brand assortment checks." }
+];
+
+const retailerCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes"];
+
+export const retailerCategoryGuides = retailerHubs.flatMap((retailer) => {
+  return retailerCategorySlugs.map((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return {
+      slug: `${retailer.slug}-${categorySlug}`,
+      retailerSlug: retailer.slug,
+      categorySlug,
+      name: `${retailer.name} ${category.name}`,
+      title: `${retailer.name} ${category.name}`,
+      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} by current assortment, seller or retailer details, size availability, return policy, product image context, price checks, and whether the listing fits the shopper's workout use case.`,
+      href: `/retailers/${retailer.slug}/${categorySlug}`,
+      relatedHrefs: [retailer.href, category.href, "/about/advertiser-disclosure", "/about/price-and-availability"],
+      tags: [retailer.name, category.name, "retailer research"]
+    };
+  });
+});
+
 const brandCategoryMatrix = {
   nike: ["leggings", "sports-bras", "running-shorts", "running-shoes", "workout-tops", "training-shoes"],
   adidas: ["leggings", "sports-bras", "running-shorts", "running-shoes", "workout-tops", "training-shoes"],

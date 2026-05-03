@@ -9,6 +9,7 @@ export const siteConfig = {
     { href: "/men", label: "Men" },
     { href: "/activities", label: "Activities" },
     { href: "/brands", label: "Brands" },
+    { href: "/retailers", label: "Retailers" },
     { href: "/styles", label: "Styles" },
     { href: "/sizes-fit", label: "Sizes & Fit" },
     { href: "/deals", label: "Deals" },
