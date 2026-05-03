@@ -904,6 +904,29 @@ export const brandDealGuides = brandCategoryGuides
     };
   });
 
+export const retailerBrandPriceBandGuides = retailerHubs.flatMap((retailer) => {
+  return brandCategoryGuides
+    .filter((guide) => categories.some((category) => category.slug === guide.categorySlug))
+    .flatMap((guide) => {
+      const brand = brandHubs.find((item) => item.slug === guide.brandSlug);
+      const category = categories.find((item) => item.slug === guide.categorySlug);
+
+      return priceBandModifiers.map((priceBand) => ({
+        slug: `${retailer.slug}-${brand.slug}-${category.slug}-${priceBand.slug}`,
+        retailerSlug: retailer.slug,
+        brandSlug: brand.slug,
+        categorySlug: category.slug,
+        priceBandSlug: priceBand.slug,
+        name: `${retailer.name} ${brand.name} ${category.name} ${priceBand.label}`,
+        title: `${retailer.name} ${brand.name} ${category.name} ${priceBand.label}`,
+        summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by retailer assortment, seller details, size availability, discount context, shipping, returns, and final price checks. ActivewearEtc treats brand retailer price bands as shopping filters, not guaranteed live prices.`,
+        href: `/retailers/${retailer.slug}/brands/${brand.slug}/deals/${category.slug}/${priceBand.slug}`,
+        relatedHrefs: [retailer.href, brand.href, category.href, guide.href, "/about/price-and-availability"],
+        tags: [retailer.name, brand.name, category.name, ...priceBand.tags]
+      }));
+    });
+});
+
 const fitGuideCategorySlugs = [
   "leggings",
   "sports-bras",
