@@ -293,6 +293,28 @@ export const retailerActivityCategoryGuides = retailerHubs.flatMap((retailer) =>
   });
 });
 
+export const retailerBrandActivityCategoryGuides = retailerHubs.flatMap((retailer) => {
+  return brandActivityCategoryGuides.map((brandActivityCategory) => {
+    const brand = brandHubs.find((item) => item.slug === brandActivityCategory.brandSlug);
+    const activity = activityHubs.find((item) => item.slug === brandActivityCategory.activitySlug);
+    const category = categories.find((item) => item.slug === brandActivityCategory.categorySlug);
+
+    return {
+      slug: `${retailer.slug}-${brand.slug}-${activity.slug}-${category.slug}`,
+      retailerSlug: retailer.slug,
+      brandSlug: brand.slug,
+      activitySlug: activity.slug,
+      categorySlug: category.slug,
+      name: `${retailer.name} ${brand.name} ${activity.name} ${category.name}`,
+      title: `${retailer.name} ${brand.name} ${activity.name} ${category.name}`,
+      summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by retailer assortment, seller details, size availability, activity fit context, return policy, product image limitations, affiliate disclosure, and final price checks before shopping.`,
+      href: `/retailers/${retailer.slug}/brands/${brand.slug}/activities/${activity.slug}/${category.slug}`,
+      relatedHrefs: [retailer.href, brand.href, activity.href, category.href, brandActivityCategory.href, "/about/price-and-availability"],
+      tags: [retailer.name, brand.name, activity.name, category.name, "affiliate research"]
+    };
+  });
+});
+
 export const sampleProducts = [
   {
     brand: "Nike",

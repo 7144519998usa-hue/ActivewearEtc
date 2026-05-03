@@ -1,5 +1,5 @@
 import HubPage from "../components/HubPage";
-import { bodyFitGuides, brandActivityCategoryGuides, brandConcernGuides, careGuides, colorGuides, concernGuides, editorialHubs, featureGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandCategoryGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
+import { bodyFitGuides, brandActivityCategoryGuides, brandConcernGuides, careGuides, colorGuides, concernGuides, editorialHubs, featureGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandActivityCategoryGuides, retailerBrandCategoryGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, seasonalGuides, shoppingGuides, useCaseGuides } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear University",
@@ -31,6 +31,7 @@ export default function UniversityPage() {
         ...retailerCategoryGuides.slice(0, 6),
         ...retailerActivityCategoryGuides.slice(0, 6),
         ...retailerBrandCategoryGuides.slice(0, 6),
+        ...retailerBrandActivityCategoryGuides.slice(0, 6),
         ...retailerPriceBandGuides.slice(0, 6),
         ...retailerComparisonGuides.slice(0, 6),
         ...retailerConcernGuides.slice(0, 6),

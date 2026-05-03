@@ -1,5 +1,5 @@
 import { siteConfig } from "./siteConfig";
-import { activityCategoryGuides, activityHubs, bodyFitGuides, brandActivityCategoryGuides, brandActivityGuides, brandCategoryGuides, brandConcernGuides, brandDealGuides, brandHubs, careGuides, categories, categoryComparisonGuides, colorGuides, comparisonGuides, concernGuides, dealGuides, editorialHubs, fabricGuides, featureGuides, fitGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandCategoryGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, sampleProducts, seasonalGuides, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
+import { activityCategoryGuides, activityHubs, bodyFitGuides, brandActivityCategoryGuides, brandActivityGuides, brandCategoryGuides, brandConcernGuides, brandDealGuides, brandHubs, careGuides, categories, categoryComparisonGuides, colorGuides, comparisonGuides, concernGuides, dealGuides, editorialHubs, fabricGuides, featureGuides, fitGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandActivityCategoryGuides, retailerBrandCategoryGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, sampleProducts, seasonalGuides, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
 
 const corePages = [
   "/",
@@ -37,6 +37,7 @@ export const sitemapSections = [
   { slug: "retailer-category-pages", paths: retailerCategoryGuides.map((item) => item.href) },
   { slug: "retailer-activity-category-pages", paths: retailerActivityCategoryGuides.map((item) => item.href) },
   { slug: "retailer-brand-category-pages", paths: retailerBrandCategoryGuides.map((item) => item.href) },
+  { slug: "retailer-brand-activity-category-pages", paths: retailerBrandActivityCategoryGuides.map((item) => item.href) },
   { slug: "retailer-price-band-pages", paths: retailerPriceBandGuides.map((item) => item.href) },
   { slug: "retailer-concern-pages", paths: retailerConcernGuides.map((item) => item.href) },
   { slug: "brand-category-pages", paths: brandCategoryGuides.map((item) => item.href) },
