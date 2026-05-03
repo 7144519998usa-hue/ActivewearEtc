@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { retailerBrandCategoryGuides, retailerCategoryGuides, retailerHubs, retailerPriceBandGuides } from "../../lib/activewearData";
+import { retailerBrandCategoryGuides, retailerCategoryGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides } from "../../lib/activewearData";
 
 function getRetailer(slug) {
   return retailerHubs.find((item) => item.slug === slug);
@@ -28,7 +28,8 @@ export default function RetailerPage({ params }) {
   const items = [
     ...retailerCategoryGuides.filter((item) => item.retailerSlug === retailer.slug).slice(0, 8),
     ...retailerBrandCategoryGuides.filter((item) => item.retailerSlug === retailer.slug).slice(0, 4),
-    ...retailerPriceBandGuides.filter((item) => item.retailerSlug === retailer.slug).slice(0, 4)
+    ...retailerPriceBandGuides.filter((item) => item.retailerSlug === retailer.slug).slice(0, 4),
+    ...retailerConcernGuides.filter((item) => item.retailerSlug === retailer.slug).slice(0, 4)
   ];
 
   return (

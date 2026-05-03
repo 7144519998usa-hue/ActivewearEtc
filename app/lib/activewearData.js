@@ -1224,6 +1224,25 @@ export const brandConcernGuides = brandHubs.flatMap((brand) => {
   });
 });
 
+export const retailerConcernGuides = retailerHubs.flatMap((retailer) => {
+  return concernCategorySlugs.flatMap((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return concernModifiers.map((concern) => ({
+      slug: `${retailer.slug}-${categorySlug}-${concern.slug}`,
+      retailerSlug: retailer.slug,
+      categorySlug,
+      concernSlug: concern.slug,
+      name: `${retailer.name} ${category.name} ${concern.label}`,
+      title: `${retailer.name} ${category.name} ${concern.label}`,
+      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} ${concern.label.toLowerCase()} by ${concern.summary}, seller details, return policy, product image context, and current retailer availability. ActivewearEtc treats retailer concern pages as shopping checks, not product guarantees.`,
+      href: `/retailers/${retailer.slug}/concerns/${categorySlug}/${concern.slug}`,
+      relatedHrefs: [retailer.href, category.href, "/concerns", "/about/price-and-availability"],
+      tags: [retailer.name, category.name, ...concern.tags]
+    }));
+  });
+});
+
 const seasonalModifiers = [
   {
     slug: "summer",
