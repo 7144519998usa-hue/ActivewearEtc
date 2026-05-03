@@ -240,6 +240,36 @@ export const brandActivityGuides = Object.entries(brandActivityMatrix).flatMap((
   });
 });
 
+const activityCategoryIntentMatrix = {
+  running: ["leggings", "sports-bras", "workout-tops", "running-shorts", "running-shoes", "hoodies"],
+  gym: ["leggings", "sports-bras", "workout-tops", "training-shoes", "compression-wear", "joggers"],
+  yoga: ["leggings", "sports-bras", "workout-tops", "yoga-wear", "hoodies", "joggers"],
+  athleisure: ["leggings", "workout-tops", "joggers", "hoodies", "training-shoes", "running-shoes"]
+};
+
+export const brandActivityCategoryGuides = brandActivityGuides.flatMap((brandActivity) => {
+  const brand = brandHubs.find((item) => item.slug === brandActivity.brandSlug);
+  const activity = activityHubs.find((item) => item.slug === brandActivity.activitySlug);
+  const categorySlugs = activityCategoryIntentMatrix[brandActivity.activitySlug] || [];
+
+  return categorySlugs.map((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return {
+      slug: `${brandActivity.brandSlug}-${brandActivity.activitySlug}-${categorySlug}`,
+      brandSlug: brandActivity.brandSlug,
+      activitySlug: brandActivity.activitySlug,
+      categorySlug,
+      name: `${brand.name} ${activity.name} ${category.name}`,
+      title: `${brand.name} ${activity.name} ${category.name}`,
+      summary: `Compare ${brand.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by fit, fabric feel, support or mobility needs, size availability, retailer coverage, return policy, and final price checks before shopping.`,
+      href: `/brands/${brandActivity.brandSlug}/activities/${brandActivity.activitySlug}/${categorySlug}`,
+      relatedHrefs: [brand.href, activity.href, category.href, brandActivity.href, "/about/how-we-rank-products"],
+      tags: [brand.name, activity.name, category.name, "activewear"]
+    };
+  });
+});
+
 export const sampleProducts = [
   {
     brand: "Nike",

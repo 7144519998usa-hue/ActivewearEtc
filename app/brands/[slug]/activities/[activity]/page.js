@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../../../components/HubPage";
-import { activityCategoryGuides, brandActivityGuides, brandCategoryGuides, brandHubs, comparisonGuides } from "../../../../lib/activewearData";
+import { activityCategoryGuides, brandActivityCategoryGuides, brandActivityGuides, brandCategoryGuides, brandHubs, comparisonGuides } from "../../../../lib/activewearData";
 
 function getBrandActivityGuide(params) {
   return brandActivityGuides.find((item) => item.brandSlug === params.slug && item.activitySlug === params.activity);
@@ -41,6 +41,9 @@ export default function BrandActivityPage({ params }) {
   const activityCategoryCards = activityCategoryGuides
     .filter((item) => item.activitySlug === guide.activitySlug)
     .slice(0, 3);
+  const brandActivityCategoryCards = brandActivityCategoryGuides
+    .filter((item) => item.brandSlug === guide.brandSlug && item.activitySlug === guide.activitySlug)
+    .slice(0, 4);
   const comparisonCards = comparisonGuides
     .filter((item) => item.relatedHrefs.includes(brand.href))
     .slice(0, 1)
@@ -51,6 +54,7 @@ export default function BrandActivityPage({ params }) {
     }));
   const items = [
     brand,
+    ...brandActivityCategoryCards,
     ...brandCategoryCards,
     ...activityCategoryCards,
     ...comparisonCards
