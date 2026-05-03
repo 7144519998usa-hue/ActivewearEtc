@@ -1205,6 +1205,25 @@ export const concernGuides = concernCategorySlugs.flatMap((categorySlug) => {
   }));
 });
 
+export const brandConcernGuides = brandHubs.flatMap((brand) => {
+  return concernCategorySlugs.flatMap((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return concernModifiers.map((concern) => ({
+      slug: `${brand.slug}-${categorySlug}-${concern.slug}`,
+      brandSlug: brand.slug,
+      categorySlug,
+      concernSlug: concern.slug,
+      name: `${brand.name} ${category.name} ${concern.label}`,
+      title: `${brand.name} ${category.name} ${concern.label}`,
+      summary: `Compare ${brand.name} ${category.name.toLowerCase()} ${concern.label.toLowerCase()} by ${concern.summary}. ActivewearEtc uses brand concern pages as fit and shopping checks, not promises that a product will solve the issue.`,
+      href: `/brands/${brand.slug}/concerns/${categorySlug}/${concern.slug}`,
+      relatedHrefs: [brand.href, category.href, "/concerns", "/about/editorial-policy"],
+      tags: [brand.name, category.name, ...concern.tags]
+    }));
+  });
+});
+
 const seasonalModifiers = [
   {
     slug: "summer",

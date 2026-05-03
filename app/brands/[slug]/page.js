@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { brandActivityGuides, brandCategoryGuides, brandHubs, categories } from "../../lib/activewearData";
+import { brandActivityGuides, brandCategoryGuides, brandConcernGuides, brandHubs, categories } from "../../lib/activewearData";
 
 export function generateStaticParams() {
   return brandHubs.map((brand) => ({ slug: brand.slug }));
@@ -14,9 +14,11 @@ export default function BrandPage({ params }) {
 
   const brandGuides = brandCategoryGuides.filter((item) => item.brandSlug === brand.slug);
   const activityGuides = brandActivityGuides.filter((item) => item.brandSlug === brand.slug);
+  const concernGuides = brandConcernGuides.filter((item) => item.brandSlug === brand.slug);
   const items = [
     ...activityGuides,
     ...brandGuides,
+    ...concernGuides.slice(0, 4),
     ...categories
   ].slice(0, 8);
 
