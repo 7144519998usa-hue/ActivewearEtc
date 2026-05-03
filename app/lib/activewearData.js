@@ -1093,6 +1093,63 @@ export const occasionGuides = occasionCategorySlugs.flatMap((categorySlug) => {
   }));
 });
 
+const concernModifiers = [
+  {
+    slug: "chafing",
+    label: "for Chafing",
+    summary: "seam placement, fabric feel, liner design, fit tightness, sweat level, and whether the item works for repeated movement",
+    tags: ["chafing", "comfort", "movement"]
+  },
+  {
+    slug: "sweat-marks",
+    label: "for Sweat Marks",
+    summary: "color choice, fabric weight, drying expectations, workout intensity, care needs, and realistic sweat visibility tradeoffs",
+    tags: ["sweat marks", "sweat", "fabric"]
+  },
+  {
+    slug: "waistband-rolling",
+    label: "for Waistband Rolling",
+    summary: "rise, compression feel, waistband width, torso fit, size chart accuracy, and return-policy risk",
+    tags: ["waistband", "fit", "support"]
+  },
+  {
+    slug: "see-through-risk",
+    label: "for See-Through Risk",
+    summary: "opacity signals, fabric stretch, color, size selection, squat-test expectations, and retailer image limitations",
+    tags: ["opacity", "coverage", "fit"]
+  },
+  {
+    slug: "pilling",
+    label: "for Pilling",
+    summary: "fabric surface, friction zones, wash care, activity match, durability expectations, and long-term value",
+    tags: ["pilling", "durability", "care"]
+  },
+  {
+    slug: "slipping-straps",
+    label: "for Slipping Straps",
+    summary: "strap adjustability, shoulder shape, support level, band fit, activity intensity, and return-policy flexibility",
+    tags: ["straps", "support", "fit"]
+  }
+];
+
+const concernCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes"];
+
+export const concernGuides = concernCategorySlugs.flatMap((categorySlug) => {
+  const category = categories.find((item) => item.slug === categorySlug);
+
+  return concernModifiers.map((concern) => ({
+    slug: `${categorySlug}-${concern.slug}`,
+    name: `${category.name} ${concern.label}`,
+    title: `${category.name} ${concern.label}`,
+    summary: `Compare ${category.name.toLowerCase()} ${concern.label.toLowerCase()} by ${concern.summary}. ActivewearEtc frames shopper concerns as fit and shopping checks, not guaranteed product performance claims.`,
+    href: `/concerns/${categorySlug}-${concern.slug}`,
+    categorySlug,
+    concernSlug: concern.slug,
+    relatedHrefs: [category.href, "/care", "/about/editorial-policy"],
+    tags: [category.name, ...concern.tags]
+  }));
+});
+
 const seasonalModifiers = [
   {
     slug: "summer",

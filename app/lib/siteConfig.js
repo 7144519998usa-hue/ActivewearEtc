@@ -13,9 +13,7 @@ export const siteConfig = {
     { href: "/styles", label: "Styles" },
     { href: "/sizes-fit", label: "Sizes & Fit" },
     { href: "/deals", label: "Deals" },
-    { href: "/care", label: "Care" },
     { href: "/compare", label: "Compare" },
-    { href: "/occasions", label: "Occasions" },
     { href: "/activewear-university", label: "University" }
   ],
   utilityLinks: [
