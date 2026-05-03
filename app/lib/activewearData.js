@@ -588,6 +588,42 @@ export const categoryComparisonGuides = comparisonBrandPairs.flatMap(([firstBran
   });
 });
 
+const retailerComparisonPairs = [
+  ["amazon", "target"],
+  ["amazon", "walmart"],
+  ["amazon", "nordstrom"],
+  ["amazon", "zappos"],
+  ["target", "walmart"],
+  ["target", "nordstrom"],
+  ["target", "zappos"],
+  ["walmart", "nordstrom"],
+  ["walmart", "zappos"],
+  ["nordstrom", "zappos"]
+];
+
+const retailerComparisonCategorySlugs = ["leggings", "sports-bras", "workout-tops", "running-shorts", "joggers", "hoodies", "running-shoes", "training-shoes"];
+
+export const retailerComparisonGuides = retailerComparisonPairs.flatMap(([firstRetailerSlug, secondRetailerSlug]) => {
+  const firstRetailer = retailerHubs.find((item) => item.slug === firstRetailerSlug);
+  const secondRetailer = retailerHubs.find((item) => item.slug === secondRetailerSlug);
+
+  return retailerComparisonCategorySlugs.map((categorySlug) => {
+    const category = categories.find((item) => item.slug === categorySlug);
+
+    return {
+      slug: `${firstRetailerSlug}-vs-${secondRetailerSlug}-${categorySlug}`,
+      title: `${firstRetailer.name} vs ${secondRetailer.name} ${category.name}`,
+      summary: `Compare ${firstRetailer.name} and ${secondRetailer.name} ${category.name.toLowerCase()} by assortment, seller details, price checks, size availability, shipping, returns, product image context, and affiliate disclosure before choosing a retailer path.`,
+      href: `/compare/${firstRetailerSlug}-vs-${secondRetailerSlug}-${categorySlug}`,
+      firstRetailerSlug,
+      secondRetailerSlug,
+      categorySlug,
+      relatedHrefs: [firstRetailer.href, secondRetailer.href, category.href, "/about/price-and-availability"],
+      tags: [firstRetailer.name, secondRetailer.name, category.name, "retailer comparison"]
+    };
+  });
+});
+
 const intentModifiers = [
   {
     slug: "with-pockets",

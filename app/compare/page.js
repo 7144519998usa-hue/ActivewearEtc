@@ -1,6 +1,6 @@
 import HubPage from "../components/HubPage";
 import ProductComparison from "../components/ProductComparison";
-import { brandHubs, categories, categoryComparisonGuides, comparisonGuides, sampleProducts } from "../lib/activewearData";
+import { brandHubs, categories, categoryComparisonGuides, comparisonGuides, retailerComparisonGuides, sampleProducts } from "../lib/activewearData";
 
 export const metadata = {
   title: "Activewear Compare",
@@ -21,6 +21,7 @@ export default function ComparePage() {
           href: `/compare/${guide.slug}`
         })),
         ...categoryComparisonGuides.slice(0, 6),
+        ...retailerComparisonGuides.slice(0, 6),
         ...brandHubs,
         ...categories.slice(0, 4)
       ]}

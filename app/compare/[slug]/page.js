@@ -1,19 +1,23 @@
 import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
-import { brandHubs, categories, categoryComparisonGuides, comparisonGuides, editorialHubs, shoppingGuides } from "../../lib/activewearData";
+import { brandHubs, categories, categoryComparisonGuides, comparisonGuides, editorialHubs, retailerComparisonGuides, retailerHubs, shoppingGuides } from "../../lib/activewearData";
 
 function getComparison(slug) {
-  return comparisonGuides.find((item) => item.slug === slug) || categoryComparisonGuides.find((item) => item.slug === slug);
+  return comparisonGuides.find((item) => item.slug === slug)
+    || categoryComparisonGuides.find((item) => item.slug === slug)
+    || retailerComparisonGuides.find((item) => item.slug === slug);
 }
 
 function getRelatedItems(comparison) {
   const lookup = [
     ...brandHubs,
+    ...retailerHubs,
     ...categories,
     ...editorialHubs,
     ...shoppingGuides.map((item) => ({ ...item, href: `/best/${item.slug}` })),
     ...comparisonGuides.map((item) => ({ ...item, href: `/compare/${item.slug}` })),
-    ...categoryComparisonGuides
+    ...categoryComparisonGuides,
+    ...retailerComparisonGuides
   ];
   const related = comparison.relatedHrefs
     .map((href) => lookup.find((item) => item.href === href))
@@ -26,12 +30,15 @@ function getRelatedItems(comparison) {
   const categoryFallback = categoryComparisonGuides
     .filter((item) => item.slug !== comparison.slug && item.categorySlug === comparison.categorySlug)
     .slice(0, 4);
+  const retailerFallback = retailerComparisonGuides
+    .filter((item) => item.slug !== comparison.slug && item.categorySlug === comparison.categorySlug)
+    .slice(0, 4);
 
-  return [...related, ...categoryFallback, ...fallback].slice(0, 6);
+  return [...related, ...categoryFallback, ...retailerFallback, ...fallback].slice(0, 6);
 }
 
 export function generateStaticParams() {
-  return [...comparisonGuides, ...categoryComparisonGuides].map((guide) => ({ slug: guide.slug }));
+  return [...comparisonGuides, ...categoryComparisonGuides, ...retailerComparisonGuides].map((guide) => ({ slug: guide.slug }));
 }
 
 export function generateMetadata({ params }) {
