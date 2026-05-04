@@ -1495,6 +1495,28 @@ export const featureGuides = Object.entries(featureMatrix).flatMap(([categorySlu
   }));
 });
 
+export const retailerBrandFeatureGuides = retailerHubs.flatMap((retailer) => {
+  return brandHubs.flatMap((brand) => {
+    return featureGuides.map((feature) => {
+      const category = categories.find((item) => item.slug === feature.categorySlug);
+
+      return {
+        slug: `${retailer.slug}-${brand.slug}-${feature.featureSlug}-${category.slug}`,
+        retailerSlug: retailer.slug,
+        brandSlug: brand.slug,
+        categorySlug: category.slug,
+        featureSlug: feature.featureSlug,
+        name: `${retailer.name} ${brand.name} ${feature.name}`,
+        title: `${retailer.name} ${brand.name} ${feature.name}`,
+        summary: `Compare ${retailer.name} ${brand.name} ${feature.name.toLowerCase()} by feature relevance, size availability, seller details, product image limitations, return policy, current assortment, and final price checks. ActivewearEtc treats feature pages as shopper filters, not guaranteed performance claims.`,
+        href: `/retailers/${retailer.slug}/brands/${brand.slug}/features/${category.slug}/${feature.featureSlug}`,
+        relatedHrefs: [retailer.href, brand.href, category.href, feature.href, "/features", "/about/how-we-rank-products"],
+        tags: [retailer.name, brand.name, category.name, ...feature.tags]
+      };
+    });
+  });
+});
+
 const colorModifiers = [
   {
     slug: "black",
