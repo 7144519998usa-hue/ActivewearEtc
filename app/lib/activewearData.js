@@ -1373,6 +1373,28 @@ export const retailerConcernGuides = retailerHubs.flatMap((retailer) => {
   });
 });
 
+export const retailerBrandConcernGuides = retailerHubs.flatMap((retailer) => {
+  return brandConcernGuides.map((brandConcern) => {
+    const brand = brandHubs.find((item) => item.slug === brandConcern.brandSlug);
+    const category = categories.find((item) => item.slug === brandConcern.categorySlug);
+    const concern = concernModifiers.find((item) => item.slug === brandConcern.concernSlug);
+
+    return {
+      slug: `${retailer.slug}-${brand.slug}-${category.slug}-${concern.slug}`,
+      retailerSlug: retailer.slug,
+      brandSlug: brand.slug,
+      categorySlug: category.slug,
+      concernSlug: concern.slug,
+      name: `${retailer.name} ${brand.name} ${category.name} ${concern.label}`,
+      title: `${retailer.name} ${brand.name} ${category.name} ${concern.label}`,
+      summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} ${concern.label.toLowerCase()} by ${concern.summary}, seller details, return policy, product image context, size availability, and current retailer availability. ActivewearEtc treats retailer brand concern pages as fit and shopping checks, not product guarantees.`,
+      href: `/retailers/${retailer.slug}/brands/${brand.slug}/concerns/${category.slug}/${concern.slug}`,
+      relatedHrefs: [retailer.href, brand.href, category.href, brandConcern.href, "/concerns", "/about/editorial-policy"],
+      tags: [retailer.name, brand.name, category.name, ...concern.tags]
+    };
+  });
+});
+
 const seasonalModifiers = [
   {
     slug: "summer",

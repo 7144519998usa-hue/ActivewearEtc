@@ -26,6 +26,30 @@ const securityHeaders = [
 const nextConfig = {
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  async redirects() {
+    return [
+      {
+        source: "/www.activewearetc.com/sitemap.xml",
+        destination: "/sitemap.xml",
+        permanent: true
+      },
+      {
+        source: "/activewearetc.com/sitemap.xml",
+        destination: "/sitemap.xml",
+        permanent: true
+      },
+      {
+        source: "/www.activewearetc.com/sitemap_index.xml",
+        destination: "/sitemap_index.xml",
+        permanent: true
+      },
+      {
+        source: "/activewearetc.com/sitemap_index.xml",
+        destination: "/sitemap_index.xml",
+        permanent: true
+      }
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   }
