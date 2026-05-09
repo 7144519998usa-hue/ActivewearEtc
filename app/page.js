@@ -51,7 +51,7 @@ export default function HomePage() {
           <div className="section-heading">
             <span className="eyebrow">Compare products</span>
             <h2>Featured comparison paths</h2>
-            <p>These product cards are starter examples only. Live product feeds should replace sample data before production launch.</p>
+            <p>These product cards use disclosure-safe comparison notes while merchant affiliate links and image sources are approved.</p>
           </div>
           <ProductComparison products={sampleProducts} />
         </section>

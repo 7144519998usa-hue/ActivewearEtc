@@ -18,7 +18,7 @@ export function generateMetadata({ params }) {
   if (!page) return {};
 
   return {
-    title: `${page.title} | ActivewearEtc`,
+    title: `${page.title}`,
     description: page.summary,
     alternates: { canonical: page.href }
   };

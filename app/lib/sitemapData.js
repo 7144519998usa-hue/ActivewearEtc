@@ -22,11 +22,16 @@ const corePages = [
   "/care",
   "/concerns",
   "/activewear-university",
+  "/about",
   "/about/advertiser-disclosure",
   "/about/editorial-policy",
   "/about/how-we-rank-products",
   "/about/price-and-availability",
-  "/about/image-attribution-policy"
+  "/about/image-attribution-policy",
+  "/contact",
+  "/privacy",
+  "/search",
+  "/terms"
 ];
 
 export const sitemapSections = [
@@ -87,6 +92,7 @@ export function getAllSitemapEntries() {
   const seen = new Set();
   return sitemapSections
     .flatMap((section) => section.paths)
+    .filter(isSitemapEligible)
     .filter((path) => {
       if (seen.has(path)) {
         return false;
@@ -99,9 +105,13 @@ export function getAllSitemapEntries() {
 
 export function getSitemapEntriesForSection(sectionSlug) {
   const section = sitemapSections.find((item) => item.slug === sectionSlug);
-  return section ? section.paths.map(makeSitemapEntry) : [];
+  return section ? section.paths.filter(isSitemapEligible).map(makeSitemapEntry) : [];
 }
 
 export function getSitemapUrls() {
   return sitemapSections.map((section) => `${siteConfig.siteUrl}/sitemaps/${section.slug}/sitemap.xml`);
+}
+
+export function isSitemapEligible(path) {
+  return Boolean(path && path.startsWith("/") && !path.includes("?"));
 }

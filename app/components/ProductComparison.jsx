@@ -1,4 +1,6 @@
 import Link from "next/link";
+import AffiliateLink from "./AffiliateLink";
+import { hasLiveAffiliateLink } from "../lib/affiliateLinks";
 
 export default function ProductComparison({ products }) {
   return (
@@ -13,10 +15,14 @@ export default function ProductComparison({ products }) {
             <div className="tag-row">
               <span className="tag">{product.category}</span>
               <span className="tag">{product.priceRange}</span>
+              <span className="tag">{product.merchant}</span>
             </div>
           </div>
-          <Link href={product.href} className="primary-button">
-            Check Best Offer
+          <AffiliateLink product={product}>
+            {hasLiveAffiliateLink(product) ? `Check ${product.merchant} offer` : "View comparison notes"}
+          </AffiliateLink>
+          <Link href={product.href} className="secondary-button">
+            See details
           </Link>
         </article>
       ))}

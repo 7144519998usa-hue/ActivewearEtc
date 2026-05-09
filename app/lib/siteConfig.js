@@ -7,6 +7,7 @@ export const siteConfig = {
   primaryNavLinks: [
     { href: "/women", label: "Women" },
     { href: "/men", label: "Men" },
+    { href: "/search", label: "Search" },
     { href: "/activities", label: "Activities" },
     { href: "/brands", label: "Brands" },
     { href: "/retailers", label: "Retailers" },
@@ -17,10 +18,14 @@ export const siteConfig = {
     { href: "/activewear-university", label: "University" }
   ],
   utilityLinks: [
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
     { href: "/about/advertiser-disclosure", label: "Affiliate Disclosure" },
     { href: "/about/editorial-policy", label: "Editorial Policy" },
     { href: "/about/how-we-rank-products", label: "How We Rank Products" },
     { href: "/about/price-and-availability", label: "Price & Availability" },
-    { href: "/about/image-attribution-policy", label: "Image Attribution Policy" }
+    { href: "/about/image-attribution-policy", label: "Image Attribution Policy" },
+    { href: "/privacy", label: "Privacy" },
+    { href: "/terms", label: "Terms" }
   ]
 };

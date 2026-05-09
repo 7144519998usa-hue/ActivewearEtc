@@ -15,7 +15,7 @@ export function generateMetadata({ params }) {
   if (!retailer) return {};
 
   return {
-    title: `${retailer.name} Activewear | ActivewearEtc`,
+    title: `${retailer.name} Activewear`,
     description: retailer.summary,
     alternates: { canonical: retailer.href }
   };

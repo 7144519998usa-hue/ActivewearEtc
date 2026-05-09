@@ -257,6 +257,49 @@ p {
   padding: 18px;
 }
 
+.content-card,
+.prose-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.content-card p:last-child,
+.prose-card p:last-child {
+  margin-bottom: 0;
+}
+
+.search-form {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.search-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+.search-row input {
+  min-height: 42px;
+  flex: 1;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  font: inherit;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   border-bottom: 0;
@@ -290,8 +333,13 @@ p {
 
   .grid,
   .site-footer-inner,
-  .footer-links {
+  .footer-links,
+  .search-row {
     grid-template-columns: 1fr;
+  }
+
+  .search-row {
+    display: grid;
   }
 
   .hero {

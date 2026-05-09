@@ -5,9 +5,9 @@ export default function CategoryGrid({ items }) {
     <div className="grid">
       {items.map((item) => (
         <Link key={item.href} href={item.href} className="card">
-          <span className="eyebrow">{item.name || item.title}</span>
-          <h3>{item.name || item.title}</h3>
-          <p>{item.summary}</p>
+          <span className="eyebrow">{item.name || item.title || item.label}</span>
+          <h3>{item.name || item.title || item.label}</h3>
+          {item.summary ? <p>{item.summary}</p> : null}
           {item.tags ? (
             <div className="tag-row">
               {item.tags.slice(0, 3).map((tag) => (

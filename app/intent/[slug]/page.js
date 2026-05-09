@@ -39,7 +39,7 @@ export function generateMetadata({ params }) {
   }
 
   return {
-    title: `${guide.title} | ActivewearEtc`,
+    title: `${guide.title}`,
     description: guide.summary,
     alternates: { canonical: guide.href }
   };

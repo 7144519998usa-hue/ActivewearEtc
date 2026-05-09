@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
+import AffiliateLink from "../../../components/AffiliateLink";
 import DisclosureNotice from "../../../components/DisclosureNotice";
+import JsonLd from "../../../components/JsonLd";
 import ProductComparison from "../../../components/ProductComparison";
 import { sampleProducts } from "../../../lib/activewearData";
+import { productSchema } from "../../../lib/structuredData";
 
 export function generateStaticParams() {
   return sampleProducts.map((product) => {
@@ -28,38 +31,60 @@ export default function ProductPage({ params }) {
   }
 
   return (
-    <main className="page-shell">
-      <section className="section">
-        <div className="section-heading">
-          <span className="eyebrow">{product.category}</span>
-          <h1>{product.brand} {product.name}</h1>
-          <p>{product.bestFor}</p>
-        </div>
-        <table className="compare-table">
-          <thead>
-            <tr>
-              <th>Brand</th>
-              <th>Product</th>
-              <th>Price Range</th>
-              <th>Best For</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{product.brand}</td>
-              <td>{product.name}</td>
-              <td>{product.priceRange}</td>
-              <td>{product.bestFor}</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section className="section">
-        <ProductComparison products={sampleProducts.filter((item) => item.href !== product.href)} />
-      </section>
-      <section className="section">
-        <DisclosureNotice />
-      </section>
-    </main>
+    <>
+      <JsonLd data={productSchema(product)} />
+      <main className="page-shell">
+        <section className="section">
+          <div className="section-heading">
+            <span className="eyebrow">{product.category}</span>
+            <h1>{product.brand} {product.name}</h1>
+            <p>{product.bestFor}</p>
+            <div className="button-row">
+              <AffiliateLink product={product} />
+              <a className="secondary-button" href="/about/price-and-availability">
+                Price disclaimer
+              </a>
+            </div>
+          </div>
+          <table className="compare-table">
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Product</th>
+                <th>Merchant</th>
+                <th>Price Range</th>
+                <th>Last Reviewed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{product.brand}</td>
+                <td>{product.name}</td>
+                <td>{product.merchant}</td>
+                <td>{product.priceRange}</td>
+                <td>{product.lastReviewed}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section className="section">
+          <div className="content-card">
+            <h2>Product and affiliate guardrails</h2>
+            <p>{product.reviewPolicy}</p>
+            <p>{product.imageAttribution}</p>
+            <p>
+              Prices, availability, sizes, colors, shipping, and returns can change. Verify every detail on the merchant
+              site before buying.
+            </p>
+          </div>
+        </section>
+        <section className="section">
+          <ProductComparison products={sampleProducts.filter((item) => item.href !== product.href)} />
+        </section>
+        <section className="section">
+          <DisclosureNotice />
+        </section>
+      </main>
+    </>
   );
 }

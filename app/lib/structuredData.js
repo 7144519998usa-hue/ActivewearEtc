@@ -23,6 +23,37 @@ export function websiteSchema() {
   };
 }
 
+export function productSchema(product) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${product.brand} ${product.name}`,
+    brand: {
+      "@type": "Brand",
+      name: product.brand
+    },
+    category: product.category,
+    description: product.bestFor,
+    url: `${siteConfig.siteUrl}${product.href}`
+  };
+
+  if (product.merchantUrl) {
+    schema.offers = {
+      "@type": "AggregateOffer",
+      priceCurrency: "USD",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "USD",
+        description: product.priceRange
+      },
+      availability: "https://schema.org/InStock",
+      url: `${siteConfig.siteUrl}${product.href}`
+    };
+  }
+
+  return schema;
+}
+
 export function collectionPageSchema({ title, description, path, items = [] }) {
   return {
     "@context": "https://schema.org",

@@ -6,6 +6,22 @@ export function generateStaticParams() {
   return brandHubs.map((brand) => ({ slug: brand.slug }));
 }
 
+export function generateMetadata({ params }) {
+  const brand = brandHubs.find((item) => item.slug === params.slug);
+  if (!brand) return {};
+
+  return {
+    title: `${brand.name} Activewear`,
+    description: brand.summary,
+    alternates: { canonical: brand.href },
+    openGraph: {
+      title: `${brand.name} Activewear`,
+      description: brand.summary,
+      url: brand.href
+    }
+  };
+}
+
 export default function BrandPage({ params }) {
   const brand = brandHubs.find((item) => item.slug === params.slug);
   if (!brand) {

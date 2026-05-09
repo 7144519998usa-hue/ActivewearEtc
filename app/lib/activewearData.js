@@ -106,6 +106,12 @@ export const editorialHubs = [
     href: "/styles/sustainable-activewear"
   },
   {
+    slug: "moisture-wicking-clothing",
+    title: "Moisture-Wicking Clothing",
+    summary: "Sweat-aware tops, leggings, shorts, and layers compared by fabric claims, care needs, ventilation, and realistic workout use.",
+    href: "/styles/moisture-wicking-clothing"
+  },
+  {
     slug: "budget-activewear",
     title: "Budget Activewear",
     summary: "Affordable activewear picks and deal-led comparisons without pretending every low price is the best value.",
@@ -323,7 +329,14 @@ export const sampleProducts = [
     bestFor: "Training and everyday workouts",
     priceRange: "$45-$70",
     badge: "Versatile Pick",
-    href: "/product/nike/one-high-waisted-leggings"
+    href: "/product/nike/one-high-waisted-leggings",
+    merchant: "Amazon",
+    merchantUrl: "",
+    linkStatus: "pending-affiliate-approval",
+    lastReviewed: "2026-05-09",
+    imageSource: "Brand-neutral placeholder art",
+    imageAttribution: "No merchant product image is used until an approved image source is available.",
+    reviewPolicy: "Editorial comparison only; no hands-on review or performance claim is implied."
   },
   {
     brand: "lululemon",
@@ -332,7 +345,14 @@ export const sampleProducts = [
     bestFor: "Studio and low-impact movement",
     priceRange: "$98-$128",
     badge: "Soft Feel",
-    href: "/product/lululemon/align-high-rise-pant"
+    href: "/product/lululemon/align-high-rise-pant",
+    merchant: "lululemon",
+    merchantUrl: "",
+    linkStatus: "pending-affiliate-approval",
+    lastReviewed: "2026-05-09",
+    imageSource: "Brand-neutral placeholder art",
+    imageAttribution: "No merchant product image is used until an approved image source is available.",
+    reviewPolicy: "Editorial comparison only; no hands-on review or performance claim is implied."
   },
   {
     brand: "Adidas",
@@ -341,7 +361,14 @@ export const sampleProducts = [
     bestFor: "Warm-weather running",
     priceRange: "$35-$60",
     badge: "Runner Focus",
-    href: "/product/adidas/ultimate-running-shorts"
+    href: "/product/adidas/ultimate-running-shorts",
+    merchant: "Amazon",
+    merchantUrl: "",
+    linkStatus: "pending-affiliate-approval",
+    lastReviewed: "2026-05-09",
+    imageSource: "Brand-neutral placeholder art",
+    imageAttribution: "No merchant product image is used until an approved image source is available.",
+    reviewPolicy: "Editorial comparison only; no hands-on review or performance claim is implied."
   }
 ];
 
