@@ -8,16 +8,18 @@ export default function SiteHeader() {
         <Link href="/" className="brand-mark">
           {siteConfig.siteName}
         </Link>
-        <nav className="nav-links" aria-label="Primary navigation">
-          {siteConfig.primaryNavLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <Link href="/deals" className="header-cta">
-          Compare Deals
-        </Link>
+        <div className="nav-cluster">
+          <nav className="nav-links" aria-label="Primary navigation">
+            {siteConfig.primaryNavLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <Link href="/deals" className="header-cta">
+            Compare Deals
+          </Link>
+        </div>
       </div>
     </header>
   );

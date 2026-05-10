@@ -5,7 +5,7 @@ export default function CategoryGrid({ items }) {
     <div className="grid">
       {items.map((item) => (
         <Link key={item.href} href={item.href} className="card">
-          <span className="eyebrow">{item.name || item.title || item.label}</span>
+          <span className="card-kicker">{item.tags?.[0] || item.name || item.title || item.label}</span>
           <h3>{item.name || item.title || item.label}</h3>
           {item.summary ? <p>{item.summary}</p> : null}
           {item.tags ? (

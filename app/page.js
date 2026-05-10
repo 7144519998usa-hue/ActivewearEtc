@@ -27,7 +27,7 @@ export default function HomePage() {
         <section className="hero">
           <div className="hero-content">
             <span className="eyebrow">Activewear discovery</span>
-            <h1>ActivewearEtc</h1>
+            <h1>Find the activewear that actually fits the workout.</h1>
             <p>
               Compare activewear by fit, fabric, support, style, activity, and budget before you click through to a retailer.
             </p>
@@ -35,6 +35,32 @@ export default function HomePage() {
               <a className="primary-button" href="/women">Shop Women's Activewear</a>
               <a className="secondary-button" href="/compare">Compare Top Picks</a>
             </div>
+            <div className="hero-chips" aria-label="Popular shopping paths">
+              <a href="/search?q=leggings">Leggings</a>
+              <a href="/search?q=sports bras">Sports bras</a>
+              <a href="/search?q=running shorts">Running shorts</a>
+            </div>
+          </div>
+          <div className="hero-visual" aria-hidden="true">
+            <div className="motion-card motion-card-main">
+              <span>Fit Match</span>
+              <strong>Yoga, gym, run</strong>
+            </div>
+            <div className="motion-orb motion-orb-one" />
+            <div className="motion-orb motion-orb-two" />
+            <div className="motion-card motion-card-small">
+              <span>Compare</span>
+              <strong>Support + fabric</strong>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-tight">
+          <div className="trust-strip">
+            <span>No fake reviews</span>
+            <span>Affiliate disclosures</span>
+            <span>Price checks before purchase</span>
+            <span>Product image guardrails</span>
           </div>
         </section>
 
@@ -58,8 +84,9 @@ export default function HomePage() {
 
         <section className="section">
           <div className="section-heading">
-            <span className="eyebrow">Shop by need</span>
-            <h2>Fit, budget, sustainability, and premium shopping lanes.</h2>
+            <span className="eyebrow">Guided shopping</span>
+            <h2>Move by need, not by endless product grids.</h2>
+            <p>Choose a lane that matches the shopper decision: fit risk, budget, sustainability, fabric feel, or premium brand comparison.</p>
           </div>
           <CategoryGrid items={editorialHubs} />
         </section>

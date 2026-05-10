@@ -34,7 +34,7 @@ export default function ProductPage({ params }) {
     <>
       <JsonLd data={productSchema(product)} />
       <main className="page-shell">
-        <section className="section">
+        <section className="section internal-hero product-hero">
           <div className="section-heading">
             <span className="eyebrow">{product.category}</span>
             <h1>{product.brand} {product.name}</h1>
@@ -46,26 +46,31 @@ export default function ProductPage({ params }) {
               </a>
             </div>
           </div>
-          <table className="compare-table">
-            <thead>
-              <tr>
-                <th>Brand</th>
-                <th>Product</th>
-                <th>Merchant</th>
-                <th>Price Range</th>
-                <th>Last Reviewed</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{product.brand}</td>
-                <td>{product.name}</td>
-                <td>{product.merchant}</td>
-                <td>{product.priceRange}</td>
-                <td>{product.lastReviewed}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="product-summary-panel">
+            <div className="product-art product-art-large" aria-hidden="true">
+              <span>{product.badge}</span>
+            </div>
+            <table className="compare-table">
+              <thead>
+                <tr>
+                  <th>Brand</th>
+                  <th>Product</th>
+                  <th>Merchant</th>
+                  <th>Price Range</th>
+                  <th>Last Reviewed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{product.brand}</td>
+                  <td>{product.name}</td>
+                  <td>{product.merchant}</td>
+                  <td>{product.priceRange}</td>
+                  <td>{product.lastReviewed}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
         <section className="section">
           <div className="content-card">

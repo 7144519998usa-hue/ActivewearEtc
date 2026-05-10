@@ -8,7 +8,7 @@ export default function HubPage({ eyebrow, title, intro, path, items = [], child
     <>
       <JsonLd data={collectionPageSchema({ title, description: intro, path, items })} />
       <main className="page-shell">
-        <section className="section">
+        <section className="section internal-hero">
           <div className="section-heading">
             <span className="eyebrow">{eyebrow}</span>
             <h1>{title}</h1>

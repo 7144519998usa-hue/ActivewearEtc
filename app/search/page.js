@@ -14,10 +14,10 @@ export default function SearchPage({ searchParams }) {
 
   return (
     <main className="page-shell">
-      <section className="section">
+      <section className="section internal-hero search-hero">
         <div className="section-heading">
           <span className="eyebrow">Search</span>
-          <h1>Find activewear guides without digging through the whole site.</h1>
+          <h1>Search activewear by fit, brand, activity, or retailer.</h1>
           <p>
             Search by category, brand, activity, fit concern, budget, retailer, or shopper intent. Results stay on
             ActivewearEtc until merchant affiliate links are approved and clearly disclosed.

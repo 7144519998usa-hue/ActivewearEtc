@@ -7,9 +7,11 @@ export default function ProductComparison({ products }) {
     <div className="grid">
       {products.map((product) => (
         <article className="card product-card" key={product.href}>
-          <div className="product-art" aria-hidden="true" />
+          <div className="product-art" aria-hidden="true">
+            <span>{product.category}</span>
+          </div>
           <div>
-            <span className="eyebrow">{product.badge}</span>
+            <span className="card-kicker">{product.badge}</span>
             <h3>{product.brand} {product.name}</h3>
             <p>{product.bestFor}</p>
             <div className="tag-row">
@@ -18,12 +20,14 @@ export default function ProductComparison({ products }) {
               <span className="tag">{product.merchant}</span>
             </div>
           </div>
-          <AffiliateLink product={product}>
-            {hasLiveAffiliateLink(product) ? `Check ${product.merchant} offer` : "View comparison notes"}
-          </AffiliateLink>
-          <Link href={product.href} className="secondary-button">
-            See details
-          </Link>
+          <div className="product-actions">
+            <AffiliateLink product={product}>
+              {hasLiveAffiliateLink(product) ? `Check ${product.merchant} offer` : "View comparison notes"}
+            </AffiliateLink>
+            <Link href={product.href} className="secondary-button">
+              See details
+            </Link>
+          </div>
         </article>
       ))}
     </div>

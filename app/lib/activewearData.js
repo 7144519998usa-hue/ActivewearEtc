@@ -1611,3 +1611,190 @@ export const allowedTaxonomy = [
   "budget activewear",
   "premium activewear"
 ];
+
+export const searchConsoleOpportunityGuides = [
+  {
+    slug: "adidas-athleisure",
+    title: "Adidas Athleisure",
+    summary: "Compare Adidas athleisure by joggers, hoodies, leggings, sneakers, outfit use, sale timing, and whether each piece works beyond workouts.",
+    href: "/queries/adidas-athleisure",
+    relatedHrefs: ["/brands/adidas", "/styles/athleisure", "/brands/adidas/activities/athleisure"],
+    tags: ["adidas", "athleisure", "brand"]
+  },
+  {
+    slug: "plus-size-running-shorts",
+    title: "Plus-Size Running Shorts",
+    summary: "Compare plus-size running shorts by liner comfort, inseam, waistband stability, thigh coverage, pocket placement, and return-policy flexibility.",
+    href: "/queries/plus-size-running-shorts",
+    relatedHrefs: ["/sizes-fit/plus-size-activewear", "/activities/running/running-shorts", "/best/best-running-shorts-with-pockets"],
+    tags: ["plus size", "running shorts", "fit"]
+  },
+  {
+    slug: "zappos-workout-leggings",
+    title: "Zappos Workout Leggings",
+    summary: "Compare Zappos workout leggings by brand assortment, sizing notes, shipping, returns, activity fit, and current product-page verification.",
+    href: "/queries/zappos-workout-leggings",
+    relatedHrefs: ["/retailers/zappos", "/retailers/zappos/leggings", "/women/leggings"],
+    tags: ["zappos", "leggings", "retailer"]
+  },
+  {
+    slug: "nordstrom-sports-bras",
+    title: "Nordstrom Sports Bras",
+    summary: "Compare Nordstrom sports bras by support level, cup coverage, brand assortment, size availability, return policy, and product-page details.",
+    href: "/queries/nordstrom-sports-bras",
+    relatedHrefs: ["/retailers/nordstrom", "/retailers/nordstrom/sports-bras", "/women/sports-bras"],
+    tags: ["nordstrom", "sports bras", "support"]
+  },
+  {
+    slug: "nordstrom-yoga",
+    title: "Nordstrom Yoga Activewear",
+    summary: "Compare Nordstrom yoga activewear by leggings, bras, soft layers, premium brands, size availability, returns, and studio-to-everyday use.",
+    href: "/queries/nordstrom-yoga",
+    relatedHrefs: ["/retailers/nordstrom", "/retailers/nordstrom/activities/yoga/leggings", "/activities/yoga"],
+    tags: ["nordstrom", "yoga", "retailer"]
+  },
+  {
+    slug: "lululemon-yoga-clothing",
+    title: "lululemon Yoga Clothing",
+    summary: "Compare lululemon yoga clothing by leggings, bras, tops, soft fabrics, fit risk, price range, and retailer verification before buying.",
+    href: "/queries/lululemon-yoga-clothing",
+    relatedHrefs: ["/brands/lululemon", "/brands/lululemon/activities/yoga", "/activities/yoga"],
+    tags: ["lululemon", "yoga", "premium"]
+  },
+  {
+    slug: "lululemon-exercise-tops",
+    title: "lululemon Exercise Tops",
+    summary: "Compare lululemon exercise tops by fabric feel, sweat handling, length, layering, activity match, price, and return-policy checks.",
+    href: "/queries/lululemon-exercise-tops",
+    relatedHrefs: ["/brands/lululemon/workout-tops", "/styles/workout-tops", "/styles/moisture-wicking-clothing"],
+    tags: ["lululemon", "workout tops", "exercise tops"]
+  },
+  {
+    slug: "target-running-shorts",
+    title: "Target Running Shorts",
+    summary: "Compare Target running shorts by budget, liner comfort, pockets, in-store pickup, size availability, return policy, and warm-weather use.",
+    href: "/queries/target-running-shorts",
+    relatedHrefs: ["/retailers/target", "/retailers/target/running-shorts", "/activities/running/running-shorts"],
+    tags: ["target", "running shorts", "budget"]
+  },
+  {
+    slug: "gymshark-flare-leggings",
+    title: "Gymshark Flare Leggings",
+    summary: "Compare Gymshark flare leggings by rise, inseam, fabric feel, lounge-to-gym use, size availability, opacity risk, and return policy.",
+    href: "/queries/gymshark-flare-leggings",
+    relatedHrefs: ["/brands/gymshark", "/features/flare-leggings", "/brands/gymshark/leggings"],
+    tags: ["gymshark", "flare leggings", "fit"]
+  },
+  {
+    slug: "compression-pants-vs-leggings",
+    title: "Compression Pants vs Leggings",
+    summary: "Compare compression pants and leggings by fit pressure, warmth, opacity, movement, yoga use, gym use, and everyday comfort.",
+    href: "/queries/compression-pants-vs-leggings",
+    relatedHrefs: ["/compare/compression-leggings-vs-yoga-leggings", "/styles/compression-wear", "/women/leggings"],
+    tags: ["compression", "leggings", "comparison"]
+  },
+  {
+    slug: "zappos-joggers",
+    title: "Zappos Joggers",
+    summary: "Compare Zappos joggers by brand assortment, fit notes, pocket design, fabric weight, shipping, returns, and active-to-casual use.",
+    href: "/queries/zappos-joggers",
+    relatedHrefs: ["/retailers/zappos", "/retailers/zappos/joggers", "/styles/joggers"],
+    tags: ["zappos", "joggers", "retailer"]
+  },
+  {
+    slug: "lululemon-leggings-amazon",
+    title: "lululemon Leggings on Amazon",
+    summary: "Research lululemon leggings on Amazon carefully by seller identity, authenticity risk, return terms, product images, price checks, and safer retailer alternatives.",
+    href: "/queries/lululemon-leggings-amazon",
+    relatedHrefs: ["/retailers/amazon/brands/lululemon/leggings", "/brands/lululemon/leggings", "/about/price-and-availability"],
+    tags: ["lululemon", "amazon", "seller checks"]
+  },
+  {
+    slug: "lululemon-at-walmart",
+    title: "lululemon at Walmart",
+    summary: "Research lululemon at Walmart by marketplace seller checks, product-page details, return policy, image limitations, price verification, and brand-authorized alternatives.",
+    href: "/queries/lululemon-at-walmart",
+    relatedHrefs: ["/retailers/walmart/brands/lululemon/leggings", "/brands/lululemon", "/about/editorial-policy"],
+    tags: ["lululemon", "walmart", "marketplace"]
+  },
+  {
+    slug: "does-nordstrom-sell-lululemon",
+    title: "Does Nordstrom Sell lululemon?",
+    summary: "Check whether Nordstrom sells lululemon by reviewing current retailer assortment, brand availability, alternatives, return terms, and product-page verification.",
+    href: "/queries/does-nordstrom-sell-lululemon",
+    relatedHrefs: ["/retailers/nordstrom/brands/lululemon/leggings", "/retailers/nordstrom", "/brands/lululemon"],
+    tags: ["nordstrom", "lululemon", "retailer research"]
+  },
+  {
+    slug: "best-activewear-brands-men",
+    title: "Best Activewear Brands for Men",
+    summary: "Compare activewear brands for men by joggers, workout tops, training shoes, gym use, athleisure, size range, price, and return policy.",
+    href: "/queries/best-activewear-brands-men",
+    relatedHrefs: ["/men", "/brands", "/best/best-joggers-for-men"],
+    tags: ["men", "brands", "activewear"]
+  },
+  {
+    slug: "yoga-compression-leggings",
+    title: "Yoga Compression Leggings",
+    summary: "Compare yoga compression leggings by pressure level, softness, stretch, waistband feel, opacity, studio comfort, and return-policy risk.",
+    href: "/queries/yoga-compression-leggings",
+    relatedHrefs: ["/compare/compression-leggings-vs-yoga-leggings", "/activities/yoga/leggings", "/styles/compression-wear"],
+    tags: ["yoga", "compression", "leggings"]
+  },
+  {
+    slug: "beginner-guide-to-training-shoes",
+    title: "Beginner Guide to Training Shoes",
+    summary: "Compare beginner training shoes by stability, cushioning, grip, lateral support, gym use, running limits, and return-policy checks.",
+    href: "/queries/beginner-guide-to-training-shoes",
+    relatedHrefs: ["/activities/gym/training-shoes", "/compare/running-shoes-vs-training-shoes", "/best/best-gym-clothes-for-beginners"],
+    tags: ["training shoes", "beginner", "gym"]
+  },
+  {
+    slug: "most-comfortable-yoga-leggings",
+    title: "Most Comfortable Yoga Leggings",
+    summary: "Compare comfortable yoga leggings by softness, waistband feel, stretch, seams, opacity, care needs, and studio-to-everyday versatility.",
+    href: "/queries/most-comfortable-yoga-leggings",
+    relatedHrefs: ["/best/best-yoga-leggings", "/activities/yoga/leggings", "/women/leggings"],
+    tags: ["comfort", "yoga", "leggings"]
+  },
+  {
+    slug: "nike-flare-leggings",
+    title: "Nike Flare Leggings",
+    summary: "Compare Nike flare leggings by rise, inseam, fabric feel, styling range, activity use, size availability, and current retailer checks.",
+    href: "/queries/nike-flare-leggings",
+    relatedHrefs: ["/brands/nike/leggings", "/features/flare-leggings", "/retailers/amazon/brands/nike/features/leggings/flare"],
+    tags: ["nike", "flare leggings", "style"]
+  },
+  {
+    slug: "best-yoga-leggings-brands",
+    title: "Best Yoga Leggings Brands",
+    summary: "Compare yoga leggings brands by fabric feel, waistband comfort, opacity, size range, price, return policy, and retailer availability.",
+    href: "/queries/best-yoga-leggings-brands",
+    relatedHrefs: ["/best/best-yoga-leggings", "/brands", "/activities/yoga/leggings"],
+    tags: ["yoga", "leggings", "brands"]
+  },
+  {
+    slug: "pilly-leggings",
+    title: "Pilly Leggings",
+    summary: "Research pilly leggings by fabric surface, friction zones, washing habits, activity match, return policy, and whether pilling is a product-risk signal.",
+    href: "/queries/pilly-leggings",
+    relatedHrefs: ["/concerns/leggings-pilling", "/care/washing-leggings", "/about/editorial-policy"],
+    tags: ["pilling", "leggings", "care"]
+  },
+  {
+    slug: "good-yoga-leggings",
+    title: "Good Yoga Leggings",
+    summary: "Compare good yoga leggings by softness, stretch, waistband comfort, opacity, care needs, price range, and return-policy flexibility.",
+    href: "/queries/good-yoga-leggings",
+    relatedHrefs: ["/best/best-yoga-leggings", "/activities/yoga/leggings", "/women/leggings"],
+    tags: ["yoga", "leggings", "comfort"]
+  },
+  {
+    slug: "best-mens-workout-joggers",
+    title: "Best Men's Workout Joggers",
+    summary: "Compare men's workout joggers by taper, pocket layout, fabric weight, mobility, gym use, travel use, and return policy.",
+    href: "/queries/best-mens-workout-joggers",
+    relatedHrefs: ["/best/best-joggers-for-men", "/men", "/styles/joggers"],
+    tags: ["men", "joggers", "workout"]
+  }
+];
