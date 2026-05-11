@@ -18,7 +18,7 @@ export function generateMetadata({ params }) {
   return product
     ? {
         title: `${product.brand} ${product.name}`,
-        description: `${product.brand} ${product.name} comparison page with visible price range, use case, and retailer disclosure.`,
+        description: `${product.brand} ${product.name} shopping guide with use-case notes and a current Amazon price check link.`,
         alternates: { canonical: product.href }
       }
     : {};
@@ -42,7 +42,7 @@ export default function ProductPage({ params }) {
             <div className="button-row">
               <AffiliateLink product={product} />
               <a className="secondary-button" href="/about/price-and-availability">
-                Price disclaimer
+                Price and availability
               </a>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function ProductPage({ params }) {
                   <th>Product</th>
                   <th>Merchant</th>
                   <th>Price</th>
-                  <th>Last Reviewed</th>
+                  <th>Last checked</th>
                 </tr>
               </thead>
               <tbody>

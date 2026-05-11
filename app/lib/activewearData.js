@@ -336,7 +336,7 @@ const featuredAmazonProducts = [
     name: "One High-Waisted Leggings",
     category: "Leggings",
     bestFor: "Training and everyday workouts",
-    priceRange: "Verify on Amazon",
+    priceRange: "Check current Amazon price",
     badge: "Versatile Pick",
     href: "/product/nike/one-high-waisted-leggings",
     merchant: "Amazon",
@@ -352,7 +352,7 @@ const featuredAmazonProducts = [
     name: "Align High-Rise Pant",
     category: "Yoga Wear",
     bestFor: "Studio and low-impact movement",
-    priceRange: "Verify on Amazon",
+    priceRange: "Check current Amazon price",
     badge: "Soft Feel",
     href: "/product/lululemon/align-high-rise-pant",
     merchant: "Amazon",
@@ -368,7 +368,7 @@ const featuredAmazonProducts = [
     name: "Ultimate Running Shorts",
     category: "Running Shorts",
     bestFor: "Warm-weather running",
-    priceRange: "Verify on Amazon",
+    priceRange: "Check current Amazon price",
     badge: "Runner Focus",
     href: "/product/adidas/ultimate-running-shorts",
     merchant: "Amazon",
@@ -405,10 +405,10 @@ const amazonProductBrands = [
 ];
 
 const amazonProductModifiers = [
-  { slug: "for-running", name: "for Running", badge: "Running Search", bestFor: "Running and cardio shopping research" },
-  { slug: "for-yoga", name: "for Yoga", badge: "Studio Search", bestFor: "Yoga, pilates, and studio shopping research" },
-  { slug: "for-gym", name: "for Gym Workouts", badge: "Gym Search", bestFor: "Training, lifting, and gym shopping research" },
-  { slug: "for-everyday", name: "for Everyday Athleisure", badge: "Everyday Search", bestFor: "Athleisure, errands, travel, and daily wear research" }
+  { slug: "for-running", name: "for Running", badge: "Running Picks", bestFor: "Running and cardio shopping" },
+  { slug: "for-yoga", name: "for Yoga", badge: "Studio Picks", bestFor: "Yoga, pilates, and studio movement" },
+  { slug: "for-gym", name: "for Gym Workouts", badge: "Gym Picks", bestFor: "Training, lifting, and gym sessions" },
+  { slug: "for-everyday", name: "for Everyday Athleisure", badge: "Everyday Picks", bestFor: "Athleisure, errands, travel, and daily wear" }
 ];
 
 const generatedAmazonProductTargets = amazonProductBrands
@@ -423,7 +423,7 @@ const generatedAmazonProductTargets = amazonProductBrands
           name,
           category: category.name,
           bestFor: modifier.bestFor,
-          priceRange: "Verify on Amazon",
+          priceRange: "Check current Amazon price",
           badge: modifier.badge,
           href: `/product/${brand.slug}/${toSlug(`${name} amazon options`)}`,
           merchant: "Amazon",

@@ -7,14 +7,14 @@ export default function AffiliateLink({ product, children, className = "primary-
   if (!affiliateUrl) {
     return (
       <Link href={product.href} className={className}>
-        {children || "View comparison notes"}
+        {children || "View buying guide"}
       </Link>
     );
   }
 
   return (
     <a className={className} href={affiliateUrl} rel="sponsored nofollow noopener" target="_blank">
-      {children || `View ${product.merchant || "merchant"} options`}
+      {children || `Shop ${product.merchant || "merchant"}`}
     </a>
   );
 }

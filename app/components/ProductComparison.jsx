@@ -24,7 +24,7 @@ export default function ProductComparison({ products, maxItems = 6 }) {
           </div>
           <div className="product-actions">
             <AffiliateLink product={product}>
-              {hasLiveAffiliateLink(product) ? `View ${product.merchant} options` : "View comparison notes"}
+              {hasLiveAffiliateLink(product) ? `Shop ${product.merchant}` : "View buying guide"}
             </AffiliateLink>
             <Link href={product.href} className="secondary-button">
               See details
