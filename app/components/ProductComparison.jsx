@@ -22,7 +22,7 @@ export default function ProductComparison({ products }) {
           </div>
           <div className="product-actions">
             <AffiliateLink product={product}>
-              {hasLiveAffiliateLink(product) ? `Check ${product.merchant} offer` : "View comparison notes"}
+              {hasLiveAffiliateLink(product) ? `View ${product.merchant} options` : "View comparison notes"}
             </AffiliateLink>
             <Link href={product.href} className="secondary-button">
               See details

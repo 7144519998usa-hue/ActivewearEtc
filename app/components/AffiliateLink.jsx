@@ -14,7 +14,7 @@ export default function AffiliateLink({ product, children, className = "primary-
 
   return (
     <a className={className} href={affiliateUrl} rel="sponsored nofollow noopener" target="_blank">
-      {children || `Check ${product.merchant || "merchant"} offer`}
+      {children || `View ${product.merchant || "merchant"} options`}
     </a>
   );
 }
