@@ -321,7 +321,16 @@ export const retailerBrandActivityCategoryGuides = retailerHubs.flatMap((retaile
   });
 });
 
-export const sampleProducts = [
+const toSlug = (value) =>
+  value
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const makeAmazonSearchUrl = (query) => `https://www.amazon.com/s?k=${encodeURIComponent(query).replace(/%20/g, "+")}`;
+
+const featuredAmazonProducts = [
   {
     brand: "Nike",
     name: "One High-Waisted Leggings",
@@ -371,6 +380,67 @@ export const sampleProducts = [
     reviewPolicy: "Comparison notes are based on shopper-visible product details."
   }
 ];
+
+const amazonProductBrands = [
+  { slug: "nike", name: "Nike" },
+  { slug: "adidas", name: "Adidas" },
+  { slug: "lululemon", name: "lululemon" },
+  { slug: "gymshark", name: "Gymshark" },
+  { slug: "under-armour", name: "Under Armour" },
+  { slug: "reebok", name: "Reebok" },
+  { slug: "puma", name: "Puma" },
+  { slug: "new-balance", name: "New Balance" },
+  { slug: "asics", name: "ASICS" },
+  { slug: "brooks", name: "Brooks" },
+  { slug: "baleaf", name: "BALEAF" },
+  { slug: "crz-yoga", name: "CRZ YOGA" },
+  { slug: "fabletics", name: "Fabletics" },
+  { slug: "alo-yoga", name: "Alo Yoga" },
+  { slug: "vuori", name: "Vuori" },
+  { slug: "beyond-yoga", name: "Beyond Yoga" },
+  { slug: "athleta", name: "Athleta" },
+  { slug: "90-degree-by-reflex", name: "90 Degree By Reflex" },
+  { slug: "champion", name: "Champion" },
+  { slug: "columbia", name: "Columbia" }
+];
+
+const amazonProductModifiers = [
+  { slug: "for-running", name: "for Running", badge: "Running Search", bestFor: "Running and cardio shopping research" },
+  { slug: "for-yoga", name: "for Yoga", badge: "Studio Search", bestFor: "Yoga, pilates, and studio shopping research" },
+  { slug: "for-gym", name: "for Gym Workouts", badge: "Gym Search", bestFor: "Training, lifting, and gym shopping research" },
+  { slug: "for-everyday", name: "for Everyday Athleisure", badge: "Everyday Search", bestFor: "Athleisure, errands, travel, and daily wear research" }
+];
+
+const generatedAmazonProductTargets = amazonProductBrands
+  .flatMap((brand) =>
+    categories.flatMap((category) =>
+      amazonProductModifiers.map((modifier) => {
+        const name = `${category.name} ${modifier.name}`;
+        const query = `${brand.name} ${category.name} ${modifier.name}`;
+
+        return {
+          brand: brand.name,
+          name,
+          category: category.name,
+          bestFor: modifier.bestFor,
+          priceRange: "Verify on Amazon",
+          badge: modifier.badge,
+          href: `/product/${brand.slug}/${toSlug(`${name} amazon options`)}`,
+          merchant: "Amazon",
+          merchantUrl: makeAmazonSearchUrl(query),
+          linkStatus: "affiliate-click-ready",
+          lastReviewed: "2026-05-10",
+          imageSource: "Brand-neutral placeholder art",
+          imageAttribution: "Product images should come from approved merchant or affiliate sources.",
+          reviewPolicy: "Comparison notes are based on shopper-visible product details."
+        };
+      })
+    )
+  )
+  .filter((product) => !featuredAmazonProducts.some((featured) => featured.href === product.href))
+  .slice(0, 997);
+
+export const sampleProducts = [...featuredAmazonProducts, ...generatedAmazonProductTargets];
 
 export const shoppingGuides = [
   {

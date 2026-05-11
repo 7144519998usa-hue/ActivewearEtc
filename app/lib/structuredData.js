@@ -37,7 +37,7 @@ export function productSchema(product) {
     url: `${siteConfig.siteUrl}${product.href}`
   };
 
-  if (product.merchantUrl) {
+  if (product.exactOfferUrl) {
     schema.offers = {
       "@type": "AggregateOffer",
       priceCurrency: "USD",

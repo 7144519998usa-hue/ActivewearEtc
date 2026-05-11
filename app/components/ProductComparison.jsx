@@ -2,10 +2,12 @@ import Link from "next/link";
 import AffiliateLink from "./AffiliateLink";
 import { hasLiveAffiliateLink } from "../lib/affiliateLinks";
 
-export default function ProductComparison({ products }) {
+export default function ProductComparison({ products, maxItems = 6 }) {
+  const visibleProducts = products.slice(0, maxItems);
+
   return (
     <div className="grid">
-      {products.map((product) => (
+      {visibleProducts.map((product) => (
         <article className="card product-card" key={product.href}>
           <div className="product-art" aria-hidden="true">
             <span>{product.category}</span>
