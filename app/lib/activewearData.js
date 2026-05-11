@@ -335,8 +335,8 @@ export const sampleProducts = [
     linkStatus: "affiliate-click-ready",
     lastReviewed: "2026-05-10",
     imageSource: "Brand-neutral placeholder art",
-    imageAttribution: "No merchant product image is used until an approved image source is available.",
-    reviewPolicy: "Editorial comparison only; no hands-on review or performance claim is implied."
+    imageAttribution: "Product images should come from approved merchant or affiliate sources.",
+    reviewPolicy: "Comparison notes are based on shopper-visible product details."
   },
   {
     brand: "lululemon",
@@ -351,8 +351,8 @@ export const sampleProducts = [
     linkStatus: "pending-affiliate-approval",
     lastReviewed: "2026-05-09",
     imageSource: "Brand-neutral placeholder art",
-    imageAttribution: "No merchant product image is used until an approved image source is available.",
-    reviewPolicy: "Editorial comparison only; no hands-on review or performance claim is implied."
+    imageAttribution: "Product images should come from approved merchant or affiliate sources.",
+    reviewPolicy: "Comparison notes are based on shopper-visible product details."
   },
   {
     brand: "Adidas",
@@ -367,8 +367,8 @@ export const sampleProducts = [
     linkStatus: "affiliate-click-ready",
     lastReviewed: "2026-05-10",
     imageSource: "Brand-neutral placeholder art",
-    imageAttribution: "No merchant product image is used until an approved image source is available.",
-    reviewPolicy: "Editorial comparison only; no hands-on review or performance claim is implied."
+    imageAttribution: "Product images should come from approved merchant or affiliate sources.",
+    reviewPolicy: "Comparison notes are based on shopper-visible product details."
   }
 ];
 

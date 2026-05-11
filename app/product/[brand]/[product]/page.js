@@ -56,7 +56,7 @@ export default function ProductPage({ params }) {
                   <th>Brand</th>
                   <th>Product</th>
                   <th>Merchant</th>
-                  <th>Price Range</th>
+                  <th>Price</th>
                   <th>Last Reviewed</th>
                 </tr>
               </thead>
@@ -74,13 +74,12 @@ export default function ProductPage({ params }) {
         </section>
         <section className="section">
           <div className="content-card">
-            <h2>Product and affiliate guardrails</h2>
-            <p>{product.reviewPolicy}</p>
-            <p>{product.imageAttribution}</p>
+            <h2>Before you buy</h2>
             <p>
-              Prices, availability, sizes, colors, shipping, and returns can change. Verify every detail on the merchant
-              site before buying.
+              We link you to the merchant so you can check the current price, available sizes, colors, shipping, and
+              return details directly before buying.
             </p>
+            <p>ActivewearEtc may earn a commission if you click a merchant link and make a purchase.</p>
           </div>
         </section>
         <section className="section">
