@@ -611,6 +611,7 @@ p {
 }
 
 .product-art {
+  position: relative;
   display: flex;
   align-items: flex-end;
   min-height: 180px;
@@ -623,7 +624,25 @@ p {
   padding: 16px;
 }
 
+.product-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgba(18, 19, 16, 0.42));
+  pointer-events: none;
+}
+
+.product-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .product-art span {
+  position: relative;
+  z-index: 1;
   border-radius: 999px;
   background: rgba(255, 250, 241, 0.9);
   color: var(--charcoal);

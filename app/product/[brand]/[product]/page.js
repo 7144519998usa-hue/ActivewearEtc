@@ -47,7 +47,16 @@ export default function ProductPage({ params }) {
             </div>
           </div>
           <div className="product-summary-panel">
-            <div className="product-art product-art-large" aria-hidden="true">
+            <div className="product-art product-art-large">
+              {product.imageUrl ? (
+                <img
+                  alt={product.imageAlt || `${product.brand} ${product.name}`}
+                  className="product-image"
+                  decoding="async"
+                  loading="eager"
+                  src={product.imageUrl}
+                />
+              ) : null}
               <span>{product.badge}</span>
             </div>
             <table className="compare-table">

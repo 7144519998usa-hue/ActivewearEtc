@@ -343,6 +343,9 @@ const featuredAmazonProducts = [
     merchantUrl: "https://www.amazon.com/s?k=Nike+One+High-Waisted+Leggings",
     linkStatus: "affiliate-click-ready",
     lastReviewed: "2026-05-10",
+    asin: "",
+    imageUrl: "",
+    imageAlt: "Nike women's high-waisted leggings available on Amazon",
     imageSource: "Brand-neutral placeholder art",
     imageAttribution: "Product images should come from approved merchant or affiliate sources.",
     reviewPolicy: "Comparison notes are based on shopper-visible product details."
@@ -359,6 +362,9 @@ const featuredAmazonProducts = [
     merchantUrl: "https://www.amazon.com/s?k=lululemon+Align+High-Rise+Pant",
     linkStatus: "affiliate-click-ready",
     lastReviewed: "2026-05-10",
+    asin: "",
+    imageUrl: "",
+    imageAlt: "lululemon Align High-Rise Pant available on Amazon",
     imageSource: "Brand-neutral placeholder art",
     imageAttribution: "Product images should come from approved merchant or affiliate sources.",
     reviewPolicy: "Comparison notes are based on shopper-visible product details."
@@ -375,6 +381,9 @@ const featuredAmazonProducts = [
     merchantUrl: "https://www.amazon.com/s?k=Adidas+Ultimate+Running+Shorts",
     linkStatus: "affiliate-click-ready",
     lastReviewed: "2026-05-10",
+    asin: "",
+    imageUrl: "",
+    imageAlt: "Adidas running shorts available on Amazon",
     imageSource: "Brand-neutral placeholder art",
     imageAttribution: "Product images should come from approved merchant or affiliate sources.",
     reviewPolicy: "Comparison notes are based on shopper-visible product details."
@@ -450,6 +459,9 @@ const generatedAmazonProductTargets = amazonProductBrands
           merchantUrl: makeAmazonSearchUrl(query),
           linkStatus: "affiliate-click-ready",
           lastReviewed: "2026-05-10",
+          asin: "",
+          imageUrl: "",
+          imageAlt: `${brand.name} ${name} available on Amazon`,
           imageSource: "Brand-neutral placeholder art",
           imageAttribution: "Product images should come from approved merchant or affiliate sources.",
           reviewPolicy: "Comparison notes are based on shopper-visible product details."

@@ -9,7 +9,16 @@ export default function ProductComparison({ products, maxItems = 6 }) {
     <div className="grid">
       {visibleProducts.map((product) => (
         <article className="card product-card" key={product.href}>
-          <div className="product-art" aria-hidden="true">
+          <div className="product-art">
+            {product.imageUrl ? (
+              <img
+                alt={product.imageAlt || `${product.brand} ${product.name}`}
+                className="product-image"
+                decoding="async"
+                loading="lazy"
+                src={product.imageUrl}
+              />
+            ) : null}
             <span>{product.category}</span>
           </div>
           <div>
