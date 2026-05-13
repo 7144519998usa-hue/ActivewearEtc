@@ -2,6 +2,7 @@ import CategoryGrid from "./components/CategoryGrid";
 import DisclosureNotice from "./components/DisclosureNotice";
 import ProductComparison from "./components/ProductComparison";
 import JsonLd from "./components/JsonLd";
+import AmazonActivewearHeroSlider from "../components/home/AmazonActivewearHeroSlider";
 import { activityHubs, brandHubs, categories, editorialHubs, retailerHubs, sampleProducts } from "./lib/activewearData";
 import { collectionPageSchema } from "./lib/structuredData";
 
@@ -23,38 +24,8 @@ export default function HomePage() {
           items: categories.slice(0, 8)
         })}
       />
+      <AmazonActivewearHeroSlider />
       <main className="page-shell">
-        <section className="hero">
-          <div className="hero-content">
-            <span className="eyebrow">Activewear discovery</span>
-            <h1>Find the activewear that actually fits the workout.</h1>
-            <p>
-              Compare activewear by fit, fabric, support, style, activity, and budget before you click through to a retailer.
-            </p>
-            <div className="hero-actions">
-              <a className="primary-button" href="/women">Shop Women's Activewear</a>
-              <a className="secondary-button" href="/compare">Compare Top Picks</a>
-            </div>
-            <div className="hero-chips" aria-label="Popular shopping paths">
-              <a href="/search?q=leggings">Leggings</a>
-              <a href="/search?q=sports bras">Sports bras</a>
-              <a href="/search?q=running shorts">Running shorts</a>
-            </div>
-          </div>
-          <div className="hero-visual" aria-hidden="true">
-            <div className="motion-card motion-card-main">
-              <span>Fit Match</span>
-              <strong>Yoga, gym, run</strong>
-            </div>
-            <div className="motion-orb motion-orb-one" />
-            <div className="motion-orb motion-orb-two" />
-            <div className="motion-card motion-card-small">
-              <span>Compare</span>
-              <strong>Support + fabric</strong>
-            </div>
-          </div>
-        </section>
-
         <section className="section section-tight">
           <div className="trust-strip">
             <span>No fake reviews</span>

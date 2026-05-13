@@ -408,12 +408,32 @@ const amazonProductModifiers = [
   { slug: "for-running", name: "for Running", badge: "Running Picks", bestFor: "Running and cardio shopping" },
   { slug: "for-yoga", name: "for Yoga", badge: "Studio Picks", bestFor: "Yoga, pilates, and studio movement" },
   { slug: "for-gym", name: "for Gym Workouts", badge: "Gym Picks", bestFor: "Training, lifting, and gym sessions" },
-  { slug: "for-everyday", name: "for Everyday Athleisure", badge: "Everyday Picks", bestFor: "Athleisure, errands, travel, and daily wear" }
+  { slug: "for-everyday", name: "for Everyday Athleisure", badge: "Everyday Picks", bestFor: "Athleisure, errands, travel, and daily wear" },
+  { slug: "with-pockets", name: "with Pockets", badge: "Pocket Picks", bestFor: "Phone, key, and card storage while moving" },
+  { slug: "high-waisted", name: "High-Waisted", badge: "High-Rise Picks", bestFor: "Secure coverage for training and daily wear" },
+  { slug: "moisture-wicking", name: "Moisture-Wicking", badge: "Sweat-Friendly Picks", bestFor: "High-sweat workouts and warm-weather movement" },
+  { slug: "lightweight", name: "Lightweight", badge: "Lightweight Picks", bestFor: "Breathable comfort for warm days and travel" },
+  { slug: "compression", name: "Compression", badge: "Compression Picks", bestFor: "Supportive fits for training and layering" },
+  { slug: "plus-size", name: "Plus-Size", badge: "Size-Inclusive Picks", bestFor: "Extended-size shopping and fit comparison" },
+  { slug: "mens", name: "Men's", badge: "Men's Picks", bestFor: "Men's training, running, and athleisure shopping" },
+  { slug: "womens", name: "Women's", badge: "Women's Picks", bestFor: "Women's training, running, studio, and athleisure shopping" },
+  { slug: "budget", name: "Budget-Friendly", badge: "Budget Picks", bestFor: "Value-focused shopping with current price checks" }
+];
+
+const amazonProductCategories = [
+  ...categories.map((category) => ({ slug: category.slug, name: category.name })),
+  { slug: "plus-size-activewear", name: "Plus-Size Activewear" },
+  { slug: "mens-activewear", name: "Men's Activewear" },
+  { slug: "womens-activewear", name: "Women's Activewear" },
+  { slug: "moisture-wicking-clothing", name: "Moisture-Wicking Clothing" },
+  { slug: "sustainable-activewear", name: "Sustainable Activewear" },
+  { slug: "budget-activewear", name: "Budget Activewear" },
+  { slug: "premium-activewear", name: "Premium Activewear" }
 ];
 
 const generatedAmazonProductTargets = amazonProductBrands
   .flatMap((brand) =>
-    categories.flatMap((category) =>
+    amazonProductCategories.flatMap((category) =>
       amazonProductModifiers.map((modifier) => {
         const name = `${category.name} ${modifier.name}`;
         const query = `${brand.name} ${category.name} ${modifier.name}`;
@@ -438,7 +458,7 @@ const generatedAmazonProductTargets = amazonProductBrands
     )
   )
   .filter((product) => !featuredAmazonProducts.some((featured) => featured.href === product.href))
-  .slice(0, 997);
+  .slice(0, 4997);
 
 export const sampleProducts = [...featuredAmazonProducts, ...generatedAmazonProductTargets];
 
