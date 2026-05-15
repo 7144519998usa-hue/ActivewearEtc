@@ -34,6 +34,9 @@ const corePages = [
   "/terms"
 ];
 
+const PRODUCT_SITEMAP_LIMIT = 250;
+const productSitemapPaths = sampleProducts.slice(0, PRODUCT_SITEMAP_LIMIT).map((item) => item.href);
+
 export const sitemapSections = [
   { slug: "core-pages", paths: corePages },
   { slug: "category-pages", paths: categories.map((item) => item.href) },
@@ -77,7 +80,7 @@ export const sitemapSections = [
   { slug: "comparison-pages", paths: comparisonGuides.map((item) => `/compare/${item.slug}`) },
   { slug: "category-comparison-pages", paths: categoryComparisonGuides.map((item) => item.href) },
   { slug: "retailer-comparison-pages", paths: retailerComparisonGuides.map((item) => item.href) },
-  { slug: "product-pages", paths: sampleProducts.map((item) => item.href) }
+  { slug: "product-pages", paths: productSitemapPaths }
 ];
 
 export function makeSitemapEntry(path) {
