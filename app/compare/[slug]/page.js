@@ -80,13 +80,14 @@ export default function ComparisonPage({ params }) {
           </p>
         </div>
         <div className="grid">
-          {comparison.tags.map((tag) => (
-            <article className="card" key={tag}>
-              <span className="eyebrow">{tag}</span>
-              <h3>{tag}</h3>
-              <p>
-                Check this signal against the workout, fit preference, and return window before choosing a retailer path.
-              </p>
+          {(comparison.decisionCards || comparison.tags.map((tag) => ({
+            title: tag,
+            body: "Check this signal against the workout, fit preference, and return window before choosing a retailer path."
+          }))).map((card) => (
+            <article className="card" key={card.title}>
+              <span className="eyebrow">{comparison.tags[0]}</span>
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
             </article>
           ))}
         </div>

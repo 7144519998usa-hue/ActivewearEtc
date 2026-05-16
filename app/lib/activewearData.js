@@ -647,6 +647,87 @@ export const shoppingGuides = [
 
 export const comparisonGuides = [
   {
+    slug: "adidas-vs-lululemon-yoga-clothing-comparison",
+    title: "Adidas vs lululemon Yoga Clothing Comparison",
+    summary: "Compare Adidas and lululemon yoga clothing by fabric feel, studio comfort, price expectations, size range, return checks, and everyday wear before choosing a shopping path.",
+    tags: ["Adidas", "lululemon", "yoga clothing", "comparison"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
+      "/compare/adidas-vs-lululemon-yoga-pants-comparison",
+      "/brands/adidas",
+      "/brands/lululemon",
+      "/activities/yoga"
+    ],
+    decisionCards: [
+      {
+        title: "Choose Adidas if you want sport-first yoga pieces",
+        body: "Adidas is usually the better starting point when you want yoga clothes that can also handle warmups, gym days, walking, and athleisure without feeling too studio-specific."
+      },
+      {
+        title: "Choose lululemon if soft studio feel matters most",
+        body: "lululemon is the stronger research lane when your priority is soft handfeel, premium yoga silhouettes, and pieces designed around studio movement and low-impact comfort."
+      },
+      {
+        title: "Compare final details before buying",
+        body: "Check current fabric notes, inseam, rise, size chart, return policy, seller details, and color availability on the retailer page because product details can change."
+      }
+    ]
+  },
+  {
+    slug: "adidas-vs-lululemon-yoga-pants-comparison",
+    title: "Adidas vs lululemon Yoga Pants Comparison",
+    summary: "Compare Adidas and lululemon yoga pants by rise, waistband feel, stretch, opacity, studio comfort, everyday wear, price checks, and return policy.",
+    tags: ["Adidas", "lululemon", "yoga pants", "leggings"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
+      "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
+      "/compare/adidas-vs-lululemon-leggings",
+      "/brands/adidas/leggings",
+      "/brands/lululemon/leggings"
+    ],
+    decisionCards: [
+      {
+        title: "For training crossover, start with Adidas",
+        body: "Adidas yoga pants are worth comparing when you want a more athletic look, sport-brand styling, and pieces that may work beyond yoga for gym warmups or casual movement."
+      },
+      {
+        title: "For studio softness, start with lululemon",
+        body: "lululemon yoga pants are often researched for soft fabrics, high-rise fits, and studio-friendly comfort, but shoppers should still verify fabric, inseam, and return terms."
+      },
+      {
+        title: "Do not rely on brand alone",
+        body: "The better choice depends on waistband security, opacity, size availability, care instructions, and whether the product page matches your exact workout use."
+      }
+    ]
+  },
+  {
+    slug: "adidas-vs-lululemon-yoga-leggings-comparison",
+    title: "Adidas vs lululemon Yoga Leggings Comparison",
+    summary: "Compare Adidas and lululemon yoga leggings by softness, stretch, waistband security, opacity, size range, price checks, and studio-to-everyday use.",
+    tags: ["Adidas", "lululemon", "yoga leggings", "best yoga leggings"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-pants-comparison",
+      "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
+      "/best/best-yoga-leggings",
+      "/women/leggings",
+      "/activities/yoga"
+    ],
+    decisionCards: [
+      {
+        title: "Adidas yoga leggings lean sport-casual",
+        body: "Use Adidas as the comparison lane when you want yoga leggings that can fit a sportier wardrobe and may cross over into training, walking, or casual athleisure."
+      },
+      {
+        title: "lululemon yoga leggings lean studio-premium",
+        body: "Use lululemon as the comparison lane when the main priority is soft studio feel, high-rise comfort, and premium yoga-focused silhouettes."
+      },
+      {
+        title: "Check opacity, rise, and fabric every time",
+        body: "Before buying, verify current product details on the merchant page, especially opacity notes, fabric blend, inseam, color availability, and return options."
+      }
+    ]
+  },
+  {
     slug: "lululemon-vs-gymshark",
     title: "lululemon vs Gymshark",
     summary: "Compare lululemon and Gymshark by fit, fabric feel, training use, price range, and return policy before choosing a brand lane.",
