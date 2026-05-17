@@ -13,10 +13,10 @@ export const homepageActivewearSlides = [
     title: "Activewear that looks as good as it moves.",
     subtitle: "Shop polished leggings, sets, and training layers for everyday momentum.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/4998817/pexels-photo-4998817.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("premium womens workout leggings"),
     brand: "Premium activewear",
-    alt: "Bright studio activewear training scene",
+    alt: "Woman in white activewear practicing yoga in a bright studio",
     cta: "Shop on Amazon"
   },
   {
@@ -24,10 +24,10 @@ export const homepageActivewearSlides = [
     title: "Clean studio fits for yoga, barre, and Pilates.",
     subtitle: "Soft colors, easy stretch, and low-impact essentials for calm movement.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/8483424/pexels-photo-8483424.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("premium yoga wear women"),
     brand: "Yoga wear",
-    alt: "Light yoga studio activewear scene",
+    alt: "Women in neutral activewear in a calm yoga studio",
     cta: "Shop on Amazon"
   },
   {
@@ -38,7 +38,7 @@ export const homepageActivewearSlides = [
     imageUrl: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1800&q=86",
     affiliateUrl: amazonSearchUrl("running apparel women activewear"),
     brand: "Running apparel",
-    alt: "Runner in light outdoor activewear",
+    alt: "Woman wearing bright leggings and running shoes outdoors",
     cta: "Shop on Amazon"
   },
   {
@@ -46,10 +46,10 @@ export const homepageActivewearSlides = [
     title: "Training staples with a sharper finish.",
     subtitle: "Find tops, bras, shorts, and layers that keep the gym outfit pulled together.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/19659197/pexels-photo-19659197.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("womens gym clothes matching activewear"),
     brand: "Gym clothes",
-    alt: "Premium gym activewear training scene",
+    alt: "Woman in stylish activewear sitting near dumbbells in a gym",
     cta: "Shop on Amazon"
   },
   {
@@ -57,10 +57,10 @@ export const homepageActivewearSlides = [
     title: "Build a workout wardrobe that feels intentional.",
     subtitle: "Compare neutral layers, compression fits, and comfortable basics in one place.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/9004766/pexels-photo-9004766.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("premium activewear women"),
     brand: "Workout wardrobe",
-    alt: "Light-toned activewear workout essentials",
+    alt: "Smiling woman in activewear sitting on a yoga mat indoors",
     cta: "Shop on Amazon"
   },
   {
@@ -68,10 +68,10 @@ export const homepageActivewearSlides = [
     title: "Strength-day outfits with clean structure.",
     subtitle: "Shop supportive bras, breathable tops, leggings, and gym-ready layers.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/13978142/pexels-photo-13978142.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("womens strength training activewear"),
     brand: "Strength training",
-    alt: "Strength training activewear in a bright gym",
+    alt: "Woman in activewear holding a dumbbell in a gym",
     cta: "Shop on Amazon"
   },
   {
@@ -79,10 +79,10 @@ export const homepageActivewearSlides = [
     title: "Performance basics without the clutter.",
     subtitle: "Quickly browse sweat-ready tops, shorts, compression wear, and workout accessories.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/8402209/pexels-photo-8402209.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("moisture wicking workout clothes women"),
     brand: "Performance basics",
-    alt: "Modern activewear performance training scene",
+    alt: "Athletic woman in leggings stretching outdoors",
     cta: "Shop on Amazon"
   },
   {
@@ -90,10 +90,10 @@ export const homepageActivewearSlides = [
     title: "Gym essentials for the full routine.",
     subtitle: "From sneakers and bags to leggings and tops, start with the pieces you use most.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/14096343/pexels-photo-14096343.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("gym essentials activewear women"),
     brand: "Gym essentials",
-    alt: "Clean gym essentials and activewear scene",
+    alt: "Woman in activewear practicing yoga on a bright city rooftop",
     cta: "Shop on Amazon"
   },
   {
@@ -101,10 +101,10 @@ export const homepageActivewearSlides = [
     title: "Athleisure that works beyond the workout.",
     subtitle: "Find jackets, joggers, hoodies, sets, and sneakers for gym-to-street days.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/3822116/pexels-photo-3822116.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("athleisure jackets women activewear"),
     brand: "Athleisure",
-    alt: "Premium athleisure and training lifestyle scene",
+    alt: "Woman in activewear stretching during a yoga class",
     cta: "Shop on Amazon"
   },
   {
@@ -112,10 +112,10 @@ export const homepageActivewearSlides = [
     title: "Inclusive activewear for every shopping lane.",
     subtitle: "Browse plus-size, budget, premium, men's, and women's activewear without the noise.",
     asin: "",
-    imageUrl: "https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1800&q=86",
+    imageUrl: "https://images.pexels.com/photos/7662368/pexels-photo-7662368.jpeg?auto=compress&cs=tinysrgb&w=1800",
     affiliateUrl: amazonSearchUrl("plus size activewear women"),
     brand: "Inclusive activewear",
-    alt: "Inclusive activewear lifestyle training scene",
+    alt: "Woman in activewear doing a plank on a yoga mat",
     cta: "Shop on Amazon"
   }
 ];

@@ -167,7 +167,7 @@ img {
 .amazon-hero-slider {
   position: relative;
   width: 100%;
-  height: clamp(310px, 28vw, 390px);
+  height: clamp(440px, 5in, 500px);
   overflow: hidden;
   background: #f4eadb;
   color: #fffaf0;
@@ -1191,7 +1191,7 @@ p {
 
 @media (max-width: 1040px) {
   .amazon-hero-slider {
-    height: 320px;
+    height: 390px;
   }
 
   .site-header-inner {
@@ -1227,7 +1227,7 @@ p {
   }
 
   .amazon-hero-slider {
-    height: clamp(240px, 66vw, 300px);
+    height: clamp(300px, 78vw, 360px);
   }
 
   .amazon-hero-overlay {
