@@ -669,13 +669,34 @@ p {
 }
 
 .storefront-hero {
+  position: relative;
+  overflow: hidden;
   border: 1px solid rgba(32, 36, 31, 0.12);
   border-radius: 34px;
   background:
-    radial-gradient(circle at 88% 18%, rgba(216, 243, 95, 0.34), transparent 17rem),
-    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(236, 228, 216, 0.9));
+    radial-gradient(circle at 88% 14%, rgba(216, 243, 95, 0.28), transparent 16rem),
+    radial-gradient(circle at 12% 88%, rgba(236, 208, 200, 0.58), transparent 18rem),
+    linear-gradient(135deg, #fffdf8 0%, #f4eadb 62%, #e8f3e7 100%);
   box-shadow: var(--shadow);
   padding: clamp(28px, 5vw, 54px);
+}
+
+.storefront-hero::after {
+  content: "";
+  position: absolute;
+  right: -76px;
+  bottom: -116px;
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(32, 36, 31, 0.08);
+  border-radius: 42% 58% 48% 52%;
+  background: rgba(255, 253, 248, 0.38);
+  transform: rotate(-14deg);
+}
+
+.storefront-hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .storefront-hero h1 {
@@ -698,9 +719,10 @@ p {
 
 .storefront-jump-links a,
 .storefront-top-link {
-  border: 1px solid rgba(32, 36, 31, 0.13);
+  border: 1px solid rgba(32, 36, 31, 0.1);
   border-radius: 999px;
-  background: rgba(255, 253, 248, 0.74);
+  background: rgba(255, 253, 248, 0.78);
+  box-shadow: 0 10px 22px rgba(32, 36, 31, 0.06);
   color: var(--charcoal);
   padding: 9px 13px;
   font-family: var(--ui-font);
@@ -748,9 +770,9 @@ p {
   min-height: 100%;
   overflow: hidden;
   flex-direction: column;
-  border: 1px solid rgba(32, 36, 31, 0.12);
-  border-radius: 24px;
-  background: rgba(255, 253, 248, 0.96);
+  border: 1px solid rgba(32, 36, 31, 0.1);
+  border-radius: 28px;
+  background: rgba(255, 253, 248, 0.98);
   box-shadow: var(--shadow-soft);
 }
 
@@ -763,14 +785,46 @@ p {
 .store-product-art {
   position: relative;
   display: flex;
-  align-items: flex-end;
-  min-height: 178px;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 210px;
   overflow: hidden;
+  background: linear-gradient(135deg, #fbf4e8, #edf3e6);
+  padding: 16px;
+}
+
+.store-product-art::before,
+.store-product-art::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.store-product-art::before {
+  right: 34px;
+  bottom: 28px;
+  width: 42%;
+  max-width: 146px;
+  aspect-ratio: 0.72;
+  border: 1px solid rgba(32, 36, 31, 0.08);
+  border-radius: 42px 42px 26px 26px;
   background:
-    radial-gradient(circle at 78% 24%, rgba(216, 243, 95, 0.78), transparent 5rem),
-    linear-gradient(145deg, rgba(32, 36, 31, 0.9), rgba(8, 121, 111, 0.54)),
-    linear-gradient(135deg, var(--paper-deep), var(--blush));
-  padding: 14px;
+    linear-gradient(90deg, transparent 47%, rgba(255, 255, 255, 0.28) 47% 53%, transparent 53%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08));
+  box-shadow: 0 28px 70px rgba(32, 36, 31, 0.1);
+  transform: rotate(8deg);
+}
+
+.store-product-art::after {
+  left: 22px;
+  bottom: 22px;
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow:
+    56px -34px 0 rgba(255, 255, 255, 0.18),
+    142px 18px 0 rgba(255, 255, 255, 0.16);
 }
 
 .store-product-art img {
@@ -781,18 +835,79 @@ p {
   object-fit: cover;
 }
 
-.store-product-art span {
+.store-art-label,
+.store-art-brand {
   position: relative;
   z-index: 1;
   border-radius: 999px;
-  background: rgba(255, 250, 241, 0.92);
+  background: rgba(255, 253, 248, 0.82);
+  box-shadow: 0 10px 24px rgba(32, 36, 31, 0.08);
   color: var(--charcoal);
-  padding: 8px 11px;
+  padding: 8px 10px;
   font-family: var(--ui-font);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.store-art-brand {
+  background: rgba(18, 19, 16, 0.72);
+  color: #fffdf8;
+}
+
+.store-tone-linen {
+  background:
+    radial-gradient(circle at 74% 20%, rgba(216, 243, 95, 0.36), transparent 7rem),
+    linear-gradient(135deg, #fff6e8, #e9f0dd);
+}
+
+.store-tone-rose {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 255, 255, 0.58), transparent 7rem),
+    linear-gradient(135deg, #fde8e1, #f4d4d8 55%, #fff8ed);
+}
+
+.store-tone-sage {
+  background:
+    radial-gradient(circle at 76% 22%, rgba(216, 243, 95, 0.26), transparent 7rem),
+    linear-gradient(135deg, #edf7e7, #d8e9ce 58%, #fff8e9);
+}
+
+.store-tone-sky {
+  background:
+    radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.52), transparent 7rem),
+    linear-gradient(135deg, #e9f4f8, #cfe0e6 58%, #f9f2e7);
+}
+
+.store-tone-sand {
+  background:
+    radial-gradient(circle at 80% 22%, rgba(255, 255, 255, 0.45), transparent 7rem),
+    linear-gradient(135deg, #f8eddc, #dbc6a8 58%, #fbf7ed);
+}
+
+.store-tone-slate {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(216, 243, 95, 0.24), transparent 7rem),
+    linear-gradient(135deg, #edf0ea, #bcc7bd 58%, #faf4e8);
+}
+
+.store-tone-peach {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 255, 255, 0.5), transparent 7rem),
+    linear-gradient(135deg, #ffe7d8, #efc4ad 58%, #fff7eb);
+}
+
+.store-tone-mint {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(216, 243, 95, 0.28), transparent 7rem),
+    linear-gradient(135deg, #eff8ee, #d7efe0 58%, #fff7e6);
+}
+
+.store-tone-cream {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(255, 255, 255, 0.58), transparent 7rem),
+    linear-gradient(135deg, #fff6e3, #eadac6 58%, #eef4e4);
 }
 
 .store-product-body {
@@ -826,9 +941,9 @@ p {
 }
 
 .store-product-card h3 {
-  margin: 14px 0 8px;
-  font-size: 1.16rem;
-  line-height: 1.12;
+  margin: 16px 0 8px;
+  font-size: 1.22rem;
+  line-height: 1.08;
 }
 
 .store-product-card h3 a:hover {
@@ -860,17 +975,18 @@ p {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 46px;
+  min-height: 48px;
   border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 12px 24px rgba(8, 121, 111, 0.18);
-  color: #fff;
+  background: #191b16;
+  box-shadow: 0 16px 28px rgba(25, 27, 22, 0.16);
+  color: #fffaf0;
   font-family: var(--ui-font);
   font-weight: 900;
 }
 
 .store-amazon-button:hover {
   background: var(--accent-dark);
+  transform: translateY(-1px);
 }
 
 .tag-row {

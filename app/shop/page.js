@@ -107,16 +107,39 @@ function buildStoreSections() {
 const storeSections = buildStoreSections();
 const productCount = storeSections.reduce((total, section) => total + section.products.length, 0);
 
+function getStoreTone(product) {
+  const category = product.category.toLowerCase();
+  const name = product.name.toLowerCase();
+
+  if (category.includes("sports bra")) return "rose";
+  if (category.includes("yoga") || name.includes("yoga")) return "sage";
+  if (category.includes("running") || name.includes("running")) return "sky";
+  if (category.includes("shoe")) return "sand";
+  if (category.includes("men")) return "slate";
+  if (category.includes("plus")) return "peach";
+  if (category.includes("budget")) return "mint";
+  if (category.includes("top") || category.includes("hoodie")) return "cream";
+
+  return "linen";
+}
+
 function StoreProductCard({ product }) {
   const affiliateUrl = buildAffiliateLink(product);
 
   return (
     <article className="store-product-card">
-      <Link href={product.href} className="store-product-art" aria-label={`View details for ${product.brand} ${product.name}`}>
+      <Link
+        href={product.href}
+        className={`store-product-art store-tone-${getStoreTone(product)}`}
+        aria-label={`View details for ${product.brand} ${product.name}`}
+      >
         {product.imageUrl ? (
           <img src={product.imageUrl} alt={product.imageAlt} loading="lazy" />
         ) : (
-          <span>{product.category}</span>
+          <>
+            <span className="store-art-label">{product.category}</span>
+            <span className="store-art-brand">{product.brand}</span>
+          </>
         )}
       </Link>
       <div className="store-product-body">
@@ -135,7 +158,7 @@ function StoreProductCard({ product }) {
       </div>
       <div className="store-product-actions">
         <a href={affiliateUrl} target="_blank" rel="nofollow sponsored noopener" className="store-amazon-button">
-          Shop Amazon
+          Shop on Amazon
         </a>
       </div>
     </article>
@@ -149,7 +172,7 @@ export default function ShopPage() {
         <span className="eyebrow">Amazon Store</span>
         <h1>Shop activewear picks on Amazon.</h1>
         <p>
-          {productCount} product paths across high-intent activewear categories, built for fast scanning and direct Amazon shopping.
+          {productCount} activewear picks organized for quick browsing, clean comparison, and direct Amazon checkout.
         </p>
         <div className="storefront-jump-links" aria-label="Shop categories">
           {storeSections.map((section) => (
@@ -167,7 +190,7 @@ export default function ShopPage() {
         <section key={section.id} id={section.id} className="storefront-section">
           <div className="storefront-section-header">
             <div>
-              <span className="card-kicker">{section.products.length} Amazon links</span>
+              <span className="card-kicker">{section.products.length} picks</span>
               <h2>{section.title}</h2>
             </div>
             <a href="#top" className="storefront-top-link">
