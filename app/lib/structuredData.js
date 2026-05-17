@@ -72,3 +72,19 @@ export function collectionPageSchema({ title, description, path, items = [] }) {
     }
   };
 }
+
+export function faqSchema({ path, faqs = [] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    url: `${siteConfig.siteUrl}${path}`,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+}

@@ -732,6 +732,49 @@ p {
   padding: 28px;
 }
 
+.revenue-cta-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 24px;
+  align-items: center;
+  border: 1px solid rgba(8, 121, 111, 0.24);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 92% 18%, rgba(216, 243, 95, 0.28), transparent 14rem),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(237, 248, 238, 0.94));
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.revenue-cta-panel h2 {
+  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 3.2vw, 2.85rem);
+}
+
+.revenue-cta-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.revenue-cta-actions .primary-button {
+  width: 100%;
+}
+
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: 18px;
+}
+
+.faq-item {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 18px;
+}
+
+.faq-item h3 {
+  margin-bottom: 8px;
+}
+
 .content-card p:last-child,
 .prose-card p:last-child {
   margin-bottom: 0;
@@ -898,6 +941,7 @@ p {
   .footer-links,
   .search-row,
   .product-summary-panel,
+  .revenue-cta-panel,
   .trust-strip {
     grid-template-columns: 1fr;
   }
