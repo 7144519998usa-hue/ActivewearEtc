@@ -645,6 +645,15 @@ export const shoppingGuides = [
   }
 ];
 
+const adidasLululemonYogaRelatedSearches = [
+  { label: "Adidas vs lululemon yoga clothing comparison", href: "/compare/adidas-vs-lululemon-yoga-clothing-comparison" },
+  { label: "Adidas vs lululemon yoga pants comparison", href: "/compare/adidas-vs-lululemon-yoga-pants-comparison" },
+  { label: "Adidas vs lululemon yoga leggings comparison", href: "/compare/adidas-vs-lululemon-yoga-leggings-comparison" },
+  { label: "Adidas vs lululemon yoga apparel comparison", href: "/compare/adidas-vs-lululemon-yoga-apparel-comparison" },
+  { label: "Adidas vs lululemon yoga wear comparison", href: "/compare/adidas-vs-lululemon-yoga-wear-comparison" },
+  { label: "lululemon vs Adidas", href: "/compare/lululemon-vs-adidas" }
+];
+
 export const comparisonGuides = [
   {
     slug: "adidas-vs-lululemon-yoga-clothing-comparison",
@@ -658,6 +667,7 @@ export const comparisonGuides = [
       "/brands/lululemon",
       "/activities/yoga"
     ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
     decisionCards: [
       {
         title: "Choose Adidas if you want sport-first yoga pieces",
@@ -685,6 +695,7 @@ export const comparisonGuides = [
       "/brands/adidas/leggings",
       "/brands/lululemon/leggings"
     ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
     decisionCards: [
       {
         title: "For training crossover, start with Adidas",
@@ -712,6 +723,7 @@ export const comparisonGuides = [
       "/women/leggings",
       "/activities/yoga"
     ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
     decisionCards: [
       {
         title: "Adidas yoga leggings lean sport-casual",
@@ -724,6 +736,174 @@ export const comparisonGuides = [
       {
         title: "Check opacity, rise, and fabric every time",
         body: "Before buying, verify current product details on the merchant page, especially opacity notes, fabric blend, inseam, color availability, and return options."
+      }
+    ]
+  },
+  {
+    slug: "adidas-vs-lululemon-yoga-apparel-comparison",
+    title: "Adidas vs lululemon Yoga Apparel Comparison",
+    summary: "Compare Adidas and lululemon yoga apparel by studio comfort, athletic styling, fabric feel, layering options, price checks, and return-policy confidence.",
+    tags: ["Adidas", "lululemon", "yoga apparel", "comparison"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
+      "/compare/adidas-vs-lululemon-yoga-wear-comparison",
+      "/brands/adidas",
+      "/brands/lululemon",
+      "/activities/yoga"
+    ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
+    decisionCards: [
+      {
+        title: "Adidas is the sport-led apparel lane",
+        body: "Start with Adidas when you want yoga apparel that can sit comfortably beside training tops, warmup layers, walking outfits, and athletic everyday wear."
+      },
+      {
+        title: "lululemon is the studio-led apparel lane",
+        body: "Start with lululemon when your search is more about soft yoga fabrics, studio silhouettes, coordinated layers, and premium low-impact comfort."
+      },
+      {
+        title: "Compare the outfit, not just the brand",
+        body: "Look at leggings, tops, bras, layers, size availability, fabric notes, and return policy together before deciding which brand fits your routine."
+      }
+    ]
+  },
+  {
+    slug: "adidas-vs-lululemon-yoga-clothes-comparison",
+    title: "Adidas vs lululemon Yoga Clothes Comparison",
+    summary: "Compare Adidas and lululemon yoga clothes by comfort, stretch, coverage, tops, leggings, bras, layering, price checks, and everyday versatility.",
+    tags: ["Adidas", "lululemon", "yoga clothes", "comparison"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
+      "/compare/adidas-vs-lululemon-yoga-pants-comparison",
+      "/brands/adidas/activities/yoga",
+      "/brands/lululemon/activities/yoga",
+      "/styles/athleisure"
+    ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
+    decisionCards: [
+      {
+        title: "For sportier yoga clothes, compare Adidas first",
+        body: "Adidas is useful when you want a cleaner sport look, cross-training crossover, and pieces that feel less exclusively tied to studio classes."
+      },
+      {
+        title: "For softer yoga clothes, compare lululemon first",
+        body: "lululemon is useful when you want yoga clothes built around soft fabrics, body-skimming studio fits, and premium everyday comfort."
+      },
+      {
+        title: "Check current product details",
+        body: "Before buying, verify the exact fabric, fit, color, size chart, seller, final price, and return window on the merchant page."
+      }
+    ]
+  },
+  {
+    slug: "adidas-vs-lululemon-yoga-wear-comparison",
+    title: "Adidas vs lululemon Yoga Wear Comparison",
+    summary: "Compare Adidas and lululemon yoga wear by softness, support, athletic crossover, premium feel, size range, product details, and current retailer checks.",
+    tags: ["Adidas", "lululemon", "yoga wear", "comparison"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
+      "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
+      "/activities/yoga",
+      "/styles/premium-activewear",
+      "/styles/athleisure"
+    ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
+    decisionCards: [
+      {
+        title: "Adidas yoga wear can be easier to style as activewear",
+        body: "Adidas can make sense when you want yoga wear that still reads athletic, practical, and easy to mix with running, gym, or athleisure pieces."
+      },
+      {
+        title: "lululemon yoga wear can feel more studio-specific",
+        body: "lululemon can make sense when you care most about soft stretch, studio comfort, premium silhouettes, and polished low-impact outfits."
+      },
+      {
+        title: "The best choice depends on the use case",
+        body: "A yoga class, walking outfit, travel day, and lounge outfit can all point to different fabric, support, pocket, and coverage needs."
+      }
+    ]
+  },
+  {
+    slug: "adidas-vs-lululemon-leggings-comparison",
+    title: "Adidas vs lululemon Leggings Comparison",
+    summary: "Compare Adidas and lululemon leggings by waistband feel, stretch, opacity, training crossover, yoga comfort, size availability, price checks, and returns.",
+    tags: ["Adidas", "lululemon", "leggings", "comparison"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
+      "/compare/adidas-vs-lululemon-leggings",
+      "/women/leggings",
+      "/brands/adidas/leggings",
+      "/brands/lululemon/leggings"
+    ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
+    decisionCards: [
+      {
+        title: "Adidas leggings are worth comparing for training crossover",
+        body: "Use Adidas as a starting point when leggings need to work across light training, walking, errands, and casual sport styling."
+      },
+      {
+        title: "lululemon leggings are worth comparing for studio comfort",
+        body: "Use lululemon as a starting point when softness, premium yoga feel, and polished studio-to-street outfits matter most."
+      },
+      {
+        title: "Fit details matter more than the logo",
+        body: "Check rise, inseam, waistband, opacity, fabric blend, care notes, and return policy before buying either brand."
+      }
+    ]
+  },
+  {
+    slug: "adidas-vs-lululemon",
+    title: "Adidas vs lululemon Activewear",
+    summary: "Compare Adidas and lululemon activewear by yoga clothing, leggings, training crossover, premium feel, price checks, size range, and retailer confidence.",
+    tags: ["Adidas", "lululemon", "activewear", "brands"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
+      "/compare/adidas-vs-lululemon-leggings-comparison",
+      "/brands/adidas",
+      "/brands/lululemon",
+      "/styles/premium-activewear"
+    ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
+    decisionCards: [
+      {
+        title: "Adidas is broader sport activewear",
+        body: "Adidas usually makes more sense when your activewear needs span training, running, warmups, shoes, and casual athletic outfits."
+      },
+      {
+        title: "lululemon is premium studio activewear",
+        body: "lululemon usually makes more sense when your activewear search centers on yoga, studio comfort, premium fabrics, and polished everyday fits."
+      },
+      {
+        title: "Compare by category before deciding",
+        body: "The right brand may change for leggings, yoga pants, sports bras, workout tops, jackets, and shoes, so narrow the category first."
+      }
+    ]
+  },
+  {
+    slug: "lululemon-vs-adidas",
+    title: "lululemon vs Adidas Activewear",
+    summary: "Compare lululemon and Adidas activewear by yoga comfort, athletic crossover, leggings, apparel quality, price checks, size availability, and return policy.",
+    tags: ["lululemon", "Adidas", "activewear", "comparison"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon",
+      "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
+      "/brands/lululemon",
+      "/brands/adidas",
+      "/activities/yoga"
+    ],
+    relatedSearches: adidasLululemonYogaRelatedSearches,
+    decisionCards: [
+      {
+        title: "Start with lululemon for yoga-first comfort",
+        body: "lululemon is the stronger first stop when the shopping question is about soft studio leggings, yoga pants, and premium low-impact outfits."
+      },
+      {
+        title: "Start with Adidas for sport-first versatility",
+        body: "Adidas is the stronger first stop when the shopping question includes training, running, warmup gear, shoes, or sportier everyday activewear."
+      },
+      {
+        title: "Use retailer details as the final check",
+        body: "Final price, current stock, colors, sizing, seller details, and returns can change, so verify every product page before buying."
       }
     ]
   },

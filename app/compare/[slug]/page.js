@@ -92,6 +92,21 @@ export default function ComparisonPage({ params }) {
           ))}
         </div>
       </section>
+      {comparison.relatedSearches ? (
+        <section className="section">
+          <div className="content-card">
+            <span className="eyebrow">Related searches</span>
+            <h2>Other ways shoppers compare this topic</h2>
+            <div className="tag-row">
+              {comparison.relatedSearches.map((search) => (
+                <a className="tag" href={search.href} key={search.href}>
+                  {search.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
     </HubPage>
   );
 }
