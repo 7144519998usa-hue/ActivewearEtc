@@ -7,6 +7,7 @@ export const siteConfig = {
   primaryNavLinks: [
     { href: "/women", label: "Women" },
     { href: "/men", label: "Men" },
+    { href: "/shop", label: "Shop" },
     { href: "/search", label: "Search" },
     { href: "/activities", label: "Activities" },
     { href: "/brands", label: "Brands" },

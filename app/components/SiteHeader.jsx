@@ -16,8 +16,8 @@ export default function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <Link href="/deals" className="header-cta">
-            Compare Deals
+          <Link href="/shop" className="header-cta">
+            Shop Amazon Picks
           </Link>
         </div>
       </div>
