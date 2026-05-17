@@ -7,11 +7,26 @@ import { activityHubs, brandHubs, categories, editorialHubs, retailerHubs, sampl
 import { collectionPageSchema } from "./lib/structuredData";
 
 export const metadata = {
-  title: "Activewear Search and Comparison",
+  title: "ActivewearEtc | Shop Activewear Picks",
   description:
-    "Compare leggings, sports bras, workout tops, running shorts, joggers, shoes, and activewear brands by fit, fabric, style, budget, and activity.",
+    "Shop leggings, sports bras, workout tops, running shorts, joggers, shoes, and everyday activewear picks by style, fit, budget, and activity.",
   alternates: { canonical: "/" }
 };
+
+const homepageFeaturedImages = [
+  "https://images.pexels.com/photos/4662342/pexels-photo-4662342.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/4498151/pexels-photo-4498151.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/6551133/pexels-photo-6551133.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/6456211/pexels-photo-6456211.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "https://images.pexels.com/photos/6456301/pexels-photo-6456301.jpeg?auto=compress&cs=tinysrgb&w=1200"
+];
+
+const homepageProducts = sampleProducts.slice(0, 6).map((product, index) => ({
+  ...product,
+  imageUrl: homepageFeaturedImages[index],
+  imageAlt: `${product.category} activewear lifestyle inspiration`
+}));
 
 export default function HomePage() {
   return (
@@ -29,43 +44,43 @@ export default function HomePage() {
         <section className="section section-tight">
           <div className="trust-strip">
             <span>No fake reviews</span>
-            <span>Affiliate disclosures</span>
-            <span>Price checks before purchase</span>
-            <span>Product image guardrails</span>
+            <span>Clear shopping links</span>
+            <span>Check price on Amazon</span>
+            <span>Fresh activewear ideas</span>
           </div>
         </section>
 
         <section className="section">
           <div className="section-heading">
             <span className="eyebrow">Shop by category</span>
-            <h2>Start with the activewear category that matches the workout.</h2>
-            <p>Each category is built to support fit, color, size, support level, material, and retailer comparison later.</p>
+            <h2>Find the activewear you actually need.</h2>
+            <p>Start with leggings, sports bras, workout tops, running shorts, shoes, or everyday athleisure.</p>
           </div>
           <CategoryGrid items={categories.slice(0, 9)} />
         </section>
 
         <section className="section">
           <div className="section-heading">
-            <span className="eyebrow">Compare products</span>
-            <h2>Featured comparison paths</h2>
-            <p>These product cards use disclosure-safe comparison notes while merchant affiliate links and image sources are approved.</p>
+            <span className="eyebrow">Popular picks</span>
+            <h2>Quick places to start shopping.</h2>
+            <p>Browse a few activewear ideas, then check the latest options and prices on Amazon.</p>
           </div>
-          <ProductComparison products={sampleProducts} />
+          <ProductComparison products={homepageProducts} />
         </section>
 
         <section className="section">
           <div className="section-heading">
             <span className="eyebrow">Guided shopping</span>
-            <h2>Move by need, not by endless product grids.</h2>
-            <p>Choose a lane that matches the shopper decision: fit risk, budget, sustainability, fabric feel, or premium brand comparison.</p>
+            <h2>Shop by what matters most to you.</h2>
+            <p>Look for better fit, softer fabric, lower prices, sustainable options, or premium styles.</p>
           </div>
           <CategoryGrid items={editorialHubs} />
         </section>
 
         <section className="section">
           <div className="section-heading">
-            <span className="eyebrow">Activities, brands, and retailers</span>
-            <h2>Move from workout intent to brand and retailer research without losing context.</h2>
+            <span className="eyebrow">More ways to shop</span>
+            <h2>Browse by workout, brand, or store.</h2>
           </div>
           <CategoryGrid items={[...activityHubs, ...brandHubs, ...retailerHubs.slice(0, 4)]} />
         </section>

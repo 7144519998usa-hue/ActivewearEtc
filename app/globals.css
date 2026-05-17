@@ -637,7 +637,7 @@ p {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 180px;
+  min-height: 230px;
   overflow: hidden;
   border-radius: 18px;
   background:
@@ -663,9 +663,21 @@ p {
   object-fit: cover;
 }
 
+.product-art:has(.product-image) {
+  background: #f4eadb;
+}
+
+.product-art:has(.product-image)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(18, 19, 16, 0.04) 20%, rgba(18, 19, 16, 0.56) 100%);
+}
+
 .product-art span {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   border-radius: 999px;
   background: rgba(255, 250, 241, 0.9);
   color: var(--charcoal);
