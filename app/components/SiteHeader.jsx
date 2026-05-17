@@ -11,7 +11,7 @@ export default function SiteHeader() {
         <div className="nav-cluster">
           <nav className="nav-links" aria-label="Primary navigation">
             {siteConfig.primaryNavLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
+              <Link key={link.href} href={link.href} className={link.featured ? "nav-shop-link" : undefined}>
                 {link.label}
               </Link>
             ))}

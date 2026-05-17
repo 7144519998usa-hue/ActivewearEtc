@@ -116,6 +116,27 @@ img {
   color: var(--accent-dark);
 }
 
+.nav-links .nav-shop-link {
+  border: 1px solid rgba(8, 121, 111, 0.22);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(216, 243, 95, 0.58), transparent 1.6rem),
+    linear-gradient(135deg, #101310, #0a6a61);
+  box-shadow: 0 12px 24px rgba(8, 121, 111, 0.18);
+  color: #fffaf0;
+  margin-top: -7px;
+  padding: 10px 15px;
+}
+
+.nav-links .nav-shop-link:hover {
+  border-color: rgba(216, 243, 95, 0.64);
+  background:
+    radial-gradient(circle at 88% 16%, rgba(216, 243, 95, 0.68), transparent 1.7rem),
+    linear-gradient(135deg, #064d47, #101310);
+  color: #fffaf0;
+  transform: translateY(-1px);
+}
+
 .header-cta,
 .primary-button {
   display: inline-flex;

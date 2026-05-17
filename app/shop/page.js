@@ -14,35 +14,35 @@ const sectionConfig = [
     id: "featured",
     label: "Featured",
     title: "Featured Amazon activewear picks",
-    limit: 24,
-    match: (_product, index) => index < 72
+    limit: 60,
+    match: (_product, index) => index < 180
   },
   {
     id: "leggings",
     label: "Leggings",
     title: "Leggings",
-    limit: 36,
+    limit: 90,
     match: (product) => product.category === "Leggings"
   },
   {
     id: "sports-bras",
     label: "Sports Bras",
     title: "Sports bras",
-    limit: 30,
+    limit: 72,
     match: (product) => product.category === "Sports Bras"
   },
   {
     id: "yoga",
     label: "Yoga",
     title: "Yoga wear",
-    limit: 36,
+    limit: 90,
     match: (product) => product.category === "Yoga Wear" || product.name.includes("Yoga")
   },
   {
     id: "running",
     label: "Running",
     title: "Running gear",
-    limit: 36,
+    limit: 90,
     match: (product) =>
       product.category === "Running Shorts" || product.category === "Running Shoes" || product.name.includes("Running")
   },
@@ -50,35 +50,35 @@ const sectionConfig = [
     id: "shoes",
     label: "Shoes",
     title: "Training and running shoes",
-    limit: 30,
+    limit: 72,
     match: (product) => product.category === "Training Shoes" || product.category === "Running Shoes"
   },
   {
     id: "workout-tops",
     label: "Tops",
     title: "Workout tops",
-    limit: 30,
+    limit: 72,
     match: (product) => product.category === "Workout Tops"
   },
   {
     id: "men",
     label: "Men",
     title: "Men's activewear",
-    limit: 30,
+    limit: 60,
     match: (product) => product.category === "Men's Activewear" || product.name.includes("Men's")
   },
   {
     id: "plus-size",
     label: "Plus-Size",
     title: "Plus-size activewear",
-    limit: 30,
+    limit: 60,
     match: (product) => product.category === "Plus-Size Activewear" || product.name.includes("Plus-Size")
   },
   {
     id: "budget",
     label: "Budget",
     title: "Budget-friendly activewear",
-    limit: 30,
+    limit: 60,
     match: (product) => product.category === "Budget Activewear" || product.name.includes("Budget-Friendly")
   }
 ];
