@@ -53,6 +53,11 @@ const nextConfig = {
         source: "/activewearetc.com/sitemap_index.xml",
         destination: "/sitemap_index.xml",
         permanent: true
+      },
+      {
+        source: "/pages/about-us",
+        destination: "/about",
+        permanent: true
       }
     ];
   },
