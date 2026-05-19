@@ -2159,5 +2159,213 @@ export const searchConsoleOpportunityGuides = [
     href: "/queries/best-mens-workout-joggers",
     relatedHrefs: ["/best/best-joggers-for-men", "/men", "/styles/joggers"],
     tags: ["men", "joggers", "workout"]
+  },
+  {
+    slug: "running-shoe-size-guide",
+    title: "Running Shoe Size Guide",
+    summary: "Compare running shoe sizing by toe room, heel hold, width, sock thickness, treadmill use, road use, and return-policy flexibility.",
+    href: "/queries/running-shoe-size-guide",
+    relatedHrefs: ["/styles/running-shoes", "/compare/running-shoes-vs-training-shoes", "/queries/running-shoe-fit-guide"],
+    tags: ["running shoes", "size guide", "fit"]
+  },
+  {
+    slug: "running-shoe-fit-guide",
+    title: "Running Shoe Fit Guide",
+    summary: "Check running shoe fit by toe space, arch feel, heel slip, width, cushioning, walking comfort, and whether the store allows easy returns.",
+    href: "/queries/running-shoe-fit-guide",
+    relatedHrefs: ["/styles/running-shoes", "/queries/running-shoe-size-guide", "/compare/running-shoes-vs-training-shoes"],
+    tags: ["running shoes", "fit", "guide"]
+  },
+  {
+    slug: "walmart-sports-bras-review-evaluation",
+    title: "Walmart Sports Bras Review Evaluation",
+    summary: "Evaluate Walmart sports bras by support level, size range, fabric feel, strap design, product-page details, current price, and return policy.",
+    href: "/queries/walmart-sports-bras-review-evaluation",
+    relatedHrefs: ["/retailers/walmart/sports-bras", "/women/sports-bras", "/compare/low-impact-vs-high-impact-sports-bras"],
+    tags: ["walmart", "sports bras", "review"]
+  },
+  {
+    slug: "target-running-clothes",
+    title: "Target Running Clothes",
+    summary: "Compare Target running clothes by shorts, tops, sports bras, light layers, budget, pickup options, current availability, and return policy.",
+    href: "/queries/target-running-clothes",
+    relatedHrefs: ["/retailers/target", "/retailers/target/activities/running/running-shorts", "/queries/target-running-shorts"],
+    tags: ["target", "running clothes", "budget"]
+  },
+  {
+    slug: "target-activewear",
+    title: "Target Activewear",
+    summary: "Compare Target activewear by leggings, sports bras, running shorts, workout tops, budget, size range, in-store pickup, and returns.",
+    href: "/queries/target-activewear",
+    relatedHrefs: ["/retailers/target", "/queries/target-running-clothes", "/queries/target-running-shorts"],
+    tags: ["target", "activewear", "budget"]
+  },
+  {
+    slug: "nordstrom-activewear",
+    title: "Nordstrom Activewear",
+    summary: "Compare Nordstrom activewear by leggings, sports bras, running shoes, premium brands, size availability, shipping, returns, and current assortment.",
+    href: "/queries/nordstrom-activewear",
+    relatedHrefs: ["/retailers/nordstrom", "/queries/nordstrom-sports-bras", "/queries/nordstrom-yoga"],
+    tags: ["nordstrom", "activewear", "premium"]
+  },
+  {
+    slug: "nordstrom-workout-clothes",
+    title: "Nordstrom Workout Clothes",
+    summary: "Compare Nordstrom workout clothes by tops, leggings, sports bras, joggers, shoes, brand mix, price range, size availability, and return policy.",
+    href: "/queries/nordstrom-workout-clothes",
+    relatedHrefs: ["/retailers/nordstrom", "/queries/nordstrom-activewear", "/queries/nordstrom-sports-bras"],
+    tags: ["nordstrom", "workout clothes", "retailer"]
+  },
+  {
+    slug: "nordstrom-running-shoes",
+    title: "Nordstrom Running Shoes",
+    summary: "Compare Nordstrom running shoes by cushioning, stability, walking comfort, size availability, brand assortment, shipping, and return policy.",
+    href: "/queries/nordstrom-running-shoes",
+    relatedHrefs: ["/retailers/nordstrom/running-shoes", "/styles/running-shoes", "/queries/running-shoe-fit-guide"],
+    tags: ["nordstrom", "running shoes", "fit"]
+  },
+  {
+    slug: "adidas-running-shoes-nordstrom",
+    title: "Adidas Running Shoes at Nordstrom",
+    summary: "Research Adidas running shoes at Nordstrom by model availability, fit notes, cushioning, width, sale timing, shipping, and return-policy confidence.",
+    href: "/queries/adidas-running-shoes-nordstrom",
+    relatedHrefs: ["/retailers/nordstrom/brands/adidas/running-shoes", "/brands/adidas", "/queries/nordstrom-running-shoes"],
+    tags: ["adidas", "nordstrom", "running shoes"]
+  },
+  {
+    slug: "running-shorts-under-50",
+    title: "Quality Running Shorts Under $50",
+    summary: "Compare running shorts under $50 by liner comfort, inseam, pockets, waistband security, fabric feel, size range, and current store pricing.",
+    href: "/queries/running-shorts-under-50",
+    relatedHrefs: ["/deals/running-shorts-deals", "/activities/running/running-shorts", "/queries/target-running-shorts"],
+    tags: ["running shorts", "under 50", "deals"]
+  },
+  {
+    slug: "white-running-shorts",
+    title: "White Running Shorts",
+    summary: "Compare white running shorts by liner coverage, opacity, sweat visibility, inseam, pockets, waistband comfort, care needs, and return policy.",
+    href: "/queries/white-running-shorts",
+    relatedHrefs: ["/colors/white-running-shorts", "/activities/running/running-shorts", "/queries/running-shorts-under-50"],
+    tags: ["white", "running shorts", "opacity"]
+  },
+  {
+    slug: "best-places-to-buy-neutral-tone-joggers",
+    title: "Best Places to Buy Neutral Tone Joggers",
+    summary: "Compare neutral tone joggers by color range, fabric weight, taper, pockets, lounge-to-gym use, price, shipping, and returns.",
+    href: "/queries/best-places-to-buy-neutral-tone-joggers",
+    relatedHrefs: ["/styles/joggers", "/colors/neutral-joggers", "/best/best-joggers-for-women"],
+    tags: ["neutral joggers", "joggers", "stores"]
+  },
+  {
+    slug: "best-yoga-leggings-for-women",
+    title: "Best Yoga Leggings for Women",
+    summary: "Compare women's yoga leggings by softness, waistband comfort, opacity, rise, inseam, size range, price, and return policy.",
+    href: "/queries/best-yoga-leggings-for-women",
+    relatedHrefs: ["/best/best-yoga-leggings", "/activities/yoga/leggings", "/queries/best-yoga-leggings-brands"],
+    tags: ["women", "yoga leggings", "comfort"]
+  },
+  {
+    slug: "best-leggings-for-yoga",
+    title: "Best Leggings for Yoga",
+    summary: "Compare leggings for yoga by stretch, softness, waistband comfort, opacity, seam feel, fabric weight, care needs, and current prices.",
+    href: "/queries/best-leggings-for-yoga",
+    relatedHrefs: ["/best/best-yoga-leggings", "/queries/best-yoga-leggings-for-women", "/activities/yoga/leggings"],
+    tags: ["leggings", "yoga", "best"]
+  },
+  {
+    slug: "gymshark-amazon",
+    title: "Gymshark on Amazon",
+    summary: "Research Gymshark on Amazon by seller details, product-page accuracy, return terms, size checks, current availability, and safer comparison options.",
+    href: "/queries/gymshark-amazon",
+    relatedHrefs: ["/retailers/amazon/brands/gymshark/leggings", "/brands/gymshark", "/queries/gymshark-leggings-amazon"],
+    tags: ["gymshark", "amazon", "seller checks"]
+  },
+  {
+    slug: "gymshark-leggings-amazon",
+    title: "Gymshark Leggings on Amazon",
+    summary: "Research Gymshark leggings on Amazon by seller identity, sizing, fabric notes, return policy, current assortment, and comparable activewear options.",
+    href: "/queries/gymshark-leggings-amazon",
+    relatedHrefs: ["/retailers/amazon/brands/gymshark/leggings", "/brands/gymshark/leggings", "/queries/gymshark-amazon"],
+    tags: ["gymshark", "leggings", "amazon"]
+  },
+  {
+    slug: "nike-vs-gymshark",
+    title: "Nike vs Gymshark",
+    summary: "Compare Nike and Gymshark by training fit, leggings, sports bras, workout tops, price range, size availability, style, and return policy.",
+    href: "/queries/nike-vs-gymshark",
+    relatedHrefs: ["/compare/nike-vs-gymshark-leggings", "/brands/nike", "/brands/gymshark"],
+    tags: ["nike", "gymshark", "comparison"]
+  },
+  {
+    slug: "gymshark-vs-nike-quality",
+    title: "Gymshark vs Nike Quality",
+    summary: "Compare Gymshark and Nike quality signals by fabric feel, seams, opacity, workout use, care needs, return policy, and product-page detail.",
+    href: "/queries/gymshark-vs-nike-quality",
+    relatedHrefs: ["/queries/nike-vs-gymshark", "/compare/nike-vs-gymshark-leggings", "/brands/gymshark"],
+    tags: ["gymshark", "nike", "quality"]
+  },
+  {
+    slug: "gymshark-vs-lululemon-comparison-article",
+    title: "Gymshark vs lululemon Comparison",
+    summary: "Compare Gymshark and lululemon by training style, yoga comfort, fabric feel, leggings, sports bras, price range, and return policy.",
+    href: "/queries/gymshark-vs-lululemon-comparison-article",
+    relatedHrefs: ["/compare/lululemon-vs-gymshark", "/brands/gymshark", "/brands/lululemon"],
+    tags: ["gymshark", "lululemon", "comparison"]
+  },
+  {
+    slug: "difference-between-high-impact-and-low-impact-sports-bra",
+    title: "Difference Between High Impact and Low Impact Sports Bra",
+    summary: "Compare high-impact and low-impact sports bras by support, compression, cup structure, straps, running use, yoga use, comfort, and fit checks.",
+    href: "/queries/difference-between-high-impact-and-low-impact-sports-bra",
+    relatedHrefs: ["/compare/low-impact-vs-high-impact-sports-bras", "/women/sports-bras", "/best/best-high-impact-sports-bras"],
+    tags: ["sports bras", "support", "fit"]
+  },
+  {
+    slug: "best-shoes-for-hiit-training",
+    title: "Best Shoes for HIIT Training",
+    summary: "Compare HIIT training shoes by lateral support, grip, cushioning, heel stability, breathability, jump comfort, and return-policy flexibility.",
+    href: "/queries/best-shoes-for-hiit-training",
+    relatedHrefs: ["/styles/training-shoes", "/activities/gym/training-shoes", "/compare/running-shoes-vs-training-shoes"],
+    tags: ["hiit", "training shoes", "gym"]
+  },
+  {
+    slug: "beginner-guide-to-training-shoes-for-men",
+    title: "Beginner Guide to Training Shoes for Men",
+    summary: "Compare men's beginner training shoes by stability, grip, cushioning, gym use, walking comfort, width, durability signals, and return policy.",
+    href: "/queries/beginner-guide-to-training-shoes-for-men",
+    relatedHrefs: ["/queries/beginner-guide-to-training-shoes", "/men", "/styles/training-shoes"],
+    tags: ["men", "training shoes", "beginner"]
+  },
+  {
+    slug: "top-mens-sportswear-brands",
+    title: "Top Men's Sportswear Brands",
+    summary: "Compare men's sportswear brands by workout tops, joggers, shorts, shoes, training use, athleisure style, price, and return policy.",
+    href: "/queries/top-mens-sportswear-brands",
+    relatedHrefs: ["/queries/best-activewear-brands-men", "/men", "/brands"],
+    tags: ["men", "sportswear", "brands"]
+  },
+  {
+    slug: "best-mens-activewear-brands",
+    title: "Best Men's Activewear Brands",
+    summary: "Compare men's activewear brands by gym clothes, joggers, workout tops, training shoes, fit, size range, price, and retailer availability.",
+    href: "/queries/best-mens-activewear-brands",
+    relatedHrefs: ["/queries/best-activewear-brands-men", "/queries/top-mens-sportswear-brands", "/men"],
+    tags: ["men", "activewear", "brands"]
+  },
+  {
+    slug: "best-mens-athletic-joggers",
+    title: "Best Men's Athletic Joggers",
+    summary: "Compare men's athletic joggers by mobility, taper, waistband, pocket layout, fabric weight, gym use, travel use, and current price.",
+    href: "/queries/best-mens-athletic-joggers",
+    relatedHrefs: ["/best/best-joggers-for-men", "/queries/best-mens-workout-joggers", "/styles/joggers"],
+    tags: ["men", "joggers", "athletic"]
+  },
+  {
+    slug: "best-gym-joggers-for-men",
+    title: "Best Gym Joggers for Men",
+    summary: "Compare gym joggers for men by stretch, taper, breathability, pockets, squat comfort, fabric weight, and return-policy confidence.",
+    href: "/queries/best-gym-joggers-for-men",
+    relatedHrefs: ["/queries/best-mens-workout-joggers", "/queries/best-mens-athletic-joggers", "/men"],
+    tags: ["men", "gym joggers", "workout"]
   }
 ];

@@ -26,6 +26,7 @@ import {
   retailerHubs,
   retailerPriceBandGuides,
   sampleProducts,
+  searchConsoleOpportunityGuides,
   seasonalGuides,
   segmentCategoryGuides,
   shoppingGuides,
@@ -63,6 +64,7 @@ const searchCollections = [
   ...comparisonGuides.map((item) => ({ ...item, href: `/compare/${item.slug}` })),
   ...categoryComparisonGuides,
   ...shoppingGuides.map((item) => ({ ...item, href: `/best/${item.slug}` })),
+  ...searchConsoleOpportunityGuides,
   ...sampleProducts.map((item) => ({
     ...item,
     title: `${item.brand} ${item.name}`,

@@ -1,5 +1,5 @@
 import { siteConfig } from "./siteConfig";
-import { activityCategoryGuides, activityHubs, bodyFitGuides, brandActivityCategoryGuides, brandActivityGuides, brandCategoryGuides, brandConcernGuides, brandDealGuides, brandHubs, brandSegmentCategoryGuides, careGuides, categories, categoryComparisonGuides, colorGuides, comparisonGuides, concernGuides, dealGuides, editorialHubs, fabricGuides, featureGuides, fitGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandActivityCategoryGuides, retailerBrandCategoryGuides, retailerBrandConcernGuides, retailerBrandFeatureGuides, retailerBrandPriceBandGuides, retailerBrandSegmentCategoryGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, retailerSegmentCategoryGuides, sampleProducts, seasonalGuides, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
+import { activityCategoryGuides, activityHubs, bodyFitGuides, brandActivityCategoryGuides, brandActivityGuides, brandCategoryGuides, brandConcernGuides, brandDealGuides, brandHubs, brandSegmentCategoryGuides, careGuides, categories, categoryComparisonGuides, colorGuides, comparisonGuides, concernGuides, dealGuides, editorialHubs, fabricGuides, featureGuides, fitGuides, intentGuides, occasionGuides, priceBandGuides, retailerActivityCategoryGuides, retailerBrandActivityCategoryGuides, retailerBrandCategoryGuides, retailerBrandConcernGuides, retailerBrandFeatureGuides, retailerBrandPriceBandGuides, retailerBrandSegmentCategoryGuides, retailerCategoryGuides, retailerComparisonGuides, retailerConcernGuides, retailerHubs, retailerPriceBandGuides, retailerSegmentCategoryGuides, sampleProducts, searchConsoleOpportunityGuides, seasonalGuides, segmentCategoryGuides, shoppingGuides, useCaseGuides } from "./activewearData";
 
 const corePages = [
   "/",
@@ -80,6 +80,7 @@ export const sitemapSections = [
   { slug: "comparison-pages", paths: comparisonGuides.map((item) => `/compare/${item.slug}`) },
   { slug: "category-comparison-pages", paths: categoryComparisonGuides.map((item) => item.href) },
   { slug: "retailer-comparison-pages", paths: retailerComparisonGuides.map((item) => item.href) },
+  { slug: "query-opportunity-pages", paths: searchConsoleOpportunityGuides.map((item) => item.href) },
   { slug: "product-pages", paths: productSitemapPaths }
 ];
 
