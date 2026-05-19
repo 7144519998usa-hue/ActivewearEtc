@@ -3,7 +3,70 @@ import HubPage from "../../components/HubPage";
 import JsonLd from "../../components/JsonLd";
 import { buildAffiliateLink } from "../../lib/affiliateLinks";
 import { brandHubs, categories, categoryComparisonGuides, comparisonGuides, editorialHubs, retailerComparisonGuides, retailerHubs, shoppingGuides } from "../../lib/activewearData";
-import { faqSchema } from "../../lib/structuredData";
+import { breadcrumbSchema, faqSchema, itemListSchema } from "../../lib/structuredData";
+
+const metadataOverrides = {
+  "adidas-vs-lululemon-yoga": {
+    title: "Adidas vs lululemon Yoga: Fit, Softness, Price",
+    description: "Quickly compare Adidas and lululemon yoga clothing by softness, fit, waistband comfort, price, everyday wear, and current Amazon options."
+  },
+  "adidas-vs-lululemon-yoga-clothing-comparison": {
+    title: "Adidas vs lululemon Yoga Clothing: Which Is Better?",
+    description: "Compare Adidas and lululemon yoga clothing by soft feel, fit, price, leggings, pants, tops, and everyday wear before shopping."
+  },
+  "adidas-vs-lululemon-yoga-pants-comparison": {
+    title: "Adidas vs lululemon Yoga Pants: Fit, Feel, Price",
+    description: "Compare Adidas and lululemon yoga pants by softness, waistband comfort, stretch, opacity, price checks, and everyday wear."
+  },
+  "adidas-vs-lululemon-yoga-leggings-comparison": {
+    title: "Adidas vs lululemon Yoga Leggings: Which to Buy?",
+    description: "Compare Adidas and lululemon yoga leggings by softness, fit, opacity, waistband comfort, size range, price, and Amazon options."
+  },
+  "lululemon-vs-adidas": {
+    title: "lululemon vs Adidas: Yoga and Activewear Comparison",
+    description: "Compare lululemon and Adidas activewear for yoga, leggings, gym use, athleisure, price checks, size range, and return policy."
+  },
+  "adidas-vs-lululemon-yoga-apparel-comparison": {
+    title: "Adidas vs lululemon Yoga Apparel: What to Compare",
+    description: "Compare Adidas and lululemon yoga apparel by studio comfort, athletic crossover, fabric feel, layers, price, and fit."
+  },
+  "adidas-vs-lululemon-yoga-clothes-comparison": {
+    title: "Adidas vs lululemon Yoga Clothes: Fit and Price",
+    description: "Compare Adidas and lululemon yoga clothes by leggings, bras, tops, stretch, comfort, coverage, price checks, and everyday use."
+  },
+  "adidas-vs-lululemon": {
+    title: "Adidas vs lululemon: Activewear Fit, Quality, Price",
+    description: "Compare Adidas and lululemon activewear by yoga clothing, leggings, training use, premium feel, size range, and shopping options."
+  },
+  "adidas-vs-lululemon-yoga-wear-comparison": {
+    title: "Adidas vs lululemon Yoga Wear: Softness and Fit",
+    description: "Compare Adidas and lululemon yoga wear by soft feel, support, athletic crossover, premium style, size range, and price checks."
+  },
+  "lululemon-vs-gymshark": {
+    title: "lululemon vs Gymshark: Fit, Fabric, Price",
+    description: "Compare lululemon and Gymshark by leggings, sports bras, training style, yoga comfort, fabric feel, price, and return policy."
+  },
+  "leggings-vs-joggers": {
+    title: "Joggers vs Leggings: Which Is Better for You?",
+    description: "Compare joggers and leggings by comfort, warmth, compression, pockets, workouts, travel, and everyday wear."
+  },
+  "low-impact-vs-high-impact-sports-bras": {
+    title: "High Impact vs Low Impact Sports Bra: Difference",
+    description: "Compare high-impact and low-impact sports bras by support, compression, straps, cup coverage, running, yoga, and fit."
+  },
+  "compression-leggings-vs-yoga-leggings": {
+    title: "Compression Pants vs Leggings: Fit and Use",
+    description: "Compare compression pants, compression leggings, and yoga leggings by pressure, stretch, comfort, opacity, workouts, and daily wear."
+  },
+  "running-shoes-vs-training-shoes": {
+    title: "Running Shoes vs Training Shoes: Fit and Support",
+    description: "Compare running shoes and training shoes by cushioning, lateral support, heel stability, grip, HIIT, gym use, and road running."
+  },
+  "nike-vs-gymshark-leggings": {
+    title: "Nike vs Gymshark Leggings: Fit, Quality, Price",
+    description: "Compare Nike and Gymshark leggings by fabric feel, training fit, opacity, waistband comfort, style, price, and returns."
+  }
+};
 
 function getComparison(slug) {
   return comparisonGuides.find((item) => item.slug === slug)
@@ -37,7 +100,18 @@ function getRelatedItems(comparison) {
     .filter((item) => item.slug !== comparison.slug && item.categorySlug === comparison.categorySlug)
     .slice(0, 4);
 
-  return [...related, ...categoryFallback, ...retailerFallback, ...fallback].slice(0, 6);
+  const seen = new Set();
+
+  return [...related, ...categoryFallback, ...retailerFallback, ...fallback]
+    .filter((item) => {
+      if (!item.href || seen.has(item.href)) {
+        return false;
+      }
+
+      seen.add(item.href);
+      return true;
+    })
+    .slice(0, 6);
 }
 
 function getAmazonSearchLink(query) {
@@ -113,6 +187,22 @@ function getFaqs(comparison) {
   ];
 }
 
+function getQuickAnswer(comparison) {
+  if (isAdidasLululemonComparison(comparison)) {
+    return "Quick answer: choose lululemon if soft studio comfort is the priority; choose Adidas if you want sport-led yoga pieces that can also work for gym, walking, and athleisure.";
+  }
+
+  if (comparison.slug === "leggings-vs-joggers") {
+    return "Quick answer: choose leggings for stretch and compression; choose joggers for warmth, pockets, and a more relaxed everyday fit.";
+  }
+
+  if (comparison.slug === "running-shoes-vs-training-shoes") {
+    return "Quick answer: choose running shoes for forward motion and cushioning; choose training shoes for gym stability, lateral support, and HIIT.";
+  }
+
+  return "Quick answer: use this comparison to narrow the fit, support, comfort, price, and return-policy details that matter before shopping.";
+}
+
 export function generateStaticParams() {
   return [...comparisonGuides, ...categoryComparisonGuides, ...retailerComparisonGuides].map((guide) => ({ slug: guide.slug }));
 }
@@ -125,8 +215,8 @@ export function generateMetadata({ params }) {
   }
 
   return {
-    title: comparison.title,
-    description: comparison.summary,
+    title: metadataOverrides[comparison.slug]?.title || comparison.title,
+    description: metadataOverrides[comparison.slug]?.description || comparison.summary,
     alternates: { canonical: `/compare/${comparison.slug}` }
   };
 }
@@ -145,6 +235,8 @@ export default function ComparisonPage({ params }) {
   return (
     <>
       <JsonLd data={faqSchema({ path: comparison.href || `/compare/${comparison.slug}`, faqs })} />
+      <JsonLd data={breadcrumbSchema({ items: [{ name: "Home", href: "/" }, { name: "Compare", href: "/compare" }, { name: comparison.title, href: comparison.href || `/compare/${comparison.slug}` }] })} />
+      <JsonLd data={itemListSchema({ title: comparison.title, path: comparison.href || `/compare/${comparison.slug}`, items: getRelatedItems(comparison) })} />
       <HubPage
         eyebrow="Comparison"
         title={comparison.title}
@@ -152,6 +244,13 @@ export default function ComparisonPage({ params }) {
         path={comparison.href || `/compare/${comparison.slug}`}
         items={getRelatedItems(comparison)}
       >
+        <section className="section section-tight">
+          <div className="content-card">
+            <span className="eyebrow">Quick answer</span>
+            <h2>{getQuickAnswer(comparison)}</h2>
+          </div>
+        </section>
+
         <section className="section section-tight">
           <div className="revenue-cta-panel">
             <div>

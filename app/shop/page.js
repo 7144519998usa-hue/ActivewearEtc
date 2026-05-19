@@ -106,6 +106,14 @@ function buildStoreSections() {
 
 const storeSections = buildStoreSections();
 const productCount = storeSections.reduce((total, section) => total + section.products.length, 0);
+const shopperShortcutLinks = [
+  { href: "/compare/adidas-vs-lululemon-yoga", label: "Adidas vs lululemon yoga" },
+  { href: "/queries/best-yoga-leggings-for-women", label: "Best yoga leggings" },
+  { href: "/queries/running-shoe-size-guide", label: "Running shoe size guide" },
+  { href: "/queries/walmart-sports-bras-review-evaluation", label: "Walmart sports bras" },
+  { href: "/queries/nordstrom-activewear", label: "Nordstrom activewear" },
+  { href: "/queries/best-mens-activewear-brands", label: "Men's activewear brands" }
+];
 
 function getStoreTone(product) {
   const category = product.category.toLowerCase();
@@ -179,6 +187,13 @@ export default function ShopPage() {
             <a key={section.id} href={`#${section.id}`}>
               {section.label}
             </a>
+          ))}
+        </div>
+        <div className="storefront-shortcuts" aria-label="Popular shopping guides">
+          {shopperShortcutLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
           ))}
         </div>
         <p className="storefront-disclosure">

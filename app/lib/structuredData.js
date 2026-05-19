@@ -88,3 +88,31 @@ export function faqSchema({ path, faqs = [] }) {
     }))
   };
 }
+
+export function breadcrumbSchema({ items = [] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteConfig.siteUrl}${item.href}`
+    }))
+  };
+}
+
+export function itemListSchema({ title, path, items = [] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: title,
+    url: `${siteConfig.siteUrl}${path}`,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name || item.title || item.label,
+      url: `${siteConfig.siteUrl}${item.href}`
+    }))
+  };
+}

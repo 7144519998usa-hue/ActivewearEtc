@@ -28,6 +28,39 @@ const homepageProducts = sampleProducts.slice(0, 6).map((product, index) => ({
   imageAlt: `${product.category} activewear lifestyle inspiration`
 }));
 
+const popularSearchLinks = [
+  {
+    href: "/compare/adidas-vs-lululemon-yoga",
+    label: "Adidas vs lululemon yoga",
+    summary: "Compare softness, fit, price, and everyday wear."
+  },
+  {
+    href: "/compare/adidas-vs-lululemon-yoga-pants-comparison",
+    label: "Adidas vs lululemon yoga pants",
+    summary: "See which lane fits yoga pants shoppers better."
+  },
+  {
+    href: "/queries/best-yoga-leggings-for-women",
+    label: "Best yoga leggings for women",
+    summary: "Shop by comfort, waistband, opacity, and price."
+  },
+  {
+    href: "/queries/running-shoe-size-guide",
+    label: "Running shoe size guide",
+    summary: "Check fit, toe room, width, and returns."
+  },
+  {
+    href: "/queries/nordstrom-sports-bras",
+    label: "Nordstrom sports bras",
+    summary: "Compare support, sizes, brands, and returns."
+  },
+  {
+    href: "/queries/gymshark-amazon",
+    label: "Gymshark on Amazon",
+    summary: "Check seller details and current Amazon options."
+  }
+];
+
 export default function HomePage() {
   return (
     <>
@@ -66,6 +99,23 @@ export default function HomePage() {
             <p>Browse a few activewear ideas, then check the latest options and prices on Amazon.</p>
           </div>
           <ProductComparison products={homepageProducts} />
+        </section>
+
+        <section className="section">
+          <div className="section-heading">
+            <span className="eyebrow">Trending searches</span>
+            <h2>What shoppers are comparing right now.</h2>
+            <p>Jump into the activewear questions people are already searching for.</p>
+          </div>
+          <div className="grid">
+            {popularSearchLinks.map((item) => (
+              <a className="card" href={item.href} key={item.href}>
+                <span className="card-kicker">Popular search</span>
+                <h3>{item.label}</h3>
+                <p>{item.summary}</p>
+              </a>
+            ))}
+          </div>
         </section>
 
         <section className="section">

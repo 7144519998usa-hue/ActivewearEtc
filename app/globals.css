@@ -752,8 +752,16 @@ p {
   margin-top: 24px;
 }
 
+.storefront-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
 .storefront-jump-links a,
-.storefront-top-link {
+.storefront-top-link,
+.storefront-shortcuts a {
   border: 1px solid rgba(32, 36, 31, 0.1);
   border-radius: 999px;
   background: rgba(255, 253, 248, 0.78);
@@ -766,9 +774,15 @@ p {
 }
 
 .storefront-jump-links a:hover,
-.storefront-top-link:hover {
+.storefront-top-link:hover,
+.storefront-shortcuts a:hover {
   border-color: rgba(8, 121, 111, 0.4);
   color: var(--accent-dark);
+}
+
+.storefront-shortcuts a {
+  background: rgba(25, 27, 22, 0.86);
+  color: #fffaf0;
 }
 
 .storefront-disclosure {

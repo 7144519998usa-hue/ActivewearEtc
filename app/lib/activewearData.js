@@ -656,11 +656,45 @@ const adidasLululemonYogaRelatedSearches = [
 
 export const comparisonGuides = [
   {
+    slug: "adidas-vs-lululemon-yoga",
+    title: "Adidas vs lululemon Yoga: Which Is Better for Fit, Softness, and Price?",
+    summary: "Compare Adidas and lululemon yoga clothing by soft feel, waistband comfort, leggings, pants, tops, price checks, and everyday wear before shopping.",
+    tags: ["Adidas", "lululemon", "yoga", "comparison"],
+    relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
+      "/compare/adidas-vs-lululemon-yoga-pants-comparison",
+      "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
+      "/best/best-yoga-leggings",
+      "/queries/best-yoga-leggings-for-women"
+    ],
+    relatedSearches: [
+      { label: "Adidas vs lululemon yoga clothing comparison", href: "/compare/adidas-vs-lululemon-yoga-clothing-comparison" },
+      { label: "Adidas vs lululemon yoga pants comparison", href: "/compare/adidas-vs-lululemon-yoga-pants-comparison" },
+      { label: "Adidas vs lululemon yoga leggings comparison", href: "/compare/adidas-vs-lululemon-yoga-leggings-comparison" },
+      { label: "lululemon vs Adidas", href: "/compare/lululemon-vs-adidas" }
+    ],
+    decisionCards: [
+      {
+        title: "Quick answer",
+        body: "Start with lululemon if you want a softer studio feel. Start with Adidas if you want sportier yoga pieces that can also work for gym, walking, and athleisure."
+      },
+      {
+        title: "Best for yoga softness",
+        body: "lululemon is usually the stronger lane for shoppers focused on soft leggings, yoga pants, and premium studio comfort."
+      },
+      {
+        title: "Best for price checks",
+        body: "Adidas is often worth checking when you want current discounts, sport-led styling, and activewear that can work beyond yoga."
+      }
+    ]
+  },
+  {
     slug: "adidas-vs-lululemon-yoga-clothing-comparison",
     title: "Adidas vs lululemon Yoga Clothing Comparison",
     summary: "Compare Adidas and lululemon yoga clothing by fabric feel, studio comfort, price expectations, size range, return checks, and everyday wear before choosing a shopping path.",
     tags: ["Adidas", "lululemon", "yoga clothing", "comparison"],
     relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga",
       "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
       "/compare/adidas-vs-lululemon-yoga-pants-comparison",
       "/brands/adidas",
@@ -689,6 +723,7 @@ export const comparisonGuides = [
     summary: "Compare Adidas and lululemon yoga pants by rise, waistband feel, stretch, opacity, studio comfort, everyday wear, price checks, and return policy.",
     tags: ["Adidas", "lululemon", "yoga pants", "leggings"],
     relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga",
       "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
       "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
       "/compare/adidas-vs-lululemon-leggings",
@@ -717,6 +752,7 @@ export const comparisonGuides = [
     summary: "Compare Adidas and lululemon yoga leggings by softness, stretch, waistband security, opacity, size range, price checks, and studio-to-everyday use.",
     tags: ["Adidas", "lululemon", "yoga leggings", "best yoga leggings"],
     relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga",
       "/compare/adidas-vs-lululemon-yoga-pants-comparison",
       "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
       "/best/best-yoga-leggings",
@@ -745,6 +781,7 @@ export const comparisonGuides = [
     summary: "Compare Adidas and lululemon yoga apparel by studio comfort, athletic styling, fabric feel, layering options, price checks, and return-policy confidence.",
     tags: ["Adidas", "lululemon", "yoga apparel", "comparison"],
     relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga",
       "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
       "/compare/adidas-vs-lululemon-yoga-wear-comparison",
       "/brands/adidas",
@@ -773,6 +810,7 @@ export const comparisonGuides = [
     summary: "Compare Adidas and lululemon yoga clothes by comfort, stretch, coverage, tops, leggings, bras, layering, price checks, and everyday versatility.",
     tags: ["Adidas", "lululemon", "yoga clothes", "comparison"],
     relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga",
       "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
       "/compare/adidas-vs-lululemon-yoga-pants-comparison",
       "/brands/adidas/activities/yoga",
@@ -801,6 +839,7 @@ export const comparisonGuides = [
     summary: "Compare Adidas and lululemon yoga wear by softness, support, athletic crossover, premium feel, size range, product details, and current retailer checks.",
     tags: ["Adidas", "lululemon", "yoga wear", "comparison"],
     relatedHrefs: [
+      "/compare/adidas-vs-lululemon-yoga",
       "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
       "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
       "/activities/yoga",
