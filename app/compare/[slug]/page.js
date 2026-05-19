@@ -22,6 +22,14 @@ const metadataOverrides = {
     title: "Adidas vs lululemon Yoga Leggings: Which to Buy?",
     description: "Compare Adidas and lululemon yoga leggings by softness, fit, opacity, waistband comfort, size range, price, and Amazon options."
   },
+  "adidas-vs-lululemon-leggings": {
+    title: "Adidas vs lululemon Leggings: Fit, Feel, Price",
+    description: "Compare Adidas and lululemon leggings by waistband comfort, fabric feel, opacity, workout use, yoga comfort, price, size range, and returns."
+  },
+  "adidas-vs-lululemon-leggings-comparison": {
+    title: "Adidas vs lululemon Leggings Comparison",
+    description: "Compare Adidas and lululemon leggings by stretch, softness, training crossover, studio comfort, opacity, current price checks, and returns."
+  },
   "lululemon-vs-adidas": {
     title: "lululemon vs Adidas: Yoga and Activewear Comparison",
     description: "Compare lululemon and Adidas activewear for yoga, leggings, gym use, athleisure, price checks, size range, and return policy."
@@ -65,6 +73,22 @@ const metadataOverrides = {
   "nike-vs-gymshark-leggings": {
     title: "Nike vs Gymshark Leggings: Fit, Quality, Price",
     description: "Compare Nike and Gymshark leggings by fabric feel, training fit, opacity, waistband comfort, style, price, and returns."
+  },
+  "target-vs-walmart-running-shoes": {
+    title: "Target vs Walmart Running Shoes: Price and Fit",
+    description: "Compare Target and Walmart running shoes by price, sizing, cushioning, brand options, pickup, shipping, and return policy."
+  },
+  "nike-vs-adidas-activewear": {
+    title: "Nike vs Adidas Activewear: Fit, Price, Style",
+    description: "Compare Nike and Adidas activewear by running gear, gym clothes, leggings, shoes, athleisure, size range, sale timing, and returns."
+  },
+  "nike-vs-adidas-hoodies": {
+    title: "Nike vs Adidas Hoodies: Fit, Fabric, Price",
+    description: "Compare Nike and Adidas hoodies by fleece weight, fit, layering, gym use, everyday wear, sale timing, and returns."
+  },
+  "premium-vs-budget-activewear": {
+    title: "Premium vs Budget Activewear: What Is Worth It?",
+    description: "Compare premium and budget activewear by fabric, fit consistency, durability, support, price, sale timing, and return policy."
   }
 };
 
@@ -123,7 +147,20 @@ function isAdidasLululemonComparison(comparison) {
   return text.includes("adidas") && text.includes("lululemon");
 }
 
+function isAdidasLululemonLeggingsComparison(comparison) {
+  const text = `${comparison.slug} ${comparison.title} ${comparison.summary}`.toLowerCase();
+  return text.includes("adidas") && text.includes("lululemon") && text.includes("leggings");
+}
+
 function getCommerceCtas(comparison) {
+  if (isAdidasLululemonLeggingsComparison(comparison)) {
+    return [
+      { label: "Shop Adidas leggings", query: "Adidas leggings women" },
+      { label: "Shop lululemon-style leggings", query: "lululemon leggings women" },
+      { label: "Compare leggings on Amazon", query: "best workout leggings women" }
+    ];
+  }
+
   if (isAdidasLululemonComparison(comparison)) {
     return [
       { label: "Shop Adidas yoga options", query: "Adidas yoga clothing women" },
@@ -140,6 +177,16 @@ function getCommerceCtas(comparison) {
 }
 
 function getDecisionRows(comparison) {
+  if (isAdidasLululemonLeggingsComparison(comparison)) {
+    return [
+      { factor: "Best starting point", adidas: "Sportier leggings for gym, walking, errands, and active-casual outfits", lululemon: "Softer studio-focused leggings for yoga, Pilates, and polished everyday wear" },
+      { factor: "Fabric feel", adidas: "Look for smooth athletic stretch and breathable training fabrics", lululemon: "Look for soft handfeel, low-friction seams, and body-skimming studio fabrics" },
+      { factor: "Workout use", adidas: "Often easier to compare for gym crossover and sport styling", lululemon: "Often easier to compare for low-impact yoga comfort and premium feel" },
+      { factor: "Fit checks", adidas: "Check rise, inseam, waistband security, opacity, and size chart", lululemon: "Check rise, inseam, fabric family, opacity, seller details, and returns" },
+      { factor: "Value check", adidas: "Worth checking when discounts or multipacks matter", lululemon: "Worth checking when softness, fit consistency, and premium styling matter more" }
+    ];
+  }
+
   if (isAdidasLululemonComparison(comparison)) {
     return [
       { factor: "Best starting point", adidas: "Sport-led yoga and athleisure crossover", lululemon: "Studio-led premium yoga comfort" },
@@ -158,6 +205,23 @@ function getDecisionRows(comparison) {
 }
 
 function getFaqs(comparison) {
+  if (isAdidasLululemonLeggingsComparison(comparison)) {
+    return [
+      {
+        question: "Are Adidas or lululemon leggings better?",
+        answer: "Adidas is usually the stronger starting point for sportier leggings that can work for gym, walking, and athleisure. lululemon is usually the stronger starting point for soft studio leggings and premium low-impact comfort."
+      },
+      {
+        question: "What should I compare before buying Adidas or lululemon leggings?",
+        answer: "Compare fabric feel, rise, inseam, waistband comfort, opacity, size availability, seller details, current price, shipping, and return policy before buying."
+      },
+      {
+        question: "Can I use this page to shop Amazon leggings?",
+        answer: "Yes. Use the Amazon links as live shopping paths, then verify product details, seller, sizes, colors, prices, and returns directly on Amazon before checkout."
+      }
+    ];
+  }
+
   if (!isAdidasLululemonComparison(comparison)) {
     return [
       {
@@ -188,6 +252,10 @@ function getFaqs(comparison) {
 }
 
 function getQuickAnswer(comparison) {
+  if (isAdidasLululemonLeggingsComparison(comparison)) {
+    return "Quick answer: choose lululemon-style leggings if softness and studio comfort matter most; choose Adidas leggings if you want sportier workout crossover, everyday wear, and more frequent deal checks.";
+  }
+
   if (isAdidasLululemonComparison(comparison)) {
     return "Quick answer: choose lululemon if soft studio comfort is the priority; choose Adidas if you want sport-led yoga pieces that can also work for gym, walking, and athleisure.";
   }

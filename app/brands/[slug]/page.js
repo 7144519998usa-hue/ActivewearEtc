@@ -2,6 +2,25 @@ import { notFound } from "next/navigation";
 import HubPage from "../../components/HubPage";
 import { brandActivityGuides, brandCategoryGuides, brandConcernGuides, brandHubs, categories } from "../../lib/activewearData";
 
+const metadataOverrides = {
+  adidas: {
+    title: "Adidas Activewear: Leggings, Shoes, Athleisure",
+    description: "Shop and compare Adidas activewear by leggings, running shoes, workout tops, hoodies, athleisure, price checks, size range, and returns."
+  },
+  nike: {
+    title: "Nike Activewear: Leggings, Shoes, Workout Clothes",
+    description: "Shop and compare Nike activewear by leggings, running shoes, workout tops, sports bras, gym clothes, price checks, size range, and returns."
+  },
+  lululemon: {
+    title: "lululemon Activewear: Leggings, Yoga, Bras",
+    description: "Compare lululemon activewear by leggings, yoga wear, sports bras, joggers, premium fabric feel, fit checks, price, and returns."
+  },
+  gymshark: {
+    title: "Gymshark Activewear: Leggings, Sets, Gym Clothes",
+    description: "Compare Gymshark activewear by leggings, sports bras, workout tops, gym fits, seller checks, price, size range, and returns."
+  }
+};
+
 export function generateStaticParams() {
   return brandHubs.map((brand) => ({ slug: brand.slug }));
 }
@@ -11,12 +30,12 @@ export function generateMetadata({ params }) {
   if (!brand) return {};
 
   return {
-    title: `${brand.name} Activewear`,
-    description: brand.summary,
+    title: metadataOverrides[brand.slug]?.title || `${brand.name} Activewear`,
+    description: metadataOverrides[brand.slug]?.description || brand.summary,
     alternates: { canonical: brand.href },
     openGraph: {
-      title: `${brand.name} Activewear`,
-      description: brand.summary,
+      title: metadataOverrides[brand.slug]?.title || `${brand.name} Activewear`,
+      description: metadataOverrides[brand.slug]?.description || brand.summary,
       url: brand.href
     }
   };

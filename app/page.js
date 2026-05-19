@@ -30,6 +30,11 @@ const homepageProducts = sampleProducts.slice(0, 6).map((product, index) => ({
 
 const popularSearchLinks = [
   {
+    href: "/compare/adidas-vs-lululemon-leggings",
+    label: "Adidas vs lululemon leggings",
+    summary: "Compare fit, fabric feel, price, opacity, and returns."
+  },
+  {
     href: "/compare/adidas-vs-lululemon-yoga",
     label: "Adidas vs lululemon yoga",
     summary: "Compare softness, fit, price, and everyday wear."
@@ -58,6 +63,21 @@ const popularSearchLinks = [
     href: "/queries/gymshark-amazon",
     label: "Gymshark on Amazon",
     summary: "Check seller details and current Amazon options."
+  },
+  {
+    href: "/brands/adidas",
+    label: "Adidas activewear",
+    summary: "Browse Adidas leggings, shoes, tops, and athleisure."
+  },
+  {
+    href: "/styles/compression-wear",
+    label: "Compression wear",
+    summary: "Compare compression fit, support, comfort, and use."
+  },
+  {
+    href: "/styles/premium-activewear",
+    label: "Premium activewear",
+    summary: "Compare fabric quality, fit, construction, and value."
   }
 ];
 

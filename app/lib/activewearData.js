@@ -1047,6 +1047,17 @@ export const categoryComparisonGuides = comparisonBrandPairs.flatMap(([firstBran
 
   return comparisonCategorySlugs.map((categorySlug) => {
     const category = categories.find((item) => item.slug === categorySlug);
+    const isAdidasLululemonLeggings = firstBrandSlug === "adidas" && secondBrandSlug === "lululemon" && categorySlug === "leggings";
+    const relatedHrefs = isAdidasLululemonLeggings
+      ? [
+          "/compare/adidas-vs-lululemon-leggings-comparison",
+          "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
+          "/women/leggings",
+          "/brands/adidas/leggings",
+          "/brands/lululemon/leggings",
+          "/shop/women/leggings"
+        ]
+      : [firstBrand.href, secondBrand.href, category.href, "/about/how-we-rank-products"];
 
     return {
       slug: `${firstBrandSlug}-vs-${secondBrandSlug}-${categorySlug}`,
@@ -1056,7 +1067,7 @@ export const categoryComparisonGuides = comparisonBrandPairs.flatMap(([firstBran
       firstBrandSlug,
       secondBrandSlug,
       categorySlug,
-      relatedHrefs: [firstBrand.href, secondBrand.href, category.href, "/about/how-we-rank-products"],
+      relatedHrefs,
       tags: [firstBrand.name, secondBrand.name, category.name]
     };
   });
@@ -1083,6 +1094,17 @@ export const retailerComparisonGuides = retailerComparisonPairs.flatMap(([firstR
 
   return retailerComparisonCategorySlugs.map((categorySlug) => {
     const category = categories.find((item) => item.slug === categorySlug);
+    const isTargetWalmartRunningShoes = firstRetailerSlug === "target" && secondRetailerSlug === "walmart" && categorySlug === "running-shoes";
+    const relatedHrefs = isTargetWalmartRunningShoes
+      ? [
+          "/queries/running-shoe-size-guide",
+          "/queries/running-shoe-fit-guide",
+          "/styles/running-shoes",
+          "/retailers/target",
+          "/retailers/walmart",
+          "/compare/running-shoes-vs-training-shoes"
+        ]
+      : [firstRetailer.href, secondRetailer.href, category.href, "/about/price-and-availability"];
 
     return {
       slug: `${firstRetailerSlug}-vs-${secondRetailerSlug}-${categorySlug}`,
@@ -1092,7 +1114,7 @@ export const retailerComparisonGuides = retailerComparisonPairs.flatMap(([firstR
       firstRetailerSlug,
       secondRetailerSlug,
       categorySlug,
-      relatedHrefs: [firstRetailer.href, secondRetailer.href, category.href, "/about/price-and-availability"],
+      relatedHrefs,
       tags: [firstRetailer.name, secondRetailer.name, category.name, "retailer comparison"]
     };
   });

@@ -3,6 +3,24 @@ import HubPage from "../../components/HubPage";
 import { categories, editorialHubs, fabricGuides, fitGuides, segmentCategoryGuides } from "../../lib/activewearData";
 
 const stylePages = [...categories, ...editorialHubs, ...fabricGuides].filter((item) => item.href.startsWith("/styles/"));
+const metadataOverrides = {
+  "compression-wear": {
+    title: "Compression Wear: Leggings, Tights, Tops, Fit",
+    description: "Compare compression wear by fit pressure, support, comfort, stretch, gym use, yoga use, layering, price checks, and return policy."
+  },
+  "premium-activewear": {
+    title: "Premium Activewear: Fabric, Fit, Value",
+    description: "Compare premium activewear by fabric quality, fit consistency, construction, support, style, price, sale timing, and returns."
+  },
+  "workout-tops": {
+    title: "Workout Tops: Tanks, Tees, Long Sleeves",
+    description: "Compare workout tops by sweat handling, fabric feel, length, coverage, gym use, running use, price checks, and returns."
+  },
+  joggers: {
+    title: "Joggers: Workout, Travel, Athleisure Fits",
+    description: "Compare joggers by taper, pockets, fabric weight, mobility, gym use, travel comfort, price checks, and return policy."
+  }
+};
 
 export function generateStaticParams() {
   return stylePages.map((item) => ({ slug: item.href.split("/").pop() }));
@@ -16,8 +34,8 @@ export function generateMetadata({ params }) {
   }
 
   return {
-    title: `${page.name || page.title}`,
-    description: page.summary,
+    title: metadataOverrides[params.slug]?.title || `${page.name || page.title}`,
+    description: metadataOverrides[params.slug]?.description || page.summary,
     alternates: { canonical: page.href }
   };
 }

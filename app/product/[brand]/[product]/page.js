@@ -6,6 +6,21 @@ import ProductComparison from "../../../components/ProductComparison";
 import { sampleProducts } from "../../../lib/activewearData";
 import { productSchema } from "../../../lib/structuredData";
 
+const metadataOverrides = {
+  "/product/lululemon/align-high-rise-pant": {
+    title: "lululemon Align High-Rise Pant: Fit and Amazon Check",
+    description: "Check lululemon Align High-Rise Pant shopping notes, yoga use, soft feel, size checks, current Amazon options, seller details, and returns."
+  },
+  "/product/nike/one-high-waisted-leggings": {
+    title: "Nike One High-Waisted Leggings: Fit and Amazon Check",
+    description: "Check Nike One High-Waisted Leggings shopping notes, workout use, high-rise fit, current Amazon options, size checks, and returns."
+  },
+  "/product/adidas/ultimate-running-shorts": {
+    title: "Adidas Ultimate Running Shorts: Fit and Amazon Check",
+    description: "Check Adidas Ultimate Running Shorts shopping notes, liner comfort, warm-weather running use, current Amazon options, sizes, and returns."
+  }
+};
+
 export function generateStaticParams() {
   return sampleProducts.map((product) => {
     const [, , brand, productSlug] = product.href.split("/");
@@ -15,10 +30,12 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }) {
   const product = sampleProducts.find((item) => item.href === `/product/${params.brand}/${params.product}`);
+  const override = metadataOverrides[product?.href];
+
   return product
     ? {
-        title: `${product.brand} ${product.name}`,
-        description: `${product.brand} ${product.name} shopping guide with use-case notes and a current Amazon price check link.`,
+        title: override?.title || `${product.brand} ${product.name}`,
+        description: override?.description || `${product.brand} ${product.name} shopping guide with use-case notes and a current Amazon price check link.`,
         alternates: { canonical: product.href }
       }
     : {};

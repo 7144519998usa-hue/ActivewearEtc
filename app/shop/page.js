@@ -107,10 +107,13 @@ function buildStoreSections() {
 const storeSections = buildStoreSections();
 const productCount = storeSections.reduce((total, section) => total + section.products.length, 0);
 const shopperShortcutLinks = [
+  { href: "/compare/adidas-vs-lululemon-leggings", label: "Adidas vs lululemon leggings" },
   { href: "/compare/adidas-vs-lululemon-yoga", label: "Adidas vs lululemon yoga" },
   { href: "/queries/best-yoga-leggings-for-women", label: "Best yoga leggings" },
+  { href: "/brands/adidas/leggings", label: "Adidas leggings" },
   { href: "/queries/running-shoe-size-guide", label: "Running shoe size guide" },
   { href: "/queries/walmart-sports-bras-review-evaluation", label: "Walmart sports bras" },
+  { href: "/styles/compression-wear", label: "Compression wear" },
   { href: "/queries/nordstrom-activewear", label: "Nordstrom activewear" },
   { href: "/queries/best-mens-activewear-brands", label: "Men's activewear brands" }
 ];
