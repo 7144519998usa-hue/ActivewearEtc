@@ -48,7 +48,7 @@ export default function BrandActivityCategoryPage({ params }) {
           <h2>Shopping safety checks</h2>
           <p>
             Use this page to narrow brand, activity, and category context before clicking through. Verify retailer
-            availability, final price, color, size, return policy, and product details on the merchant page before purchase.
+            availability, final price, color, size, return policy, and product details on the retailer page before purchase.
           </p>
         </div>
       </section>

@@ -5,11 +5,11 @@ import { brandActivityGuides, brandCategoryGuides, brandConcernGuides, brandHubs
 const metadataOverrides = {
   adidas: {
     title: "Adidas Activewear: Leggings, Shoes, Athleisure",
-    description: "Shop and compare Adidas activewear by leggings, running shoes, workout tops, hoodies, athleisure, price checks, size range, and returns."
+    description: "Shop and compare Adidas activewear by leggings, running shoes, workout tops, hoodies, athleisure, price, size range, and returns."
   },
   nike: {
     title: "Nike Activewear: Leggings, Shoes, Workout Clothes",
-    description: "Shop and compare Nike activewear by leggings, running shoes, workout tops, sports bras, gym clothes, price checks, size range, and returns."
+    description: "Shop and compare Nike activewear by leggings, running shoes, workout tops, sports bras, gym clothes, price, size range, and returns."
   },
   lululemon: {
     title: "lululemon Activewear: Leggings, Yoga, Bras",

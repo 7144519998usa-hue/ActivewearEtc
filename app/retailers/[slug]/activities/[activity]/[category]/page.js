@@ -48,10 +48,10 @@ export default function RetailerActivityCategoryPage({ params }) {
     <HubPage eyebrow="Retailer activity category" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Activity shopping guardrails</h2>
+          <h2>Activity details to check</h2>
           <p>
             These pages organize retailer research around the workout context. ActivewearEtc does not guarantee live
-            prices, inventory, support, durability, or fit outcomes; verify the merchant page, size chart, seller details,
+            prices, inventory, support, durability, or fit outcomes; check the retailer page, size chart, seller details,
             return policy, and current product images before buying.
           </p>
         </div>

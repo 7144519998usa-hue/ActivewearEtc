@@ -38,7 +38,7 @@ export default function RetailerPage({ params }) {
         <div className="content-card">
           <h2>Retailer verification checklist</h2>
           <p>
-            Before buying, verify the final merchant page for seller identity, price, stock, shipping, returns, product
+            Before buying, check the retailer page for seller identity, price, stock, shipping, returns, product
             images, size charts, and whether affiliate disclosure applies.
           </p>
         </div>

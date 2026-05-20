@@ -65,7 +65,7 @@ export default function RetailerBrandPriceBandPage({ params }) {
         <div className="content-card">
           <h2>Price-band and affiliate disclaimer</h2>
           <p>
-            This page is a shopping filter, not a live price or discount guarantee. Verify the merchant page for current
+            This page is a shopping filter, not a live price or discount guarantee. Check the retailer page for current
             price, coupon eligibility, stock, seller identity, color, size, shipping, return policy, product imagery, and
             affiliate disclosure before purchase.
           </p>

@@ -69,7 +69,7 @@ export default function BrandCategoryPage({ params }) {
           <p>
             This page is built for shoppers who already know the brand and category they want to compare. We keep the
             frontend concise while organizing the SEO context in structured summaries, related guides, canonical URLs,
-            sitemap entries, and disclosure-safe affiliate language.
+            sitemap entries, and clear affiliate language.
           </p>
           <p>
             We do not publish fake reviews or unsupported performance claims. Prices, availability, colors, and sizes can

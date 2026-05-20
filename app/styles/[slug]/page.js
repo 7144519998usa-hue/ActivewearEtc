@@ -6,7 +6,7 @@ const stylePages = [...categories, ...editorialHubs, ...fabricGuides].filter((it
 const metadataOverrides = {
   "compression-wear": {
     title: "Compression Wear: Leggings, Tights, Tops, Fit",
-    description: "Compare compression wear by fit pressure, support, comfort, stretch, gym use, yoga use, layering, price checks, and return policy."
+    description: "Compare compression wear by fit, support, comfort, stretch, gym use, yoga use, layering, price, and return policy."
   },
   "premium-activewear": {
     title: "Premium Activewear: Fabric, Fit, Value",
@@ -14,11 +14,11 @@ const metadataOverrides = {
   },
   "workout-tops": {
     title: "Workout Tops: Tanks, Tees, Long Sleeves",
-    description: "Compare workout tops by sweat handling, fabric feel, length, coverage, gym use, running use, price checks, and returns."
+    description: "Compare workout tops by sweat handling, fabric feel, length, coverage, gym use, running use, price, and returns."
   },
   joggers: {
     title: "Joggers: Workout, Travel, Athleisure Fits",
-    description: "Compare joggers by taper, pockets, fabric weight, mobility, gym use, travel comfort, price checks, and return policy."
+    description: "Compare joggers by taper, pockets, fabric weight, mobility, gym use, travel comfort, price, and return policy."
   }
 };
 
@@ -70,10 +70,10 @@ export default function StylePage({ params }) {
     >
       <section className="section">
         <div className="content-card">
-          <h2>Fabric claim guardrails</h2>
+          <h2>Fabric details to check</h2>
           <p>
-            Fabric language should help shoppers compare feel, use case, and care expectations. ActivewearEtc avoids
-            unsupported performance promises and treats retailer claims as signals to verify before purchase.
+            Fabric descriptions should help you compare feel, activity use, and care expectations. We avoid unsupported
+            claims and recommend checking the retailer page before buying.
           </p>
         </div>
       </section>

@@ -2,7 +2,7 @@ export const siteConfig = {
   siteName: "ActivewearEtc",
   siteUrl: process.env.ACTIVEWEAR_SITE_URL || "https://www.activewearetc.com",
   siteDescription:
-    "Compare activewear by category, activity, fit, fabric, style, budget, and brand with clear affiliate disclosures and shopper-first guidance.",
+    "Compare activewear by category, activity, fit, fabric, style, budget, and brand with clear affiliate disclosures and practical shopping guidance.",
   supportEmail: "hello@activewearetc.com",
   primaryNavLinks: [
     { href: "/women", label: "Women" },

@@ -62,7 +62,7 @@ const popularSearchLinks = [
   {
     href: "/queries/gymshark-amazon",
     label: "Gymshark on Amazon",
-    summary: "Check seller details and current Amazon options."
+    summary: "Check seller details and Amazon options."
   },
   {
     href: "/brands/adidas",

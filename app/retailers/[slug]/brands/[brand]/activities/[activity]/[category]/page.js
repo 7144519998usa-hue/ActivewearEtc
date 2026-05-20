@@ -69,7 +69,7 @@ export default function RetailerBrandActivityCategoryPage({ params }) {
     <HubPage eyebrow="Retailer brand activity guide" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Affiliate and product-data guardrails</h2>
+          <h2>Product details to check</h2>
           <p>
             These pages prepare ActivewearEtc for approved affiliate feeds without pretending to have live marketplace data.
             Confirm merchant availability, price, seller identity, review context, size chart, return policy, and current

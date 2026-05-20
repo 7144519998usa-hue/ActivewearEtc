@@ -63,11 +63,11 @@ export default function RetailerBrandFeaturePage({ params }) {
     <HubPage eyebrow="Retailer brand feature guide" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Feature and affiliate guardrails</h2>
+          <h2>Feature details to check</h2>
           <p>
             These feature pages organize retailer, brand, category, and shopper-filter research without claiming live
             product testing or guaranteed performance. Verify the seller, product details, imagery, size chart, final
-            price, inventory, reviews, and return policy on the merchant page before buying.
+            price, inventory, reviews, and return policy on the retailer page before buying.
           </p>
         </div>
       </section>

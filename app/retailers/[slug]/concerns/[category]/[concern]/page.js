@@ -47,7 +47,7 @@ export default function RetailerConcernPage({ params }) {
     <HubPage eyebrow="Retailer concern guide" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Retailer concern guardrails</h2>
+          <h2>What to check for this concern</h2>
           <p>
             Retailer concern pages help shoppers organize fit and comfort questions before clicking out. They do not
             guarantee a product outcome; verify seller details, reviews, size charts, current price, returns, and product-page images.

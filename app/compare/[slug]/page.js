@@ -8,7 +8,7 @@ import { breadcrumbSchema, faqSchema, itemListSchema } from "../../lib/structure
 const metadataOverrides = {
   "adidas-vs-lululemon-yoga": {
     title: "Adidas vs lululemon Yoga: Fit, Softness, Price",
-    description: "Quickly compare Adidas and lululemon yoga clothing by softness, fit, waistband comfort, price, everyday wear, and current Amazon options."
+    description: "Compare Adidas and lululemon yoga clothing by softness, fit, waistband comfort, price, everyday wear, and Amazon shopping options."
   },
   "adidas-vs-lululemon-yoga-clothing-comparison": {
     title: "Adidas vs lululemon Yoga Clothing: Which Is Better?",
@@ -16,7 +16,7 @@ const metadataOverrides = {
   },
   "adidas-vs-lululemon-yoga-pants-comparison": {
     title: "Adidas vs lululemon Yoga Pants: Fit, Feel, Price",
-    description: "Compare Adidas and lululemon yoga pants by softness, waistband comfort, stretch, opacity, price checks, and everyday wear."
+    description: "Compare Adidas and lululemon yoga pants by softness, waistband comfort, stretch, opacity, price, and everyday wear."
   },
   "adidas-vs-lululemon-yoga-leggings-comparison": {
     title: "Adidas vs lululemon Yoga Leggings: Which to Buy?",
@@ -28,11 +28,11 @@ const metadataOverrides = {
   },
   "adidas-vs-lululemon-leggings-comparison": {
     title: "Adidas vs lululemon Leggings Comparison",
-    description: "Compare Adidas and lululemon leggings by stretch, softness, training crossover, studio comfort, opacity, current price checks, and returns."
+    description: "Compare Adidas and lululemon leggings by stretch, softness, training crossover, studio comfort, opacity, price, and returns."
   },
   "lululemon-vs-adidas": {
     title: "lululemon vs Adidas: Yoga and Activewear Comparison",
-    description: "Compare lululemon and Adidas activewear for yoga, leggings, gym use, athleisure, price checks, size range, and return policy."
+    description: "Compare lululemon and Adidas activewear for yoga, leggings, gym use, athleisure, price, size range, and return policy."
   },
   "adidas-vs-lululemon-yoga-apparel-comparison": {
     title: "Adidas vs lululemon Yoga Apparel: What to Compare",
@@ -40,7 +40,7 @@ const metadataOverrides = {
   },
   "adidas-vs-lululemon-yoga-clothes-comparison": {
     title: "Adidas vs lululemon Yoga Clothes: Fit and Price",
-    description: "Compare Adidas and lululemon yoga clothes by leggings, bras, tops, stretch, comfort, coverage, price checks, and everyday use."
+    description: "Compare Adidas and lululemon yoga clothes by leggings, bras, tops, stretch, comfort, coverage, price, and everyday use."
   },
   "adidas-vs-lululemon": {
     title: "Adidas vs lululemon: Activewear Fit, Quality, Price",
@@ -48,7 +48,7 @@ const metadataOverrides = {
   },
   "adidas-vs-lululemon-yoga-wear-comparison": {
     title: "Adidas vs lululemon Yoga Wear: Softness and Fit",
-    description: "Compare Adidas and lululemon yoga wear by soft feel, support, athletic crossover, premium style, size range, and price checks."
+    description: "Compare Adidas and lululemon yoga wear by soft feel, support, athletic crossover, premium style, size range, and price."
   },
   "lululemon-vs-gymshark": {
     title: "lululemon vs Gymshark: Fit, Fabric, Price",
@@ -171,7 +171,7 @@ function getCommerceCtas(comparison) {
 
   const queryBase = comparison.title.replace(/\bvs\b/gi, "").replace(/\s+/g, " ").trim();
   return [
-    { label: "Shop current Amazon options", query: queryBase },
+    { label: "Shop Amazon options", query: queryBase },
     { label: "Compare activewear alternatives", query: `${queryBase} activewear` }
   ];
 }
@@ -193,7 +193,7 @@ function getDecisionRows(comparison) {
       { factor: "Fabric feel", adidas: "Look for breathable, athletic stretch fabrics", lululemon: "Look for softer, body-skimming studio fabrics" },
       { factor: "Yoga pants and leggings", adidas: "Good for shoppers who also want gym or walking use", lululemon: "Good for shoppers prioritizing soft low-impact movement" },
       { factor: "Price check", adidas: "Often worth checking for current discounts and multipacks", lululemon: "Often requires more careful value and return-policy checks" },
-      { factor: "Before buying", adidas: "Verify size chart, inseam, fabric, color, and return terms", lululemon: "Verify seller, authenticity signals, fabric, size, and return terms" }
+      { factor: "Before buying", adidas: "Check the size chart, inseam, fabric, color, and return terms", lululemon: "Check the seller, product details, fabric, size, and return terms" }
     ];
   }
 
@@ -217,7 +217,7 @@ function getFaqs(comparison) {
       },
       {
         question: "Can I use this page to shop Amazon leggings?",
-        answer: "Yes. Use the Amazon links as live shopping paths, then verify product details, seller, sizes, colors, prices, and returns directly on Amazon before checkout."
+        answer: "Yes. Use the Amazon links to compare available options, then check product details, seller, sizes, colors, prices, and returns directly on Amazon before checkout."
       }
     ];
   }
@@ -226,7 +226,7 @@ function getFaqs(comparison) {
     return [
       {
         question: `How should I use this ${comparison.title} comparison?`,
-        answer: "Use it to narrow your shopping criteria, then verify current price, size availability, materials, seller details, shipping, and return terms on the merchant page before buying."
+        answer: "Use it to narrow your shopping criteria, then check current price, size availability, materials, seller details, shipping, and return terms on the retailer page before buying."
       },
       {
         question: "Does ActivewearEtc publish hands-on product reviews?",
@@ -246,7 +246,7 @@ function getFaqs(comparison) {
     },
     {
       question: "What should I check before buying Adidas or lululemon yoga pants?",
-      answer: "Verify current price, size chart, inseam, waistband style, fabric notes, color availability, seller details, shipping, and returns on the merchant page because product details can change."
+      answer: "Check current price, size chart, inseam, waistband style, fabric notes, color availability, seller details, shipping, and returns on the retailer page because product details can change."
     }
   ];
 }
@@ -322,11 +322,11 @@ export default function ComparisonPage({ params }) {
         <section className="section section-tight">
           <div className="revenue-cta-panel">
             <div>
-              <span className="eyebrow">Shop current options</span>
+              <span className="eyebrow">Shop options</span>
               <h2>Check live availability before choosing.</h2>
               <p>
                 Product prices, sizes, colors, sellers, shipping, and returns can change. Use these links to compare
-                current Amazon options, then verify final details before buying.
+                Amazon options, then check final details before buying.
               </p>
             </div>
             <div className="revenue-cta-actions">
@@ -345,7 +345,7 @@ export default function ComparisonPage({ params }) {
             <h2>Compare the factors that affect the purchase.</h2>
             <p>
               These tables are editorial shopping guidance, not hands-on performance testing. Use them to shortlist
-              options before checking current merchant details.
+              options before checking current retailer details.
             </p>
           </div>
           <div className="compare-table-wrap">
@@ -376,7 +376,7 @@ export default function ComparisonPage({ params }) {
             <h2>Use the comparison to narrow the next click</h2>
             <p>
               These pages compare shopper-visible differences like fit, support, fabric, budget, use case, and retailer
-              policies. ActivewearEtc does not invent test results or claim a winner without support.
+              policies. ActivewearEtc only compares details shoppers can review before buying.
             </p>
           </div>
           <div className="grid">

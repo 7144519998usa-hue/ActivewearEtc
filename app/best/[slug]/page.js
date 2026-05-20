@@ -60,8 +60,8 @@ export default function BestGuidePage({ params }) {
           <span className="eyebrow">Comparison criteria</span>
           <h2>What to compare before clicking through</h2>
           <p>
-            ActivewearEtc keeps buying guides focused on visible shopper signals: fit, fabric, support, size availability,
-            return policy, and whether the product matches the workout use case.
+            ActivewearEtc keeps buying guides focused on details shoppers can check: fit, fabric, support, size availability,
+            return policy, and whether the product matches the workout.
           </p>
         </div>
         <div className="grid">
@@ -70,8 +70,8 @@ export default function BestGuidePage({ params }) {
               <span className="eyebrow">{tag}</span>
               <h3>{tag}</h3>
               <p>
-                Use this signal to narrow the comparison before leaving for a retailer. Prices and availability can change,
-                so final checks should happen on the merchant page.
+                Use this detail to narrow the comparison before leaving for a retailer. Prices and availability can change,
+                so final checks should happen on the retailer page.
               </p>
             </article>
           ))}

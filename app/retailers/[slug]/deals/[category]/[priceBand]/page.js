@@ -46,7 +46,7 @@ export default function RetailerPriceBandPage({ params }) {
         <div className="content-card">
           <h2>Price-band disclaimer</h2>
           <p>
-            Retailer price-band pages are shopping filters, not live price promises. Verify the final merchant page for
+            Retailer price-band pages are shopping filters, not live price promises. Check the retailer page for
             current price, coupons, stock, seller details, shipping, returns, color, size, and affiliate disclosure before purchase.
           </p>
         </div>

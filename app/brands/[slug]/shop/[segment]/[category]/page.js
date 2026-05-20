@@ -47,11 +47,11 @@ export default function BrandSegmentCategoryPage({ params }) {
     <HubPage eyebrow="Brand shopper segment" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Brand segment guardrails</h2>
+          <h2>What to check before buying</h2>
           <p>
             Brand segment pages organize fit, budget, lifestyle, and material preference questions before shoppers choose
-            a retailer. ActivewearEtc does not guarantee size availability, price, product outcomes, material claims, or
-            current inventory; verify final merchant details before buying.
+            a retailer. ActivewearEtc does not guarantee size availability, price, product results, material claims, or
+            current inventory. Check final details on the retailer page before buying.
           </p>
         </div>
       </section>

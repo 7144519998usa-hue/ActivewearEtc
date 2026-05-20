@@ -47,10 +47,10 @@ export default function BrandConcernPage({ params }) {
     <HubPage eyebrow="Brand concern guide" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Fit concern guardrails</h2>
+          <h2>Fit details to check</h2>
           <p>
-            Brand concern pages help organize shopper questions about fit, comfort, fabric, care, and returns. They do not
-            guarantee that any product solves a concern, so verify product details, size charts, reviews, and return policies on the merchant page.
+            Brand concern pages help organize questions about fit, comfort, fabric, care, and returns. They do not
+            guarantee that any product solves a concern, so check product details, size charts, reviews, and return policies on the retailer page.
           </p>
         </div>
       </section>

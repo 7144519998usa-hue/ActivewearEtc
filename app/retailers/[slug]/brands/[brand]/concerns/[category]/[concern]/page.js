@@ -65,11 +65,11 @@ export default function RetailerBrandConcernPage({ params }) {
     <HubPage eyebrow="Retailer brand concern guide" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Concern and affiliate guardrails</h2>
+          <h2>What to check for this concern</h2>
           <p>
             These pages organize brand, retailer, category, and shopper concern research without promising product outcomes.
             Verify seller identity, final price, inventory, size chart, returns, reviews, product imagery, and affiliate
-            disclosures on the merchant page before purchase.
+            disclosures on the retailer page before purchase.
           </p>
         </div>
       </section>

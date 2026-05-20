@@ -36,7 +36,7 @@ export default function ColorGuidePage({ params }) {
     <HubPage eyebrow="Color guide" title={guide.title} intro={guide.summary} path={guide.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Color inventory guardrails</h2>
+          <h2>Color details to check</h2>
           <p>
             Color pages help shoppers compare style filters, but retailer color names, shades, sizes, photos, prices,
             and availability can change. Confirm final product details on the retailer page before purchasing.

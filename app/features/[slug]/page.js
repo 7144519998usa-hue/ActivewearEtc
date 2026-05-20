@@ -62,9 +62,9 @@ export default function FeatureGuidePage({ params }) {
     >
       <section className="section">
         <div className="content-card">
-          <h2>Feature comparison guardrails</h2>
+          <h2>Feature details to check</h2>
           <p>
-            Feature pages help shoppers filter options, but they should not imply hands-on testing or guaranteed
+            Feature pages help shoppers filter options, but they do not imply hands-on testing or guaranteed
             performance. Confirm the retailer's current product details, size chart, reviews, price, and return window
             before buying.
           </p>

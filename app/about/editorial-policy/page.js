@@ -11,7 +11,7 @@ export default function EditorialPolicyPage() {
         <div className="section-heading">
           <span className="eyebrow">Editorial policy</span>
           <h1>Editorial Policy</h1>
-          <p>ActivewearEtc publishes shopper-first activewear pages built around visible product data, clear limitations, and practical comparison criteria.</p>
+          <p>ActivewearEtc publishes activewear pages based on visible product information, clear limitations, and practical comparison criteria.</p>
         </div>
         <div className="grid">
           <article className="card">
@@ -20,7 +20,7 @@ export default function EditorialPolicyPage() {
           </article>
           <article className="card">
             <h3>No unsupported claims</h3>
-            <p>Performance, compression, moisture-wicking, support, and sustainability claims must be supported by product data or clearly framed as retailer-provided information.</p>
+            <p>Performance, compression, moisture-wicking, support, and sustainability claims must be supported by product data or clearly identified as retailer-provided information.</p>
           </article>
           <article className="card">
             <h3>Image attribution</h3>

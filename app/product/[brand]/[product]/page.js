@@ -9,15 +9,15 @@ import { productSchema } from "../../../lib/structuredData";
 const metadataOverrides = {
   "/product/lululemon/align-high-rise-pant": {
     title: "lululemon Align High-Rise Pant: Fit and Amazon Check",
-    description: "Check lululemon Align High-Rise Pant shopping notes, yoga use, soft feel, size checks, current Amazon options, seller details, and returns."
+    description: "Check lululemon Align High-Rise Pant shopping notes, yoga use, soft feel, sizing, Amazon options, seller details, and returns."
   },
   "/product/nike/one-high-waisted-leggings": {
     title: "Nike One High-Waisted Leggings: Fit and Amazon Check",
-    description: "Check Nike One High-Waisted Leggings shopping notes, workout use, high-rise fit, current Amazon options, size checks, and returns."
+    description: "Check Nike One High-Waisted Leggings shopping notes, workout use, high-rise fit, Amazon options, sizing, and returns."
   },
   "/product/adidas/ultimate-running-shorts": {
     title: "Adidas Ultimate Running Shorts: Fit and Amazon Check",
-    description: "Check Adidas Ultimate Running Shorts shopping notes, liner comfort, warm-weather running use, current Amazon options, sizes, and returns."
+    description: "Check Adidas Ultimate Running Shorts shopping notes, liner comfort, warm-weather running use, Amazon options, sizes, and returns."
   }
 };
 
@@ -35,7 +35,7 @@ export function generateMetadata({ params }) {
   return product
     ? {
         title: override?.title || `${product.brand} ${product.name}`,
-        description: override?.description || `${product.brand} ${product.name} shopping guide with use-case notes and a current Amazon price check link.`,
+        description: override?.description || `${product.brand} ${product.name} shopping guide with fit notes and an Amazon price-check link.`,
         alternates: { canonical: product.href }
       }
     : {};

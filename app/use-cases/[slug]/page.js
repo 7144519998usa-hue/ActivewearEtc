@@ -62,7 +62,7 @@ export default function UseCaseGuidePage({ params }) {
     >
       <section className="section">
         <div className="content-card">
-          <h2>Use-case comparison guardrails</h2>
+          <h2>What to check for this use</h2>
           <p>
             Use-case pages should explain shopper tradeoffs without pretending every product was personally tested.
             Final fit, price, size, and availability checks should happen on the retailer page before purchase.

@@ -62,7 +62,7 @@ export default function SeasonalGuidePage({ params }) {
     >
       <section className="section">
         <div className="content-card">
-          <h2>Seasonal shopping guardrails</h2>
+          <h2>Seasonal details to check</h2>
           <p>
             Seasonal pages are evergreen planning guides, not live sale trackers. Prices, availability, shipping cutoff
             dates, colors, and return windows can change quickly, so final checks belong on the retailer page.

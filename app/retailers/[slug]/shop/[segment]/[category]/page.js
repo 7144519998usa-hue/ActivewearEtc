@@ -47,11 +47,11 @@ export default function RetailerSegmentCategoryPage({ params }) {
     <HubPage eyebrow="Retailer shopper segment" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Segment shopping guardrails</h2>
+          <h2>What to check before buying</h2>
           <p>
             Segment pages help shoppers narrow activewear by fit, budget, lifestyle, or material preference. ActivewearEtc
             does not guarantee retailer inventory, size availability, pricing, material claims, or product outcomes; verify
-            the final merchant page before purchase.
+            the final retailer page before purchase.
           </p>
         </div>
       </section>

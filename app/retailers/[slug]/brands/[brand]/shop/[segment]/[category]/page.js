@@ -63,11 +63,11 @@ export default function RetailerBrandSegmentCategoryPage({ params }) {
     <HubPage eyebrow="Retailer brand shopper segment" title={page.title} intro={page.summary} path={page.href} items={items}>
       <section className="section">
         <div className="content-card">
-          <h2>Affiliate segment guardrails</h2>
+          <h2>What to check before buying</h2>
           <p>
             These pages organize brand, retailer, segment, and category research without claiming live merchant data.
             Verify seller identity, final price, inventory, size availability, material claims, return policy, product
-            imagery, and affiliate disclosures on the merchant page before purchase.
+            images, and affiliate disclosures on the retailer page before purchase.
           </p>
         </div>
       </section>

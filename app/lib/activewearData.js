@@ -44,7 +44,7 @@ export const categories = [
   {
     slug: "compression-wear",
     name: "Compression Wear",
-    summary: "Compression tights, tops, shorts, and base layers with fit notes and use-case guidance.",
+    summary: "Compression tights, tops, shorts, and base layers with fit notes for training, layering, and everyday movement.",
     href: "/styles/compression-wear",
     tags: ["training", "support", "recovery"]
   },
@@ -102,7 +102,7 @@ export const editorialHubs = [
   {
     slug: "sustainable-activewear",
     title: "Sustainable Activewear",
-    summary: "Recycled fabrics, responsible materials, durability signals, and brand transparency in one comparison lane.",
+    summary: "Recycled fabrics, responsible materials, durability details, and brand transparency in one place.",
     href: "/styles/sustainable-activewear"
   },
   {
@@ -114,7 +114,7 @@ export const editorialHubs = [
   {
     slug: "budget-activewear",
     title: "Budget Activewear",
-    summary: "Affordable activewear picks and deal-led comparisons without pretending every low price is the best value.",
+    summary: "Affordable activewear picks compared by price, fit, fabric, and overall value.",
     href: "/deals/budget-activewear"
   },
   {
@@ -141,7 +141,7 @@ export const brandHubs = [
 
 export const retailerHubs = [
   { slug: "amazon", name: "Amazon", href: "/retailers/amazon", summary: "Marketplace activewear research with extra attention to seller quality, size charts, returns, product images, and price verification." },
-  { slug: "target", name: "Target", href: "/retailers/target", summary: "Accessible activewear shopping paths with budget, in-store pickup, sizing, and return-policy considerations." },
+  { slug: "target", name: "Target", href: "/retailers/target", summary: "Accessible activewear options with budget picks, in-store pickup, sizing, and return-policy notes." },
   { slug: "walmart", name: "Walmart", href: "/retailers/walmart", summary: "Value-focused activewear research with marketplace, shipping, size availability, and return-window checks." },
   { slug: "nordstrom", name: "Nordstrom", href: "/retailers/nordstrom", summary: "Premium and department-store activewear comparison with brand assortment, fit help, and return-policy context." },
   { slug: "zappos", name: "Zappos", href: "/retailers/zappos", summary: "Shoe and activewear research with sizing, shipping, return-policy, and brand assortment checks." }
@@ -159,7 +159,7 @@ export const retailerCategoryGuides = retailerHubs.flatMap((retailer) => {
       categorySlug,
       name: `${retailer.name} ${category.name}`,
       title: `${retailer.name} ${category.name}`,
-      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} by current assortment, seller or retailer details, size availability, return policy, product image context, price checks, and whether the listing fits the shopper's workout use case.`,
+      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} by current assortment, seller or retailer details, size availability, return policy, product images, price, and workout fit.`,
       href: `/retailers/${retailer.slug}/${categorySlug}`,
       relatedHrefs: [retailer.href, category.href, "/about/advertiser-disclosure", "/about/price-and-availability"],
       tags: [retailer.name, category.name, "retailer research"]
@@ -181,7 +181,7 @@ export const retailerBrandCategoryGuides = retailerHubs.flatMap((retailer) => {
         categorySlug,
         name: `${retailer.name} ${brand.name} ${category.name}`,
         title: `${retailer.name} ${brand.name} ${category.name}`,
-        summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} by retailer assortment, seller details, size availability, return policy, product image context, price checks, and whether the listing matches the shopper's activity and fit needs.`,
+        summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} by retailer assortment, seller details, size availability, return policy, product images, price, activity, and fit needs.`,
         href: `/retailers/${retailer.slug}/brands/${brand.slug}/${categorySlug}`,
         relatedHrefs: [retailer.href, brand.href, category.href, "/about/advertiser-disclosure", "/about/price-and-availability"],
         tags: [retailer.name, brand.name, category.name, "affiliate research"]
@@ -268,7 +268,7 @@ export const brandActivityCategoryGuides = brandActivityGuides.flatMap((brandAct
       categorySlug,
       name: `${brand.name} ${activity.name} ${category.name}`,
       title: `${brand.name} ${activity.name} ${category.name}`,
-      summary: `Compare ${brand.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by fit, fabric feel, support or mobility needs, size availability, retailer coverage, return policy, and final price checks before shopping.`,
+      summary: `Compare ${brand.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by fit, fabric feel, support or mobility needs, size availability, retailer coverage, return policy, and final price before shopping.`,
       href: `/brands/${brandActivity.brandSlug}/activities/${brandActivity.activitySlug}/${categorySlug}`,
       relatedHrefs: [brand.href, activity.href, category.href, brandActivity.href, "/about/how-we-rank-products"],
       tags: [brand.name, activity.name, category.name, "activewear"]
@@ -290,7 +290,7 @@ export const retailerActivityCategoryGuides = retailerHubs.flatMap((retailer) =>
         categorySlug,
         name: `${retailer.name} ${activity.name} ${category.name}`,
         title: `${retailer.name} ${activity.name} ${category.name}`,
-        summary: `Compare ${retailer.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by assortment, seller or retailer details, size availability, activity-specific fit needs, return policy, product image context, and final price checks before shopping.`,
+        summary: `Compare ${retailer.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by assortment, seller or retailer details, size availability, activity-specific fit needs, return policy, product images, and final price before shopping.`,
         href: `/retailers/${retailer.slug}/activities/${activity.slug}/${categorySlug}`,
         relatedHrefs: [retailer.href, activity.href, category.href, "/about/advertiser-disclosure", "/about/price-and-availability"],
         tags: [retailer.name, activity.name, category.name, "retailer activity research"]
@@ -313,7 +313,7 @@ export const retailerBrandActivityCategoryGuides = retailerHubs.flatMap((retaile
       categorySlug: category.slug,
       name: `${retailer.name} ${brand.name} ${activity.name} ${category.name}`,
       title: `${retailer.name} ${brand.name} ${activity.name} ${category.name}`,
-      summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by retailer assortment, seller details, size availability, activity fit context, return policy, product image limitations, affiliate disclosure, and final price checks before shopping.`,
+      summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} for ${activity.name.toLowerCase()} by retailer assortment, seller details, size availability, activity fit, return policy, product images, affiliate disclosure, and final price before shopping.`,
       href: `/retailers/${retailer.slug}/brands/${brand.slug}/activities/${activity.slug}/${category.slug}`,
       relatedHrefs: [retailer.href, brand.href, activity.href, category.href, brandActivityCategory.href, "/about/price-and-availability"],
       tags: [retailer.name, brand.name, activity.name, category.name, "affiliate research"]
@@ -426,7 +426,7 @@ const amazonProductModifiers = [
   { slug: "plus-size", name: "Plus-Size", badge: "Size-Inclusive Picks", bestFor: "Extended-size shopping and fit comparison" },
   { slug: "mens", name: "Men's", badge: "Men's Picks", bestFor: "Men's training, running, and athleisure shopping" },
   { slug: "womens", name: "Women's", badge: "Women's Picks", bestFor: "Women's training, running, studio, and athleisure shopping" },
-  { slug: "budget", name: "Budget-Friendly", badge: "Budget Picks", bestFor: "Value-focused shopping with current price checks" }
+  { slug: "budget", name: "Budget-Friendly", badge: "Budget Picks", bestFor: "Value-focused shopping with current price details" }
 ];
 
 const amazonProductCategories = [
@@ -658,7 +658,7 @@ export const comparisonGuides = [
   {
     slug: "adidas-vs-lululemon-yoga",
     title: "Adidas vs lululemon Yoga: Which Is Better for Fit, Softness, and Price?",
-    summary: "Compare Adidas and lululemon yoga clothing by soft feel, waistband comfort, leggings, pants, tops, price checks, and everyday wear before shopping.",
+    summary: "Compare Adidas and lululemon yoga clothing by soft feel, waistband comfort, leggings, pants, tops, price, and everyday wear before shopping.",
     tags: ["Adidas", "lululemon", "yoga", "comparison"],
     relatedHrefs: [
       "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
@@ -683,7 +683,7 @@ export const comparisonGuides = [
         body: "lululemon is usually the stronger lane for shoppers focused on soft leggings, yoga pants, and premium studio comfort."
       },
       {
-        title: "Best for price checks",
+        title: "Best for deal hunting",
         body: "Adidas is often worth checking when you want current discounts, sport-led styling, and activewear that can work beyond yoga."
       }
     ]
@@ -720,7 +720,7 @@ export const comparisonGuides = [
   {
     slug: "adidas-vs-lululemon-yoga-pants-comparison",
     title: "Adidas vs lululemon Yoga Pants Comparison",
-    summary: "Compare Adidas and lululemon yoga pants by rise, waistband feel, stretch, opacity, studio comfort, everyday wear, price checks, and return policy.",
+    summary: "Compare Adidas and lululemon yoga pants by rise, waistband feel, stretch, opacity, studio comfort, everyday wear, price, and return policy.",
     tags: ["Adidas", "lululemon", "yoga pants", "leggings"],
     relatedHrefs: [
       "/compare/adidas-vs-lululemon-yoga",
@@ -749,7 +749,7 @@ export const comparisonGuides = [
   {
     slug: "adidas-vs-lululemon-yoga-leggings-comparison",
     title: "Adidas vs lululemon Yoga Leggings Comparison",
-    summary: "Compare Adidas and lululemon yoga leggings by softness, stretch, waistband security, opacity, size range, price checks, and studio-to-everyday use.",
+    summary: "Compare Adidas and lululemon yoga leggings by softness, stretch, waistband security, opacity, size range, price, and studio-to-everyday use.",
     tags: ["Adidas", "lululemon", "yoga leggings", "best yoga leggings"],
     relatedHrefs: [
       "/compare/adidas-vs-lululemon-yoga",
@@ -763,22 +763,22 @@ export const comparisonGuides = [
     decisionCards: [
       {
         title: "Adidas yoga leggings lean sport-casual",
-        body: "Use Adidas as the comparison lane when you want yoga leggings that can fit a sportier wardrobe and may cross over into training, walking, or casual athleisure."
+        body: "Start with Adidas when you want yoga leggings that fit a sportier wardrobe and can also work for training, walking, or casual athleisure."
       },
       {
         title: "lululemon yoga leggings lean studio-premium",
-        body: "Use lululemon as the comparison lane when the main priority is soft studio feel, high-rise comfort, and premium yoga-focused silhouettes."
+        body: "Start with lululemon when soft studio feel, high-rise comfort, and premium yoga-focused silhouettes matter most."
       },
       {
         title: "Check opacity, rise, and fabric every time",
-        body: "Before buying, verify current product details on the merchant page, especially opacity notes, fabric blend, inseam, color availability, and return options."
+        body: "Before buying, check current product details on the retailer page, especially opacity notes, fabric blend, inseam, color availability, and return options."
       }
     ]
   },
   {
     slug: "adidas-vs-lululemon-yoga-apparel-comparison",
     title: "Adidas vs lululemon Yoga Apparel Comparison",
-    summary: "Compare Adidas and lululemon yoga apparel by studio comfort, athletic styling, fabric feel, layering options, price checks, and return-policy confidence.",
+    summary: "Compare Adidas and lululemon yoga apparel by studio comfort, athletic styling, fabric feel, layering options, price, and return-policy confidence.",
     tags: ["Adidas", "lululemon", "yoga apparel", "comparison"],
     relatedHrefs: [
       "/compare/adidas-vs-lululemon-yoga",
@@ -807,7 +807,7 @@ export const comparisonGuides = [
   {
     slug: "adidas-vs-lululemon-yoga-clothes-comparison",
     title: "Adidas vs lululemon Yoga Clothes Comparison",
-    summary: "Compare Adidas and lululemon yoga clothes by comfort, stretch, coverage, tops, leggings, bras, layering, price checks, and everyday versatility.",
+    summary: "Compare Adidas and lululemon yoga clothes by comfort, stretch, coverage, tops, leggings, bras, layering, price, and everyday versatility.",
     tags: ["Adidas", "lululemon", "yoga clothes", "comparison"],
     relatedHrefs: [
       "/compare/adidas-vs-lululemon-yoga",
@@ -829,7 +829,7 @@ export const comparisonGuides = [
       },
       {
         title: "Check current product details",
-        body: "Before buying, verify the exact fabric, fit, color, size chart, seller, final price, and return window on the merchant page."
+        body: "Before buying, check the exact fabric, fit, color, size chart, seller, final price, and return window on the retailer page."
       }
     ]
   },
@@ -865,7 +865,7 @@ export const comparisonGuides = [
   {
     slug: "adidas-vs-lululemon-leggings-comparison",
     title: "Adidas vs lululemon Leggings Comparison",
-    summary: "Compare Adidas and lululemon leggings by waistband feel, stretch, opacity, training crossover, yoga comfort, size availability, price checks, and returns.",
+    summary: "Compare Adidas and lululemon leggings by waistband feel, stretch, opacity, training crossover, yoga comfort, size availability, price, and returns.",
     tags: ["Adidas", "lululemon", "leggings", "comparison"],
     relatedHrefs: [
       "/compare/adidas-vs-lululemon-yoga-leggings-comparison",
@@ -893,7 +893,7 @@ export const comparisonGuides = [
   {
     slug: "adidas-vs-lululemon",
     title: "Adidas vs lululemon Activewear",
-    summary: "Compare Adidas and lululemon activewear by yoga clothing, leggings, training crossover, premium feel, price checks, size range, and retailer confidence.",
+    summary: "Compare Adidas and lululemon activewear by yoga clothing, leggings, training crossover, premium feel, price, size range, and retailer details.",
     tags: ["Adidas", "lululemon", "activewear", "brands"],
     relatedHrefs: [
       "/compare/adidas-vs-lululemon-yoga-clothing-comparison",
@@ -921,7 +921,7 @@ export const comparisonGuides = [
   {
     slug: "lululemon-vs-adidas",
     title: "lululemon vs Adidas Activewear",
-    summary: "Compare lululemon and Adidas activewear by yoga comfort, athletic crossover, leggings, apparel quality, price checks, size availability, and return policy.",
+    summary: "Compare lululemon and Adidas activewear by yoga comfort, athletic crossover, leggings, apparel quality, price, size availability, and return policy.",
     tags: ["lululemon", "Adidas", "activewear", "comparison"],
     relatedHrefs: [
       "/compare/adidas-vs-lululemon",
@@ -1109,7 +1109,7 @@ export const retailerComparisonGuides = retailerComparisonPairs.flatMap(([firstR
     return {
       slug: `${firstRetailerSlug}-vs-${secondRetailerSlug}-${categorySlug}`,
       title: `${firstRetailer.name} vs ${secondRetailer.name} ${category.name}`,
-      summary: `Compare ${firstRetailer.name} and ${secondRetailer.name} ${category.name.toLowerCase()} by assortment, seller details, price checks, size availability, shipping, returns, product image context, and affiliate disclosure before choosing a retailer path.`,
+      summary: `Compare ${firstRetailer.name} and ${secondRetailer.name} ${category.name.toLowerCase()} by assortment, seller details, price, size availability, shipping, returns, product images, and affiliate disclosure before choosing where to shop.`,
       href: `/compare/${firstRetailerSlug}-vs-${secondRetailerSlug}-${categorySlug}`,
       firstRetailerSlug,
       secondRetailerSlug,
@@ -1167,7 +1167,7 @@ export const intentGuides = intentCategorySlugs.flatMap((categorySlug) => {
   return intentModifiers.map((intent) => ({
     slug: `${categorySlug}-${intent.slug}`,
     title: `${category.name} ${intent.label}`,
-    summary: `Compare ${category.name.toLowerCase()} ${intent.label.toLowerCase()} by ${intent.summary}. ActivewearEtc keeps these pages disclosure-safe and avoids fake reviews or unsupported performance claims.`,
+    summary: `Compare ${category.name.toLowerCase()} ${intent.label.toLowerCase()} by ${intent.summary}. ActivewearEtc keeps these pages clear, practical, and free of fake review language.`,
     href: `/intent/${categorySlug}-${intent.slug}`,
     categorySlug,
     intentSlug: intent.slug,
@@ -1233,7 +1233,7 @@ export const segmentCategoryGuides = Object.entries(segmentCategoryMatrix).flatM
       categorySlug,
       name: `${segment.name} ${category.name}`,
       title: `${segment.name} ${category.name}`,
-      summary: `Compare ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by fit, fabric, support, price range, retailer availability, return policy, and disclosure-safe shopping signals.`,
+      summary: `Compare ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by fit, fabric, support, price range, retailer availability, return policy, and practical shopping details.`,
       href: `/shop/${segmentSlug}/${categorySlug}`,
       relatedHrefs: [segment.href, category.href, "/about/advertiser-disclosure"],
       tags: [segment.name, category.name, "shopping guide"]
@@ -1253,7 +1253,7 @@ export const retailerSegmentCategoryGuides = retailerHubs.flatMap((retailer) => 
       categorySlug: category.slug,
       name: `${retailer.name} ${segment.name} ${category.name}`,
       title: `${retailer.name} ${segment.name} ${category.name}`,
-      summary: `Compare ${retailer.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by retailer assortment, size availability, fit context, price range, seller details, shipping, returns, product image limitations, and disclosure-safe shopping signals.`,
+      summary: `Compare ${retailer.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by retailer assortment, size availability, fit, price range, seller details, shipping, returns, and product images.`,
       href: `/retailers/${retailer.slug}/shop/${segment.slug}/${category.slug}`,
       relatedHrefs: [retailer.href, segment.href, category.href, segmentCategory.href, "/about/advertiser-disclosure"],
       tags: [retailer.name, segment.name, category.name, "shopping segment"]
@@ -1273,7 +1273,7 @@ export const brandSegmentCategoryGuides = brandHubs.flatMap((brand) => {
       categorySlug: category.slug,
       name: `${brand.name} ${segment.name} ${category.name}`,
       title: `${brand.name} ${segment.name} ${category.name}`,
-      summary: `Compare ${brand.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by fit context, size availability, fabric expectations, price range, retailer coverage, return-policy risk, and disclosure-safe shopping signals before choosing where to shop.`,
+      summary: `Compare ${brand.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by fit, size availability, fabric expectations, price range, retailer coverage, and return-policy risk before choosing where to shop.`,
       href: `/brands/${brand.slug}/shop/${segment.slug}/${category.slug}`,
       relatedHrefs: [brand.href, segment.href, category.href, segmentCategory.href, "/about/how-we-rank-products"],
       tags: [brand.name, segment.name, category.name, "brand segment"]
@@ -1295,7 +1295,7 @@ export const retailerBrandSegmentCategoryGuides = retailerHubs.flatMap((retailer
       categorySlug: category.slug,
       name: `${retailer.name} ${brand.name} ${segment.name} ${category.name}`,
       title: `${retailer.name} ${brand.name} ${segment.name} ${category.name}`,
-      summary: `Compare ${retailer.name} ${brand.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by retailer assortment, size availability, fit context, seller details, price range, shipping, returns, product image limitations, and disclosure-safe affiliate shopping signals.`,
+      summary: `Compare ${retailer.name} ${brand.name} ${segment.name.toLowerCase()} ${category.name.toLowerCase()} by retailer assortment, size availability, fit, seller details, price range, shipping, returns, product images, and affiliate disclosures.`,
       href: `/retailers/${retailer.slug}/brands/${brand.slug}/shop/${segment.slug}/${category.slug}`,
       relatedHrefs: [retailer.href, brand.href, segment.href, category.href, brandSegmentCategory.href, "/about/advertiser-disclosure"],
       tags: [retailer.name, brand.name, segment.name, category.name, "affiliate segment research"]
@@ -1350,7 +1350,7 @@ const priceBandModifiers = [
   {
     slug: "under-75",
     label: "Under $75",
-    summary: "midrange price filters, fabric quality signals, feature coverage, return flexibility, and comparison against sale pricing",
+    summary: "midrange price filters, fabric quality, feature coverage, return flexibility, and comparison against sale pricing",
     tags: ["under $75", "midrange", "value"]
   },
   {
@@ -1370,7 +1370,7 @@ export const priceBandGuides = priceBandCategorySlugs.flatMap((categorySlug) => 
     slug: `${categorySlug}-${priceBand.slug}`,
     name: `${category.name} ${priceBand.label}`,
     title: `${category.name} ${priceBand.label}`,
-    summary: `Compare ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by ${priceBand.summary}. ActivewearEtc uses price bands as shopping filters, not guaranteed live prices, so verify the final merchant page before purchase.`,
+    summary: `Compare ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by ${priceBand.summary}. ActivewearEtc uses price bands as shopping filters, not guaranteed live prices, so check the retailer page before purchase.`,
     href: `/deals/${categorySlug}-${priceBand.slug}`,
     categorySlug,
     priceBandSlug: priceBand.slug,
@@ -1390,7 +1390,7 @@ export const retailerPriceBandGuides = retailerHubs.flatMap((retailer) => {
       priceBandSlug: priceBand.slug,
       name: `${retailer.name} ${category.name} ${priceBand.label}`,
       title: `${retailer.name} ${category.name} ${priceBand.label}`,
-      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by current retailer assortment, seller details, size availability, shipping, returns, and final price checks. ActivewearEtc treats retailer price bands as filters, not guaranteed live prices.`,
+      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by current retailer assortment, seller details, size availability, shipping, returns, and final price. ActivewearEtc treats retailer price bands as filters, not guaranteed live prices.`,
       href: `/retailers/${retailer.slug}/deals/${categorySlug}/${priceBand.slug}`,
       relatedHrefs: [retailer.href, category.href, "/deals", "/about/price-and-availability"],
       tags: [retailer.name, category.name, ...priceBand.tags]
@@ -1432,7 +1432,7 @@ export const retailerBrandPriceBandGuides = retailerHubs.flatMap((retailer) => {
         priceBandSlug: priceBand.slug,
         name: `${retailer.name} ${brand.name} ${category.name} ${priceBand.label}`,
         title: `${retailer.name} ${brand.name} ${category.name} ${priceBand.label}`,
-        summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by retailer assortment, seller details, size availability, discount context, shipping, returns, and final price checks. ActivewearEtc treats brand retailer price bands as shopping filters, not guaranteed live prices.`,
+        summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} ${priceBand.label.toLowerCase()} by retailer assortment, seller details, size availability, discount context, shipping, returns, and final price. ActivewearEtc treats brand retailer price bands as shopping filters, not guaranteed live prices.`,
         href: `/retailers/${retailer.slug}/brands/${brand.slug}/deals/${category.slug}/${priceBand.slug}`,
         relatedHrefs: [retailer.href, brand.href, category.href, guide.href, "/about/price-and-availability"],
         tags: [retailer.name, brand.name, category.name, ...priceBand.tags]
@@ -1460,7 +1460,7 @@ export const fitGuides = fitGuideCategorySlugs.map((categorySlug) => {
     slug: `${categorySlug}-fit-guide`,
     name: `${category.name} Fit Guide`,
     title: `${category.name} Fit Guide`,
-    summary: `Compare ${category.name.toLowerCase()} sizing, fit signals, fabric behavior, support level, return-policy risk, and retailer size-chart details before choosing a product.`,
+    summary: `Compare ${category.name.toLowerCase()} sizing, fit, fabric behavior, support level, return-policy risk, and retailer size-chart details before choosing a product.`,
     href: `/sizes-fit/${categorySlug}-fit-guide`,
     categorySlug,
     relatedHrefs: [category.href, "/about/how-we-rank-products", "/about/price-and-availability"],
@@ -1535,7 +1535,7 @@ const fabricModifiers = [
   {
     slug: "sustainable",
     label: "Sustainable",
-    summary: "material claims, recycled-content signals, durability, care expectations, and brand transparency",
+    summary: "material claims, recycled content, durability, care expectations, and brand transparency",
     tags: ["sustainable", "materials", "durability"]
   },
   {
@@ -1555,7 +1555,7 @@ export const fabricGuides = fabricCategorySlugs.flatMap((categorySlug) => {
     slug: `${fabric.slug}-${categorySlug}`,
     name: `${fabric.label} ${category.name}`,
     title: `${fabric.label} ${category.name}`,
-    summary: `Compare ${fabric.label.toLowerCase()} ${category.name.toLowerCase()} by ${fabric.summary}. ActivewearEtc treats fabric claims as shopper signals, not guaranteed performance promises.`,
+    summary: `Compare ${fabric.label.toLowerCase()} ${category.name.toLowerCase()} by ${fabric.summary}. ActivewearEtc treats fabric claims as details to check, not guaranteed results.`,
     href: `/styles/${fabric.slug}-${categorySlug}`,
     categorySlug,
     fabricSlug: fabric.slug,
@@ -1669,7 +1669,7 @@ export const useCaseGuides = useCaseCategorySlugs.flatMap((categorySlug) => {
     slug: `${categorySlug}-${useCase.slug}`,
     name: `${category.name} ${useCase.label}`,
     title: `${category.name} ${useCase.label}`,
-    summary: `Compare ${category.name.toLowerCase()} ${useCase.label.toLowerCase()} by ${useCase.summary}. ActivewearEtc keeps use-case pages helpful, disclosure-safe, and free of fake review language.`,
+    summary: `Compare ${category.name.toLowerCase()} ${useCase.label.toLowerCase()} by ${useCase.summary}. ActivewearEtc keeps these pages helpful, clear, and free of fake review language.`,
     href: `/use-cases/${categorySlug}-${useCase.slug}`,
     categorySlug,
     useCaseSlug: useCase.slug,
@@ -1720,7 +1720,7 @@ export const occasionGuides = occasionCategorySlugs.flatMap((categorySlug) => {
     slug: `${categorySlug}-${occasion.slug}`,
     name: `${category.name} ${occasion.label}`,
     title: `${category.name} ${occasion.label}`,
-    summary: `Compare ${category.name.toLowerCase()} ${occasion.label.toLowerCase()} by ${occasion.summary}. ActivewearEtc keeps occasion pages practical, disclosure-safe, and focused on shopper decision context.`,
+    summary: `Compare ${category.name.toLowerCase()} ${occasion.label.toLowerCase()} by ${occasion.summary}. ActivewearEtc keeps occasion pages practical and focused on real shopping decisions.`,
     href: `/occasions/${categorySlug}-${occasion.slug}`,
     categorySlug,
     occasionSlug: occasion.slug,
@@ -1751,7 +1751,7 @@ const concernModifiers = [
   {
     slug: "see-through-risk",
     label: "for See-Through Risk",
-    summary: "opacity signals, fabric stretch, color, size selection, squat-test expectations, and retailer image limitations",
+    summary: "opacity, fabric stretch, color, size selection, squat-test expectations, and retailer image limitations",
     tags: ["opacity", "coverage", "fit"]
   },
   {
@@ -1816,7 +1816,7 @@ export const retailerConcernGuides = retailerHubs.flatMap((retailer) => {
       concernSlug: concern.slug,
       name: `${retailer.name} ${category.name} ${concern.label}`,
       title: `${retailer.name} ${category.name} ${concern.label}`,
-      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} ${concern.label.toLowerCase()} by ${concern.summary}, seller details, return policy, product image context, and current retailer availability. ActivewearEtc treats retailer concern pages as shopping checks, not product guarantees.`,
+      summary: `Compare ${retailer.name} ${category.name.toLowerCase()} ${concern.label.toLowerCase()} by ${concern.summary}, seller details, return policy, product images, and current retailer availability. ActivewearEtc treats retailer concern pages as shopping checks, not product guarantees.`,
       href: `/retailers/${retailer.slug}/concerns/${categorySlug}/${concern.slug}`,
       relatedHrefs: [retailer.href, category.href, "/concerns", "/about/price-and-availability"],
       tags: [retailer.name, category.name, ...concern.tags]
@@ -1838,7 +1838,7 @@ export const retailerBrandConcernGuides = retailerHubs.flatMap((retailer) => {
       concernSlug: concern.slug,
       name: `${retailer.name} ${brand.name} ${category.name} ${concern.label}`,
       title: `${retailer.name} ${brand.name} ${category.name} ${concern.label}`,
-      summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} ${concern.label.toLowerCase()} by ${concern.summary}, seller details, return policy, product image context, size availability, and current retailer availability. ActivewearEtc treats retailer brand concern pages as fit and shopping checks, not product guarantees.`,
+      summary: `Compare ${retailer.name} ${brand.name} ${category.name.toLowerCase()} ${concern.label.toLowerCase()} by ${concern.summary}, seller details, return policy, product images, size availability, and current retailer availability. ActivewearEtc treats retailer brand concern pages as fit and shopping checks, not product guarantees.`,
       href: `/retailers/${retailer.slug}/brands/${brand.slug}/concerns/${category.slug}/${concern.slug}`,
       relatedHrefs: [retailer.href, brand.href, category.href, brandConcern.href, "/concerns", "/about/editorial-policy"],
       tags: [retailer.name, brand.name, category.name, ...concern.tags]
@@ -1895,7 +1895,7 @@ const featureMatrix = {
   leggings: [
     { slug: "high-waisted", label: "High-Waisted", summary: "rise, waistband stability, coverage, compression feel, opacity, and everyday comfort", tags: ["high-waisted", "coverage", "fit"] },
     { slug: "with-pockets", label: "with Pockets", summary: "phone storage, pocket placement, waistband comfort, bounce control, and travel utility", tags: ["pockets", "storage", "travel"] },
-    { slug: "squat-proof", label: "Squat-Proof", summary: "opacity signals, fabric weight, seam placement, return-policy risk, and gym confidence", tags: ["opacity", "gym", "fit"] },
+    { slug: "squat-proof", label: "Squat-Proof", summary: "opacity, fabric weight, seam placement, return-policy risk, and gym confidence", tags: ["opacity", "gym", "fit"] },
     { slug: "flare", label: "Flare", summary: "leg opening, inseam, styling range, studio use, and everyday wear versatility", tags: ["flare", "athleisure", "style"] }
   ],
   "sports-bras": [
@@ -1959,7 +1959,7 @@ export const retailerBrandFeatureGuides = retailerHubs.flatMap((retailer) => {
         featureSlug: feature.featureSlug,
         name: `${retailer.name} ${brand.name} ${feature.name}`,
         title: `${retailer.name} ${brand.name} ${feature.name}`,
-        summary: `Compare ${retailer.name} ${brand.name} ${feature.name.toLowerCase()} by feature relevance, size availability, seller details, product image limitations, return policy, current assortment, and final price checks. ActivewearEtc treats feature pages as shopper filters, not guaranteed performance claims.`,
+        summary: `Compare ${retailer.name} ${brand.name} ${feature.name.toLowerCase()} by feature relevance, size availability, seller details, product images, return policy, current assortment, and final price. ActivewearEtc treats feature pages as shopper filters, not guaranteed performance claims.`,
         href: `/retailers/${retailer.slug}/brands/${brand.slug}/features/${category.slug}/${feature.featureSlug}`,
         relatedHrefs: [retailer.href, brand.href, category.href, feature.href, "/features", "/about/how-we-rank-products"],
         tags: [retailer.name, brand.name, category.name, ...feature.tags]
@@ -2128,7 +2128,7 @@ export const searchConsoleOpportunityGuides = [
   {
     slug: "lululemon-leggings-amazon",
     title: "lululemon Leggings on Amazon",
-    summary: "Research lululemon leggings on Amazon carefully by seller identity, authenticity risk, return terms, product images, price checks, and safer retailer alternatives.",
+    summary: "Research lululemon leggings on Amazon carefully by seller identity, authenticity risk, return terms, product images, price, and safer retailer alternatives.",
     href: "/queries/lululemon-leggings-amazon",
     relatedHrefs: ["/retailers/amazon/brands/lululemon/leggings", "/brands/lululemon/leggings", "/about/price-and-availability"],
     tags: ["lululemon", "amazon", "seller checks"]
@@ -2360,7 +2360,7 @@ export const searchConsoleOpportunityGuides = [
   {
     slug: "gymshark-vs-nike-quality",
     title: "Gymshark vs Nike Quality",
-    summary: "Compare Gymshark and Nike quality signals by fabric feel, seams, opacity, workout use, care needs, return policy, and product-page detail.",
+    summary: "Compare Gymshark and Nike quality by fabric feel, seams, opacity, workout use, care needs, return policy, and product-page details.",
     href: "/queries/gymshark-vs-nike-quality",
     relatedHrefs: ["/queries/nike-vs-gymshark", "/compare/nike-vs-gymshark-leggings", "/brands/gymshark"],
     tags: ["gymshark", "nike", "quality"]
@@ -2392,7 +2392,7 @@ export const searchConsoleOpportunityGuides = [
   {
     slug: "beginner-guide-to-training-shoes-for-men",
     title: "Beginner Guide to Training Shoes for Men",
-    summary: "Compare men's beginner training shoes by stability, grip, cushioning, gym use, walking comfort, width, durability signals, and return policy.",
+    summary: "Compare men's beginner training shoes by stability, grip, cushioning, gym use, walking comfort, width, durability, and return policy.",
     href: "/queries/beginner-guide-to-training-shoes-for-men",
     relatedHrefs: ["/queries/beginner-guide-to-training-shoes", "/men", "/styles/training-shoes"],
     tags: ["men", "training shoes", "beginner"]
